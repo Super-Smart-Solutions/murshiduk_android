@@ -245,12 +245,19 @@ public class PestIdentificationActivity extends AppCompatActivity {
         }
 
         File file = new File(getRealPathFromURI(selectedImageUri));
+        String originalFileName = file.getName();
+        String fileNameWithoutExt = originalFileName.substring(0, originalFileName.lastIndexOf('.'));
+        String fileExt = originalFileName.substring(originalFileName.lastIndexOf('.') + 1);
+        long timestamp = System.currentTimeMillis();
+        String newFileName = "uploads/" + fileNameWithoutExt + "_" + timestamp + "." + fileExt;
+
         RequestBody requestFile = RequestBody.create(MediaType.parse(getContentResolver().getType(selectedImageUri)), file);
-        MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image_file", file.getName(), requestFile);
-        MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", file.getName());
-        MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", String.valueOf(selectedPlantId));
-        MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", "1");
-        MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", "false");
+        MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image_file", newFileName, requestFile);
+
+        MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", null, RequestBody.create(MediaType.parse("text/plain"), newFileName));
+        MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", null, RequestBody.create(MediaType.parse("text/plain"), String.valueOf(selectedPlantId)));
+        MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", null, RequestBody.create(MediaType.parse("text/plain"), "1")); // Assuming farm_id is always 1
+        MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", null, RequestBody.create(MediaType.parse("text/plain"), "false"));
 
         pestIdentificationService.uploadImage(authToken, imagePart, namePart, plantIdPart, farmIdPart, annotatedPart, new Callback<UploadImageResponse>() {
             @Override

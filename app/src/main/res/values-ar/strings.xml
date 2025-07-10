@@ -748,11 +748,11 @@
     <string name="plant_grape">عنب</string>
     <string name="plant_citrus">حمضيات</string>
     <string name="plant_honey_bees">نحل العسل</string>
-    <string name="plant_roses">ورود</string>
+    <string name="plant_roses">ورد</string>
     <string name="plant_pomegranate">رمان</string>
     <string name="plant_fish">أسماك</string>
     <string name="plant_coffee">قهوة</string>
-    <string name="plant_animals">حيوانات</string>
+    <string name="plant_animals">الماشية</string>
 
     <string name="tap_to_add_image">اضغط لإضافة صورة</string>
     <string name="checking_image">جاري فحص الصورة...</string>
@@ -765,4 +765,6 @@
     <string name="treatment_header">العلاج</string>
     <string name="english_name_header">الاسم الإنجليزي</string>
     <string name="arabic_name_header">الاسم العربي</string>
+    <string name="ai_disease_detection">الكشف عن أمراض النبات بالذكاء الاصطناعي</string>
+    <string name="select_category">اختر الفئة</string>
 </resources>

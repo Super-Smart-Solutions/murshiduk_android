@@ -1060,4 +1060,6 @@
     <string name="treatment_header">Treatment</string>
     <string name="english_name_header">English Name</string>
     <string name="arabic_name_header">Arabic Name</string>
+    <string name="ai_disease_detection">AI Disease Detection</string>
+    <string name="select_category">Select Category</string>
 </resources>

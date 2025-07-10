@@ -11,16 +11,39 @@
         android:layout_height="wrap_content"
         tools:context=".PestIdentificationActivity">
 
+        <include
+            android:id="@+id/appBar"
+            layout="@layout/app_bar_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_select_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/select_category"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBar" />
+
         <Spinner
             android:id="@+id/spinner_pest_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:background="@drawable/spinner_background"
+            android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/text_select_category" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_image_picker"

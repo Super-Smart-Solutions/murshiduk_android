@@ -71,11 +71,20 @@ public class PestIdentificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pest_identification);
 
+        // Set up the custom toolbar
+        TextView toolbarTitle = findViewById(R.id.appBar).findViewById(R.id.toolbar_title);
+        toolbarTitle.setText(R.string.ai_disease_detection);
+
+        ImageView backButton = findViewById(R.id.appBar).findViewById(R.id.btn_back);
+        backButton.setOnClickListener(v -> onBackPressed());
+
         pestIdentificationService = new PestIdentificationService();
         // TODO: Replace this with a secure method of obtaining the auth token
         authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl19.PVWELPTrzW7Y50Jw4GXTrBf7skvwJ1KkJ0iomqdXuqQ";
 
         spinnerPestType = findViewById(R.id.spinner_pest_type);
+        TextView selectCategoryText = findViewById(R.id.text_select_category);
+        selectCategoryText.setText(R.string.select_category);
         imagePicker = findViewById(R.id.image_picker);
         textTapToAddImage = findViewById(R.id.text_tap_to_add_image);
         buttonClearImage = findViewById(R.id.button_clear_image);
@@ -86,8 +95,10 @@ public class PestIdentificationActivity extends AppCompatActivity {
         setupPlantIdMap();
 
         // Setup Spinner
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.pest_types, android.R.layout.simple_spinner_item);
+        List<String> pestTypes = new ArrayList<>(plantIdMap.keySet());
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, pestTypes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPestType.setAdapter(adapter);
 
@@ -98,9 +109,11 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 if (plantIdMap.containsKey(selectedPlantName)) {
                     selectedPlantId = plantIdMap.get(selectedPlantName);
                 } else {
-                    selectedPlantId = -1; // Or handle error appropriately
+                    selectedPlantId = -1; // Should not happen with correct data
                 }
-                Toast.makeText(PestIdentificationActivity.this, "Selected: " + selectedPlantName + " (ID: " + selectedPlantId + ")", Toast.LENGTH_SHORT).show();
+                if (selectedPlantId != -1) {
+                    Toast.makeText(PestIdentificationActivity.this, "Selected: " + selectedPlantName + " (ID: " + selectedPlantId + ")", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override

@@ -767,4 +767,7 @@
     <string name="arabic_name_header">الاسم العربي</string>
     <string name="ai_disease_detection">الكشف عن أمراض النبات بالذكاء الاصطناعي</string>
     <string name="select_category">اختر الفئة</string>
+    <string name="select_image">اختر صورة</string>
+    <string name="reset_image">إعادة تعيين الصورة</string>
+    <string name="submit">إرسال</string>
 </resources>

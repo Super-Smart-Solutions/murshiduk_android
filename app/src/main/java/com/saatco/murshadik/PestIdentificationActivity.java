@@ -52,10 +52,10 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private Spinner spinnerPestType;
     private ImageView imagePicker;
-    private TextView textTapToAddImage;
     private ImageButton buttonClearImage;
     private Uri selectedImageUri;
     private Button buttonSubmit;
+    private Button buttonResetImage;
     private int selectedPlantId = -1;
 
     private ProgressBar progressBar;
@@ -86,9 +86,9 @@ public class PestIdentificationActivity extends AppCompatActivity {
         TextView selectCategoryText = findViewById(R.id.text_select_category);
         selectCategoryText.setText(R.string.select_category);
         imagePicker = findViewById(R.id.image_picker);
-        textTapToAddImage = findViewById(R.id.text_tap_to_add_image);
         buttonClearImage = findViewById(R.id.button_clear_image);
         buttonSubmit = findViewById(R.id.button_submit);
+        buttonResetImage = findViewById(R.id.button_reset_image); // Initialize here
         progressBar = findViewById(R.id.progress_bar);
         loadingMessageTextView = findViewById(R.id.text_loading_message);
 
@@ -132,6 +132,14 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         // Setup Clear Image Button
         buttonClearImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearImageSelection();
+            }
+        });
+
+        // Setup Reset Image Button
+        buttonResetImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clearImageSelection();
@@ -238,7 +246,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         imagePicker.setImageResource(android.R.drawable.ic_menu_camera); // Set default image
         selectedImageUri = null;
         buttonClearImage.setVisibility(View.GONE);
-        textTapToAddImage.setVisibility(View.VISIBLE);
+        buttonResetImage.setVisibility(View.GONE);
     }
 
     @Override
@@ -248,7 +256,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
             selectedImageUri = data.getData();
             imagePicker.setImageURI(selectedImageUri);
             buttonClearImage.setVisibility(View.VISIBLE);
-            textTapToAddImage.setVisibility(View.GONE);
+            buttonResetImage.setVisibility(View.VISIBLE);
         }
     }
 

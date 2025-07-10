@@ -1052,4 +1052,8 @@
     <string name="detecting_disease">Detecting disease...</string>
     <string name="detection_completed">Detection completed successfully!</string>
     <string name="detection_inconclusive">Detection inconclusive. Deep analysis needed.</string>
+    <string name="detection_failed">Detection Failed</string>
+    <string name="detection_failed_message">An unexpected error occurred during disease detection. Please try again.</string>
+    <string name="getting_disease_details">Getting disease details...</string>
+    <string name="detection_inconclusive_message">We could not determine the disease from the image. Please try again with a clearer image.</string>
 </resources>

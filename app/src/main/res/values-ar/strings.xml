@@ -757,4 +757,8 @@
     <string name="tap_to_add_image">اضغط لإضافة صورة</string>
     <string name="checking_image">جاري فحص الصورة...</string>
     <string name="image_not_valid">الصورة غير صالحة، الرجاء اختيار صورة أخرى.</string>
+    <string name="detection_failed">فشل الكشف</string>
+    <string name="detection_failed_message">حدث خطأ غير متوقع أثناء الكشف عن الآفة. الرجاء معاودة المحاولة.</string>
+    <string name="getting_disease_details">جاري جلب تفاصيل المرض...</string>
+    <string name="detection_inconclusive_message">لم نتمكن من تحديد المرض من الصورة. يرجى المحاولة مرة أخرى بصورة أوضح.</string>
 </resources>

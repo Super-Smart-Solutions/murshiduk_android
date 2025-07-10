@@ -37,4 +37,9 @@ public class PestIdentificationService {
         Call<InferenceResponse> call = apiInterface.detectDisease("Bearer " + authToken, inferenceId);
         call.enqueue(callback);
     }
+
+    public void getDiseaseById(String authToken, int diseaseId, Callback<com.saatco.murshadik.models.Disease> callback) {
+        Call<com.saatco.murshadik.models.Disease> call = apiInterface.getDiseaseById("Bearer " + authToken, diseaseId);
+        call.enqueue(callback);
+    }
 }

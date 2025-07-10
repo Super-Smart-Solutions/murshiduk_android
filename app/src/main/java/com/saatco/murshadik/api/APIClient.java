@@ -42,7 +42,7 @@ public class APIClient {
 
     public static String sliderUrl = "https://murshadik.saatco.net/storage/";
 
-    public static String pestIdentificationBaseUrl = "https://plant-backend.ss-solution.org/api/";
+    public static String pestIdentificationBaseUrl = "https://staging.plant-backend.ss-solution.org/api/";
 
     public static Retrofit getClient() {
 

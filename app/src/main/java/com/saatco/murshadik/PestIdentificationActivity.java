@@ -138,6 +138,9 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Hide the result view initially
+        findViewById(R.id.inference_result_container).setVisibility(View.GONE);
     }
 
     private void showLoading(String message) {
@@ -336,16 +339,15 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 hideLoading();
                 if (response.isSuccessful() && response.body() != null) {
                     int status = response.body().getStatus();
-                    String message = response.body().getMessage();
                     if (status == 2) { // DETECTION_COMPLETED
-                        Toast.makeText(PestIdentificationActivity.this, getString(R.string.detection_completed) + "\n" + message, Toast.LENGTH_LONG).show();
+                        int diseaseId = response.body().getDiseaseId();
+                        getDiseaseDetails(diseaseId);
                     } else if (status == -2) { // DETECTION_INCONCLUSIVE
-                        Toast.makeText(PestIdentificationActivity.this, getString(R.string.detection_inconclusive) + "\n" + message, Toast.LENGTH_LONG).show();
+                        showInconclusiveResult();
                     } else {
-                        Toast.makeText(PestIdentificationActivity.this, "Disease detection failed: " + message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PestIdentificationActivity.this, getString(R.string.detection_failed), Toast.LENGTH_SHORT).show();
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(PestIdentificationActivity.this, "Disease detection failed: " + response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -356,6 +358,74 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 Toast.makeText(PestIdentificationActivity.this, "Disease detection failed: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void getDiseaseDetails(int diseaseId) {
+        showLoading(getString(R.string.getting_disease_details));
+        pestIdentificationService.getDiseaseById(authToken, diseaseId, new Callback<com.saatco.murshadik.models.Disease>() {
+            @Override
+            public void onResponse(Call<com.saatco.murshadik.models.Disease> call, Response<com.saatco.murshadik.models.Disease> response) {
+                hideLoading();
+                if (response.isSuccessful() && response.body() != null) {
+                    com.saatco.murshadik.models.Disease disease = response.body();
+                    displaySuccessfulResult(disease);
+                } else {
+                    Toast.makeText(PestIdentificationActivity.this, "Failed to get disease details: " + response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<com.saatco.murshadik.models.Disease> call, Throwable t) {
+                hideLoading();
+                Toast.makeText(PestIdentificationActivity.this, "Failed to get disease details: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void displaySuccessfulResult(com.saatco.murshadik.models.Disease disease) {
+        View resultView = findViewById(R.id.inference_result_container);
+        resultView.setVisibility(View.VISIBLE);
+
+        ImageView resultImage = findViewById(R.id.result_image);
+        // TODO: Load the actual image of the disease
+        resultImage.setImageURI(selectedImageUri);
+
+        TextView resultTitle = findViewById(R.id.result_title);
+        TextView resultScientificName = findViewById(R.id.result_scientific_name);
+        TextView resultSymptoms = findViewById(R.id.result_symptoms);
+        TextView resultTreatment = findViewById(R.id.result_treatment);
+
+        // Check the current language and display the appropriate name
+        String language = java.util.Locale.getDefault().getLanguage();
+        if (language.equals("ar")) {
+            resultTitle.setText(disease.getArabicName());
+        } else {
+            resultTitle.setText(disease.getEnglishName());
+        }
+
+        resultScientificName.setText(disease.getScientificName());
+        resultSymptoms.setText(disease.getSymptoms());
+        resultTreatment.setText(disease.getTreatments());
+    }
+
+    private void showInconclusiveResult() {
+        View resultView = findViewById(R.id.inference_result_container);
+        resultView.setVisibility(View.VISIBLE);
+
+        ImageView resultImage = findViewById(R.id.result_image);
+        resultImage.setImageURI(selectedImageUri);
+
+        TextView resultTitle = findViewById(R.id.result_title);
+        resultTitle.setText(R.string.detection_inconclusive);
+
+        TextView resultScientificName = findViewById(R.id.result_scientific_name);
+        resultScientificName.setText("");
+
+        TextView resultSymptoms = findViewById(R.id.result_symptoms);
+        resultSymptoms.setText(R.string.detection_inconclusive_message);
+
+        TextView resultTreatment = findViewById(R.id.result_treatment);
+        resultTreatment.setText("");
     }
 
     private String getRealPathFromURI(Uri contentUri) {

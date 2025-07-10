@@ -757,6 +757,12 @@ public interface APIInterface {
             @Path("id") int id
     );
 
+    @GET("diseases/{id}")
+    Call<com.saatco.murshadik.models.Disease> getDiseaseById(
+            @Header("Authorization") String authHeader,
+            @Path("id") int id
+    );
+
 
 }
 

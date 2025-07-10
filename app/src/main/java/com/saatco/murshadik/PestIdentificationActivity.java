@@ -63,12 +63,17 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private Map<String, Integer> plantIdMap;
 
-    private final String AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl19.PVWELPTrzW7Y50Jw4GXTrBf7skvwJ1KkJ0iomqdXuqQ";
+    private PestIdentificationService pestIdentificationService;
+    private String authToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pest_identification);
+
+        pestIdentificationService = new PestIdentificationService();
+        // TODO: Replace this with a secure method of obtaining the auth token
+        authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl19.PVWELPTrzW7Y50Jw4GXTrBf7skvwJ1KkJ0iomqdXuqQ";
 
         spinnerPestType = findViewById(R.id.spinner_pest_type);
         imagePicker = findViewById(R.id.image_picker);
@@ -232,7 +237,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
     }
 
     private void uploadImage() {
-        showLoading(getString(R.string.checking_image)); // Show loading for upload as well
+        showLoading(getString(R.string.checking_image));
         if (selectedImageUri == null) {
             Toast.makeText(this, "No image selected to upload.", Toast.LENGTH_SHORT).show();
             hideLoading();
@@ -242,15 +247,12 @@ public class PestIdentificationActivity extends AppCompatActivity {
         File file = new File(getRealPathFromURI(selectedImageUri));
         RequestBody requestFile = RequestBody.create(MediaType.parse(getContentResolver().getType(selectedImageUri)), file);
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image_file", file.getName(), requestFile);
+        MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", file.getName());
+        MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", String.valueOf(selectedPlantId));
+        MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", "1");
+        MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", "false");
 
-        MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", null, RequestBody.create(MediaType.parse("text/plain"), file.getName()));
-        MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", null, RequestBody.create(MediaType.parse("text/plain"), String.valueOf(selectedPlantId)));
-        MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", null, RequestBody.create(MediaType.parse("text/plain"), "1"));
-        MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", null, RequestBody.create(MediaType.parse("text/plain"), "false"));
-
-        APIInterface apiService = APIClient.getPestIdentificationClient().create(APIInterface.class);
-        Call<UploadImageResponse> call = apiService.uploadImage("Bearer " + AUTH_TOKEN, imagePart, namePart, plantIdPart, farmIdPart, annotatedPart);
-        call.enqueue(new Callback<UploadImageResponse>() {
+        pestIdentificationService.uploadImage(authToken, imagePart, namePart, plantIdPart, farmIdPart, annotatedPart, new Callback<UploadImageResponse>() {
             @Override
             public void onResponse(Call<UploadImageResponse> call, Response<UploadImageResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -272,10 +274,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private void createInference(int imageId) {
         showLoading(getString(R.string.checking_image));
-        APIInterface apiInterface = APIClient.getPestIdentificationClient().create(APIInterface.class);
-        Call<InferenceResponse> call = apiInterface.createInference("Bearer " + AUTH_TOKEN, imageId);
-
-        call.enqueue(new Callback<InferenceResponse>() {
+        pestIdentificationService.createInference(authToken, imageId, new Callback<InferenceResponse>() {
             @Override
             public void onResponse(Call<InferenceResponse> call, Response<InferenceResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -297,10 +296,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private void validateInference(int inferenceId) {
         showLoading(getString(R.string.checking_image));
-        APIInterface apiInterface = APIClient.getPestIdentificationClient().create(APIInterface.class);
-        Call<InferenceResponse> call = apiInterface.validateInference("Bearer " + AUTH_TOKEN, inferenceId);
-
-        call.enqueue(new Callback<InferenceResponse>() {
+        pestIdentificationService.validateInference(authToken, inferenceId, new Callback<InferenceResponse>() {
             @Override
             public void onResponse(Call<InferenceResponse> call, Response<InferenceResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -327,10 +323,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private void detectDisease(int inferenceId) {
         showLoading(getString(R.string.detecting_disease));
-        APIInterface apiInterface = APIClient.getPestIdentificationClient().create(APIInterface.class);
-        Call<InferenceResponse> call = apiInterface.detectDisease("Bearer " + AUTH_TOKEN, inferenceId);
-
-        call.enqueue(new Callback<InferenceResponse>() {
+        pestIdentificationService.detectDisease(authToken, inferenceId, new Callback<InferenceResponse>() {
             @Override
             public void onResponse(Call<InferenceResponse> call, Response<InferenceResponse> response) {
                 hideLoading();
@@ -344,7 +337,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(PestIdentificationActivity.this, "Disease detection failed: " + message, Toast.LENGTH_SHORT).show();
                     }
-                } else {
+                }
+                else {
                     Toast.makeText(PestIdentificationActivity.this, "Disease detection failed: " + response.message(), Toast.LENGTH_SHORT).show();
                 }
             }

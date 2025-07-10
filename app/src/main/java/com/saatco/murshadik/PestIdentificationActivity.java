@@ -247,6 +247,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         selectedImageUri = null;
         buttonClearImage.setVisibility(View.GONE);
         buttonResetImage.setVisibility(View.GONE);
+        findViewById(R.id.inference_result_container).setVisibility(View.GONE);
     }
 
     @Override

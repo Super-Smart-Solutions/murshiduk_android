@@ -9,41 +9,65 @@
     android:background="@color/white"
     android:visibility="gone">
 
-    <ImageView
-        android:id="@+id/result_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_launcher_background" />
+    <TextView
+        android:id="@+id/english_name_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/english_name_header"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
-        android:text="Disease Name"
+        android:layout_marginTop="4dp"
+        android:text="Disease Name (English)"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
+
+    <TextView
+        android:id="@+id/arabic_name_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/arabic_name_header"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
+
+    <TextView
+        android:id="@+id/result_arabic_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Disease Name (Arabic)"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_scientific_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="4dp"
         android:text="Scientific Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColor="@color/darkGray" />
+        android:textColor="@color/darkGray"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_symptoms_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Symptoms"
+        android:text="@string/symptoms_header"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_symptoms"
@@ -52,16 +76,18 @@
         android:layout_marginTop="4dp"
         android:text="Symptoms details..."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/darkGray" />
+        android:textColor="@color/darkGray"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_treatment_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Treatment"
+        android:text="@string/treatment_header"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary"
+        android:textDirection="locale" />
 
     <TextView
         android:id="@+id/result_treatment"
@@ -70,6 +96,7 @@
         android:layout_marginTop="4dp"
         android:text="Treatment details..."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/darkGray" />
+        android:textColor="@color/darkGray"
+        android:textDirection="locale" />
 
 </LinearLayout>

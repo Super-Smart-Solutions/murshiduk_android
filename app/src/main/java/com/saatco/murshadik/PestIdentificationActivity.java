@@ -386,46 +386,71 @@ public class PestIdentificationActivity extends AppCompatActivity {
         View resultView = findViewById(R.id.inference_result_container);
         resultView.setVisibility(View.VISIBLE);
 
-        ImageView resultImage = findViewById(R.id.result_image);
-        // TODO: Load the actual image of the disease
-        resultImage.setImageURI(selectedImageUri);
+        
+        
 
+        TextView englishNameHeader = findViewById(R.id.english_name_header);
         TextView resultTitle = findViewById(R.id.result_title);
+        TextView arabicNameHeader = findViewById(R.id.arabic_name_header);
+        TextView resultArabicName = findViewById(R.id.result_arabic_name);
         TextView resultScientificName = findViewById(R.id.result_scientific_name);
+        TextView resultSymptomsTitle = findViewById(R.id.result_symptoms_title);
         TextView resultSymptoms = findViewById(R.id.result_symptoms);
+        TextView resultTreatmentTitle = findViewById(R.id.result_treatment_title);
         TextView resultTreatment = findViewById(R.id.result_treatment);
 
-        // Check the current language and display the appropriate name
-        String language = java.util.Locale.getDefault().getLanguage();
-        if (language.equals("ar")) {
-            resultTitle.setText(disease.getArabicName());
-        } else {
-            resultTitle.setText(disease.getEnglishName());
-        }
+        englishNameHeader.setVisibility(View.VISIBLE);
+        resultTitle.setText(disease.getEnglishName());
+        resultTitle.setVisibility(View.VISIBLE);
+
+        arabicNameHeader.setVisibility(View.VISIBLE);
+        resultArabicName.setText(disease.getArabicName());
+        resultArabicName.setVisibility(View.VISIBLE);
 
         resultScientificName.setText(disease.getScientificName());
+        resultScientificName.setVisibility(View.VISIBLE);
+
+        resultSymptomsTitle.setVisibility(View.VISIBLE);
         resultSymptoms.setText(disease.getSymptoms());
+        resultSymptoms.setVisibility(View.VISIBLE);
+
+        resultTreatmentTitle.setVisibility(View.VISIBLE);
         resultTreatment.setText(disease.getTreatments());
+        resultTreatment.setVisibility(View.VISIBLE);
     }
 
     private void showInconclusiveResult() {
         View resultView = findViewById(R.id.inference_result_container);
         resultView.setVisibility(View.VISIBLE);
 
-        ImageView resultImage = findViewById(R.id.result_image);
-        resultImage.setImageURI(selectedImageUri);
+        TextView englishNameHeader = findViewById(R.id.english_name_header);
+        englishNameHeader.setVisibility(View.GONE);
 
         TextView resultTitle = findViewById(R.id.result_title);
         resultTitle.setText(R.string.detection_inconclusive);
+        resultTitle.setVisibility(View.VISIBLE);
+
+        TextView arabicNameHeader = findViewById(R.id.arabic_name_header);
+        arabicNameHeader.setVisibility(View.GONE);
+
+        TextView resultArabicName = findViewById(R.id.result_arabic_name);
+        resultArabicName.setVisibility(View.GONE);
 
         TextView resultScientificName = findViewById(R.id.result_scientific_name);
-        resultScientificName.setText("");
+        resultScientificName.setVisibility(View.GONE);
+
+        TextView resultSymptomsTitle = findViewById(R.id.result_symptoms_title);
+        resultSymptomsTitle.setVisibility(View.GONE);
 
         TextView resultSymptoms = findViewById(R.id.result_symptoms);
         resultSymptoms.setText(R.string.detection_inconclusive_message);
+        resultSymptoms.setVisibility(View.VISIBLE);
+
+        TextView resultTreatmentTitle = findViewById(R.id.result_treatment_title);
+        resultTreatmentTitle.setVisibility(View.GONE);
 
         TextView resultTreatment = findViewById(R.id.result_treatment);
-        resultTreatment.setText("");
+        resultTreatment.setVisibility(View.GONE);
     }
 
     private String getRealPathFromURI(Uri contentUri) {

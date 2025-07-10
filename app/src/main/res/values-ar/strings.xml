@@ -761,4 +761,8 @@
     <string name="detection_failed_message">حدث خطأ غير متوقع أثناء الكشف عن الآفة. الرجاء معاودة المحاولة.</string>
     <string name="getting_disease_details">جاري جلب تفاصيل المرض...</string>
     <string name="detection_inconclusive_message">لم نتمكن من تحديد المرض من الصورة. يرجى المحاولة مرة أخرى بصورة أوضح.</string>
+    <string name="symptoms_header">الأعراض</string>
+    <string name="treatment_header">العلاج</string>
+    <string name="english_name_header">الاسم الإنجليزي</string>
+    <string name="arabic_name_header">الاسم العربي</string>
 </resources>

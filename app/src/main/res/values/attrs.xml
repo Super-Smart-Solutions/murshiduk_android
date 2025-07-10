@@ -1,0 +1,141 @@
+<resources>
+    <declare-styleable name="AnimButton">
+        <attr name="recording" format="reference" />
+        <attr name="typing" format="reference" />
+        <attr name="duration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DevlomiSeekbar">
+        <attr name="progressColor" format="color" />
+        <attr name="thumbColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressWithCancelView">
+        <attr name="progressBarColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="EditWithBorderTitle">
+        <attr name="title" format="string" />
+        <attr name="title_bg" format="color" />
+        <attr name="view_content" format="string|reference" />
+        <attr name="is_multi_line_text" format="boolean" />
+        <attr name="is_edit_text" format="boolean" />
+        <attr name="is_spinner" format="boolean" />
+        <attr name="prefix_icon" format="reference" />
+        <attr name="prefix_icon_tint" format="color" />
+        <attr name="prefix_icon_shown" format="boolean" />
+        <attr name="arrow_icon" format="reference" />
+        <attr name="arrow_icon_shown" format="boolean" />
+        <attr name="arrow_icon_tint" format="color" />
+        <attr name="border_corner_radius" format="dimension" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="TextViewWithDotAndBg">
+        <attr name="label" format="string" />
+        <attr name="dot_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewWithIcon">
+        <attr name="icon_text_label" format="string" />
+        <attr name="icon" format="reference" />
+        <attr name="icon_text_size" format="dimension" />
+        <attr name="icon_text_color" format="color" />
+        <attr name="icon_color" format="color" />
+        <attr name="is_multi_line" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HeaderView">
+        <attr name="title_HeaderView" format="string" />
+        <attr name="backgroundColor_HeaderView" format="color" />
+        <attr name="text_color_HeaderView" format="color" />
+        <attr name="is_with_icon" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HeaderViewWithLikeButtonsAndText">
+        <attr name="title_Header" format="string" />
+        <attr name="backgroundColor_Header" format="color" />
+        <attr name="is_icon_shown" format="boolean" />
+        <attr name="header_icon" format="reference" />
+        <attr name="icon_tint_color" format="color" />
+        <attr name="likes_tint_color" format="color" />
+        <attr name="likes_tint_active_color" format="color" />
+        <attr name="icon_text" format="string" />
+        <attr name="is_with_like_buttons" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomFrameLayout">
+        <attr name="border_color" format="color" />
+        <attr name="border_stroke" format="dimension" />
+        <attr name="border_radius" format="dimension" />
+        <attr name="border_bg" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ServiceCard">
+        <attr name="service_icon" format="reference" />
+        <attr name="service_icon_tint" format="color" />
+        <attr name="service_title" format="string" />
+        <attr name="service_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SearchableToolbar">
+        <attr name="bg_res" format="reference" />
+        <attr name="view_container" format="reference" />
+        <attr name="toolbar_title" format="string" />
+        <attr name="is_contain_filter" format="boolean" />
+        <attr name="is_contain_sort" format="boolean" />
+        <attr name="is_contain_add_new" format="boolean" />
+        <attr name="icon_add_new" format="reference" />
+        <attr name="icon_tint_color_add_new" format="color" />
+        <attr name="is_contain_search_box" format="boolean" />
+        <attr name="with_second_row" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="TextCardWithTitledBoxView">
+        <attr name="text_card_text" format="reference|string" />
+        <attr name="text_card_title" format="reference|string" />
+        <attr name="text_card_icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollableEditText">
+        <attr name="min_height" format="dimension" />
+        <attr name="edit_text_hint" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="LinearLayoutWithBackgroundTint">
+        <attr name="linearBgTintColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RelativeLayoutWithBackgroundTint">
+        <attr name="relativeBgTintColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="FrameLayoutWithBackgroundTint">
+        <attr name="frameBgTintColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="TextViewDrawableCompat">
+        <attr name="drawableStartCompat" format="reference" />
+        <attr name="drawableEndCompat" format="reference" />
+        <attr name="drawableTopCompat" format="reference" />
+        <attr name="drawableBottomCompat" format="reference" />
+        <attr name="drawableTintCompat" format="color" />
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+</resources>

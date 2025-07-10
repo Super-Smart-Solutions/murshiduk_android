@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_transparent_with_cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/image"
+        android:src="@drawable/reason_img_header" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/more_information"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/reason_header_subtitle"
+        android:textAlignment="center"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_subtitle" />
+
+    <EditText
+        android:id="@+id/et_reason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="اشرح مشكلتك"
+        android:inputType="textMultiLine"
+        android:minHeight="150dp"
+        android:maxHeight="250dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="1dp"
+        android:hint="@string/more_information"
+        android:padding="5dp"
+        android:textSize="@dimen/text_size_subtitle"
+        android:textColor="@color/black"
+        android:gravity="start|top"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_title"
+        style="@style/GreenButtonStyle"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

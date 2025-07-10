@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    tools:context=".InitialActivity">
+
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="192dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            android:padding="50dp"
+            android:src="@drawable/saudi_call_logo" />
+
+        <ImageView
+            android:id="@+id/ivSuccess"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/success_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+        </ImageView>
+
+        <TextView
+
+            android:id="@+id/tv1"
+            android:text="@string/fastest_internet"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+
+            android:id="@+id/tv2"
+            android:layout_marginTop="16dp"
+            android:text="@string/success_desc"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginTop="8dp"
+            android:id="@+id/btnBackMain"
+            android:text="@string/back_main"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

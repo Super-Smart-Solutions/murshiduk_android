@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-32dp"
+        android:layout_marginEnd="-55dp"
+        android:orientation="vertical"
+        android:rotation="-45">
+
+
+        <TextView
+            android:id="@+id/appointment_status_tv"
+            android:layout_width="125dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|end"
+            android:background="@color/clinic_available"
+            android:gravity="center|bottom"
+            android:text="@string/call_done"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/cancel_appointment_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="-5dp"
+        android:background="@drawable/click_animate_bg"
+        android:contentDescription="@string/cancel_appointment"
+        android:src="@drawable/ic_baseline_close_24"
+        android:visibility="visible"
+        app:tint="@color/red" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <com.saatco.murshadik.views.TextViewWithIcon
+            android:id="@+id/doctor_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/account"
+            app:icon_color="@color/gray_light"
+            app:icon_text_color="@color/themeColor"
+            app:icon_text_label="@string/doctor"
+            app:icon_text_size="14sp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <com.saatco.murshadik.views.TextViewWithIcon
+            android:id="@+id/clinic_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/virtual_clinic_ic"
+            app:icon_color="@color/gray_light"
+            app:icon_text_color="@color/themeColor"
+            app:icon_text_label="@string/clinic"
+            app:icon_text_size="16sp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.saatco.murshadik.views.TextViewWithIcon
+                android:id="@+id/date_tvwi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/calendar"
+                app:icon_text_color="#7A7A7A"
+                app:icon_text_label="@string/date"
+                app:icon_text_size="13sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <com.saatco.murshadik.views.TextViewWithIcon
+                android:id="@+id/time_tvwi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/clock"
+                app:icon_text_color="#7A7A7A"
+                app:icon_text_label="@string/time"
+                app:icon_text_size="13sp" />
+
+            <TextView
+                android:id="@+id/appointment_duration_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/call_duration"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/call_action_buttons_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/video_call_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/video"
+                    app:tint="@color/themeColor" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/video_call"
+                    android:textColor="@color/themeColor"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:id="@+id/voice_call_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/phone"
+                    app:tint="@color/themeColor" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/voice_call"
+                    android:textColor="@color/themeColor"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

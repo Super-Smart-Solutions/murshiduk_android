@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:text="1/14/20"
+        android:textSize="12sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:paddingLeft="4dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPrimary"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@id/layoutBG"
+        android:layout_height="70dp">
+
+        <FrameLayout
+            android:layout_weight="0.25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:src="@drawable/ag_logo" />
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_gravity="end|bottom"
+                android:id="@+id/onlineStatus"
+                android:src="@drawable/circle_bg"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:tint="@color/btn_scroll_icon_color">
+
+            </ImageView>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/choose_fiber_box"
+                    android:textColor="@color/darkGray"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <TextView
+
+                android:id="@+id/tvDesc"
+                android:layout_marginStart="4dp"
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="4dp"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textAlignment="viewStart"
+                android:textColor="@color/gray"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:text="12:00 am"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+
+                android:visibility="visible"
+                android:id="@+id/tvCount"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:singleLine="true"
+                android:text="0"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/circle_bg"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+</LinearLayout>

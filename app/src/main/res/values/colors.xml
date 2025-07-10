@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#63BE6A</color>
+    <color name="colorPrimaryDark">#008941</color>
+    <color name="colorSecondary">#4789c8</color>
+    <color name="colorSecondaryDark">#003462</color>
+    <color name="colorAccent">#6A63BE</color>
+    <color name="light_grey">#F5F4F4</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="greenColor">#4DB174</color>
+    <color name="greenLight">#0E6932</color>
+    <color name="gray">#878A89</color>
+    <color name="darkGray">#505251</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_green_navbar_bg">#AED18F</color>
+    <color name="dark_green_navbar_bg">#007902</color>
+    <color name="light_brown_navbar_bg">#FDE7C0</color>
+    <color name="dark_brown_navbar_bg">#B5862C</color>
+
+
+    <color name="app_bar_background">#F4FFFC</color>
+    <color name="transparent">#00000000</color>
+
+    <!--    Reef Colors-->
+    <color name="PrimaryColorReef">#006838</color>
+    <color name="SecondaryColorReef">#E0B027</color>
+
+    <color name="primary_light">#BBDEFB</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#E3E3E3</color>
+    <color name="colorPrimary_light">#FFCDD2</color>
+    <color name="colorprimary_text">#212121</color>
+    <color name="colorsecondary_text">#757575</color>
+    <color name="coloricons">#FFFFFF</color>
+    <color name="colordivider">#BDBDBD</color>
+    <color name="colorPrimaryText">#63BE6A</color>
+    <color name="colorPrimaryTextDark">#008941</color>
+    <color name="colorSecondaryText">#003462</color>
+
+
+    <color name="translucent_scrim_top">#26000000</color>
+    <color name="translucent_scrim_top_center">#0C000000</color>
+    <color name="translucent_scrim_bottom">#2A000000</color>
+    <color name="translucent_scrim_bottom_center">#0D000000</color>
+
+
+    <color name="transulcent_toolbar">#80000000</color>
+
+
+    <color name="toolbar_status_text_color">#C0DAF1</color>
+    <color name="sent_color_state">#67B359</color>
+    <color name="read_color_state">#FF5722</color>
+
+    <color name="read_color_voice_state">#FF5722</color>
+    <color name="sent_color_voice_state">#67B359</color>
+
+
+    <color name="chat_list_title_color">#000000</color>
+    <color name="red">#d42525</color>
+
+
+    <!--<color name="sent_message_background_color">#71A2A9</color>-->
+    <!--<color name="sent_message_background_color">#35607c</color>-->
+    <color name="sent_message_background_color">#EEFFDD</color>
+    <color name="received_message_background_color">#FFFFFF</color>
+
+    <color name="sent_message_title_color">#1E241C</color>
+    <color name="sent_message_time_color">#97B585</color>
+
+    <color name="received_message_title_color">#1E241C</color>
+    <color name="received_message_time_color">#B5B9BE</color>
+
+    <color name="header_background_color">#35607c</color>
+    <color name="header_text_color">#ffffff</color>
+
+    <color name="btn_scroll_background_color">#FFFFFF</color>
+    <color name="btn_scroll_icon_color">#A8A8A8</color>
+
+    <color name="record_btn_background_color">#20b66e</color>
+    <color name="record_btn_icon_color">#FFFFFF</color>
+
+    <color name="item_title_color_user_details">#0080D4</color>
+
+    <color name="item_selected_background_color">#4fc3f7</color>
+    <color name="audio_wave_background">#ffffff</color>
+    <color name="typing_color">#0080D4</color>
+    <color name="chat_background">#EEE7DD</color>
+
+
+    <color name="unread_count_background_color">#4EA2E8</color>
+    <color name="unread_count_text_color">#FFFFFF</color>
+
+    <color name="contact_title_color">#63A456</color>
+
+    <!--    Farm visit status colors-->
+    <color name="f_light_green">#5CED73</color>
+    <color name="f_light_gray">#AAAAAA</color>
+    <color name="f_light_yellow">#F9E076</color>
+    <color name="f_light_brown">#E3C565</color>
+
+
+    <color name="grey">#ababab</color>
+    <color name="blue">#4788C8</color>
+    <color name="dark_blue">#126097</color>
+    <color name="text_color_grey">#ADADAD</color>
+    <color name="group_event_bg_color">#AAB5BE</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="light_blue">#a2d5fa</color>
+    <color name="light_gray">#807a7a7a</color>
+    <color name="status_seen_color">#5c5c5c</color>
+    <color name="status_not_seen_color">@color/blue</color>
+    <color name="bottom_navbar_text_color_inactive">#727f7c</color>
+    <color name="bottom_navbar_text_color_active">#008941</color>
+
+    <color name="text_color_inactive">#727f7c</color>
+    <color name="text_color_active">#000</color>
+
+
+    <color name="quoted_sent_quoted_color">@color/colorGreen</color>
+    <color name="quoted_sent_text_color">@color/colorGreen</color>
+    <color name="quoted_sent_background_color">#f7ffef</color>
+    <color name="quoted_cancel_color">@color/colorGreen</color>
+
+    <color name="quoted_received_quoted_color">@color/colorBlue</color>
+    <color name="quoted_received_text_color">@color/colorBlue</color>
+    <color name="quoted_received_background_color">#f1f1f1</color>
+    <color name="gray_light">#807a7a7a</color>
+    <color name="gray_light_2">#aeaeae</color>
+    <color name="gray_light_3">#e0e0e0</color>
+    <color name="gray_light_4">#5a5a5a</color>
+    <color name="gray_light_5">#727f7c</color>
+    <color name="status_hint">#26FFFFFF</color>
+    <color name="chats_background">@android:color/transparent</color>
+
+    <color name="profile_list_icon_color">@color/gray_light_3</color>
+
+
+    <string-array name="status_bg_colors">
+        <item>#FF8A8C</item>
+        <item>#54C265</item>
+        <item>#8294CA</item>
+        <item>#A62C71</item>
+        <item>#90A841</item>
+        <item>#C1A03F</item>
+        <item>#792138</item>
+        <item>#AE8774</item>
+        <item>#q0B330</item>
+        <item>#B6B327</item>
+        <item>#C69FCC</item>
+        <item>#8B6990</item>
+        <item>#26C4DC</item>
+        <item>#57C9FF</item>
+        <item>#74676A</item>
+        <item>#5696FF</item>
+    </string-array>
+
+    <!--    {"#51519d", "#ff942c", "#f05349", "#408080", "#669966", "#9966cc"}-->
+    <string-array name="news_colors">
+        <item>#51519d</item>
+        <item>#ff942c</item>
+        <item>#f05349</item>
+        <item>#9C27B0</item>
+        <item>#669966</item>
+        <item>#9966cc</item>
+    </string-array>
+
+
+    <color name="colorWhiteOverlay">#afffffff</color>
+    <color name="colorTextDesc">#7d7d7d</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorDivider">#E9E9E9</color>
+    <color name="colorDarkGray">#494949</color>
+    <color name="colorGreen">#20b66e</color>
+    <color name="colorBlue">#0080D4</color>
+
+    <color name="sinch_purple">#ff63029d</color>
+    <color name="off_white">#fffafafa</color>
+    <color name="greyish">#fff2f1f2</color>
+
+    <color name="black_transparent_30">#30000000</color>
+    <color name="black_transparent_50">#50000000</color>
+    <color name="white_transparent_80">#80FFFFFF</color>
+    <color name="white_transparent_50">#50FFFFFF</color>
+    <color name="grey_transparent_50">#50606060</color>
+    <color name="grey_transparent_20">#20606060</color>
+    <color name="grey_transparent_10">#10606060</color>
+
+    <color name="text_color_outgoing_opponents_names_audio_call">#1f1f1f</color>
+    <color name="text_color_call_type">#6e6e6e</color>
+    <color name="text_color_also_on_call">@color/text_color_call_type</color>
+    <color name="text_color_other_inc_users">#1f1f1f</color>
+    <color name="text_color_caller_name">#1f1f1f</color>
+    <color name="text_color_medium_grey">#b1b1b1</color>
+    <color name="text_color_light_grey">#dedede</color>
+    <color name="text_color_black">#000000</color>
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_dark_grey">#6e6e6e</color>
+
+    <color name="toolbar_dropshadow_end_color">#88333333</color>
+    <color name="toolbar_subtitle_color">#6e6e6e</color>
+    <color name="toolbar_title_color">#1f1f1f</color>
+
+    <color name="green">#45D100</color>
+    <color name="white_green">#A9FF80</color>
+
+    <color name="background_app_color">#F4FFFC</color>
+    <color name="background_color_selected_user_item">#eeeeee</color>
+    <color name="background_color_normal_user_item">#ffffff</color>
+    <color name="background_fragment_conversation">#2b2a2a</color>
+    <color name="icon_background_color_selected_user">#959595</color>
+
+    <color name="button_end_call_normal_color">#ff2744</color>
+    <color name="button_end_call_pressed_color">#FC5876</color>
+    <color name="toggle_button_background_normal">#cc212121</color>
+    <color name="toggle_button_background_checked">#ccffffff</color>
+
+
+    <color name="selected_list_item_color">#e0e0e0</color>
+
+    <color name="random_color_1">#ff9500</color>
+    <color name="random_color_2">#007aff</color>
+    <color name="random_color_3">#ff0091</color>
+    <color name="random_color_4">#4cd964</color>
+    <color name="random_color_5">#c3c1f2</color>
+    <color name="random_color_6">#a727a5</color>
+    <color name="random_color_7">#77a6d0</color>
+    <color name="random_color_8">#d0021b</color>
+    <color name="random_color_9">#166642</color>
+    <color name="random_color_10">#bdbdbd</color>
+    <color name="brown">#DFAE67</color>
+    <color name="success_color">#5DB763</color>
+
+    <color name="farmer_color">#B6862D</color>
+    <color name="themeColor">#63BE6A</color>
+    <color name="disable_resend_color">#5C8E5E</color>
+    <color name="resend_color">#345e3e</color>
+    <color name="bottom_bar_bg">#ecf0f3</color>
+
+    <!--    colors for consultation fragment-->
+    <color name="item_consultation_bg">#e5e5e5</color>
+    <color name="item_consultation_text_color">#008a53</color>
+    <color name="item_consultation_subtext_color">#1b9455</color>
+    <color name="item_consultation_arrow_color">#008941</color>
+    <color name="main_bg">@color/app_bar_background</color>
+    <color name="app_name_color">#304b65</color>
+    <color name="black_light">#4d4d4d</color>
+    <color name="light_sky">#f3fbfa</color>
+    <color name="light_sky300">#cceeeb</color>
+    <color name="light_red">#fceced</color>
+    <color name="light_black">#47484A</color>
+    <color name="clinic_service_bg">#FAFAFA</color>
+
+    <!--    Colors for clinic Service -->
+    <color name="clinic_available">#008E00</color>
+    <color name="clinic_completed">#00A89B</color>
+    <color name="clinic_not_completed">#424242</color>
+    <color name="clinic_pending">#FBB100</color>
+
+
+    <color name="weatherIconColor">@color/themeColor</color>
+    <color name="weatherDaysTextColor">#000</color>
+    <color name="item_doctor_bg_color">#ecf3f7</color>
+    <color name="item_doctor_bg_color_selected">#cbdee8</color>
+    <color name="item_clinic_bg_color_selected">#e2fbe4</color>
+    <color name="item_market_details_bg_color">#eef8f8</color>
+    <color name="colorGreenTrans">#e0f8e1</color>
+
+</resources>

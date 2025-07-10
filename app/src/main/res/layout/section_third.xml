@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+
+    <com.saatco.murshadik.utils.RoundCornerImageView
+        android:id="@+id/ivBanner1"
+        android:layout_margin="10dp"
+        android:src="@drawable/chat_bg"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.saatco.murshadik.utils.RoundCornerImageView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/consulting_fish"
+            android:layout_width="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_height="25dp"></ImageView>
+
+        <ImageView
+            android:src="@drawable/left_arrow_back"
+            android:layout_width="25dp"
+            android:visibility="gone"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_height="25dp"></ImageView>
+
+        <TextView
+            android:id="@+id/tvTitleBanner1"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="24dp"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_marginEnd="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:layout_height="wrap_content"></TextView>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled state -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/clinic_service_bg" />
+        </shape>
+    </item>
+
+    <!-- Enabled and unchecked state -->
+    <item android:state_enabled="true" android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/clinic_service_bg" />
+        </shape>
+    </item>
+
+    <!-- Enabled and checked state -->
+    <item android:state_enabled="true" android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/themeColor" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-35dp"
+        android:layout_marginEnd="-60dp"
+        android:orientation="vertical"
+        android:rotation="-45">
+
+
+        <TextView
+            android:id="@+id/appointment_status_tv"
+            android:layout_width="125dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|end"
+            android:background="@color/clinic_completed"
+            android:gravity="center|bottom"
+            android:text="@string/call_done"
+            android:textSize="11sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+
+        <com.saatco.murshadik.views.TextViewWithIcon
+            android:id="@+id/doctor_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/account"
+            app:icon_color="@color/gray_light"
+            app:icon_text_color="@color/themeColor"
+            app:icon_text_label="@string/doctor"
+            app:icon_text_size="14sp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <com.saatco.murshadik.views.TextViewWithIcon
+            android:id="@+id/clinic_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/virtual_clinic_ic"
+            app:icon_color="@color/gray_light"
+            app:icon_text_color="@color/themeColor"
+            app:icon_text_label="@string/clinic"
+            app:icon_text_size="16sp"/>
+
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <com.saatco.murshadik.views.TextViewWithIcon
+                android:id="@+id/date_tvwi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/calendar"
+                app:icon_text_color="#7A7A7A"
+                app:icon_text_label="@string/date"
+                app:icon_text_size="13sp" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <com.saatco.murshadik.views.TextViewWithIcon
+                android:id="@+id/time_tvwi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/clock"
+                app:icon_text_color="#7A7A7A"
+                app:icon_text_label="@string/time"
+                app:icon_text_size="13sp" />
+
+            <TextView
+                android:id="@+id/appointment_duration_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/call_duration"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

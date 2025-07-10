@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FarmVisitListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_bar_transparent" />
+
+        <com.saatco.murshadik.views.HeaderView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="14dp"
+            app:title_HeaderView="طلبات الزيارة"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_farm_visit_requests"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            tools:listitem="@layout/item_farm_visit"
+            />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/ll_progress_bar"
+        layout="@layout/item_loader"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_new_farm_visit_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="15dp"
+        android:background="@drawable/click_animate_bg"
+        android:src="@android:drawable/ic_input_add"
+        android:tint="@color/white"
+        app:backgroundTint="@color/themeColor"/>
+</FrameLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_bar_plain"></include>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/cairobold"
+            android:text="آفات شجر البن"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"></TextView>
+
+
+        <ImageView
+            android:id="@+id/btnPickPhoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/coffee_camera_image"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/cairoregular"
+            android:text="التقاط او ارفاق صورة للتعرف على البن"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/cairoregular"
+            android:text="يمكنني ان أتعرف على الأمراض التالية:"
+            android:textAlignment="center"
+            android:textColor="#CF7E07"
+            android:textSize="12sp"
+            android:textStyle="bold"></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_tag"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="صانعة أنفاق"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_tag"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="صدأ"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_tag"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="تبقع"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="12sp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_tag"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="تبقع العين البنية"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="12sp"></TextView>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></View>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/coffee_back"></ImageView>
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/ll_progress_bar"
+        android:visibility="gone"
+        layout="@layout/item_loader" />
+</FrameLayout>

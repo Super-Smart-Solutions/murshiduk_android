@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/inactive_home"
+        android:title="@string/home"
+        app:showAsAction="ifRoom"
+        android:enabled="true" />
+
+    <item
+        android:id="@+id/market"
+        android:icon="@drawable/inactive_market"
+        android:title="@string/market"
+        app:showAsAction="ifRoom"
+        android:enabled="true"        />
+
+    <item
+        android:id="@+id/consultation"
+        android:icon="@drawable/headset"
+        android:title="@string/consultation"
+        app:showAsAction="ifRoom"
+        android:enabled="true"        />
+
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/inactive_notification"
+        android:title="@string/notifications"
+        app:showAsAction="ifRoom"
+        android:enabled="true"        />
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/inactive_user"
+        android:title="@string/account"
+        app:showAsAction="ifRoom"
+        android:enabled="true"        />
+
+</menu>

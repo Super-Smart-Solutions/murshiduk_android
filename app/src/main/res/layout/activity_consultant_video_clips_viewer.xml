@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConsultantVideoClipsViewerActivity">
+
+    <LinearLayout
+        android:id="@+id/include_view_trans_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/app_bar_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Widget for exoplayer view-->
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_play_consultant_clip"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:layout_weight="2"
+            app:controller_layout_id="@layout/exo_playback_control_view" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_data_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="SpeakableTextPresentCheck">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:divider="@drawable/empty_tall_divider_10dp"
+                android:orientation="vertical"
+                android:showDividers="middle"
+
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="موعد حصاد التفاح" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            app:cardCornerRadius="15dp">
+
+                            <ImageView
+                                android:id="@+id/iv_consultant_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/logo"
+                                android:scaleType="fitXY" />
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_consultant_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:text="د. محمد احمد" />
+
+                            <TextView
+                                android:id="@+id/tv_tag"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textAlignment="viewStart"
+                                tools:text="#حصاد, #تفاح" />
+
+                        </LinearLayout>
+
+
+                        <ImageButton
+                            android:id="@+id/btn_messaging_consultant"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/click_animate_bg"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_chat2"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/textView13"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="15dp"-->
+                    <!--                        android:layout_marginBottom="5dp"-->
+                    <!--                        tools:text="التعليقات"-->
+                    <!--                        android:textAlignment="viewStart"-->
+                    <!--                        android:textSize="16sp"-->
+                    <!--                        android:textStyle="bold" />-->
+
+                    <com.saatco.murshadik.views.HeaderViewWithLikeButtonsAndText
+                        android:id="@+id/hlt_comments_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:header_icon="@drawable/calendar_outline"
+                        app:icon_text="2023-01-08"
+                        app:icon_tint_color="@color/themeColor"
+                        app:is_icon_shown="true"
+                        app:is_with_like_buttons="true"
+                        app:likes_tint_active_color="@color/colorBlue"
+                        app:likes_tint_color="@color/gray5B"
+                        app:title_Header="التعليقات" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round_grey_border_5dp"
+                        android:backgroundTint="@color/main_bg"
+                        android:padding="10dp"
+                        android:singleLine="false"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:text="افضل وقت لحصاد ثمار التفاح " />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/item_comments_on_consultant_clips" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_comment_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_reply_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reply_on"
+                    android:textColor="@color/sinch_purple"
+                    android:textSize="11sp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/ll_reply_on_close_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_green"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/ic_close_x" />
+
+                    <TextView
+                        android:id="@+id/tv_reply_on"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:text="@string/reply_on"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/sinch_purple"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/nsv_comment_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/round_grey_border_1dp">
+
+                        <EditText
+                            android:id="@+id/et_write_comment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/round_grey_border_5dp"
+                            android:backgroundTint="#cceeeb"
+                            android:ems="10"
+                            android:focusableInTouchMode="true"
+                            android:hint="@string/write_comment"
+                            android:importantForAutofill="no"
+                            android:inputType="textMultiLine"
+                            android:isScrollContainer="true"
+                            android:minHeight="38dp"
+                            android:paddingStart="5dp"
+                            android:text=""
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorDarkGray"
+                            android:textColorHint="@color/grey"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                    </androidx.core.widget.NestedScrollView>
+
+                    <ImageView
+                        android:id="@+id/iv_send_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/send"
+                        android:padding="6dp"
+                        android:rotationY="180"
+                        app:srcCompat="@drawable/ic_send"
+                        app:tint="@color/colorDarkGray" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

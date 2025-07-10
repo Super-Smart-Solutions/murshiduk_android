@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsultantsVideoListActivity">
+
+
+
+    <com.saatco.murshadik.views.SyncScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.saatco.murshadik.views.SearchableToolbar
+                android:id="@+id/st_searchable_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_contain_search_box="true"
+                app:is_contain_sort="true"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_consultant_clips"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:scrollbarSize="0dp"
+                tools:listitem="@layout/item_consultant_clips_card"/>
+
+        </LinearLayout>
+    </com.saatco.murshadik.views.SyncScrollView>
+
+    <TextView
+        android:id="@+id/tv_no_data_received"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/no_data"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/ll_progress_bar"
+        layout="@layout/item_loader"
+        android:visibility="gone" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

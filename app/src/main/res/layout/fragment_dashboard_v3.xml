@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <include
+                android:id="@+id/layout_header"
+                layout="@layout/item_weather_header" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="166dp"
+                android:layout_margin="13dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_request_consultation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/request_consultation_bg"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/consultation_subtext"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14sp" />
+
+                    <androidx.legacy.widget.Space
+                        android:layout_width="0dp"
+                        android:layout_height="10dp" />
+
+                    <Button
+                        android:id="@+id/btn_request_consultation"
+                        android:layout_width="108dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/btn_rounded_selector"
+                        android:text="@string/request_consultation"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:letterSpacing="0.01"
+                    android:text="@string/services"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_view_all_services"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:letterSpacing="0.01"
+                    android:textColor="#003462"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    android:text="@string/show_all_services" />
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="0dp"
+                android:scrollbarSize="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <com.saatco.murshadik.views.ServiceCard
+                        android:id="@+id/sc_QNA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:service_icon="@drawable/newton_law"
+                        app:service_title="@string/ask_general_question" />
+
+                    <com.saatco.murshadik.views.ServiceCard
+                        android:id="@+id/sc_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:service_icon="@drawable/ic_weather_25dp"
+                        app:service_title="@string/weather_icon" />
+
+
+                    <com.saatco.murshadik.views.ServiceCard
+                        android:id="@+id/sc_clinics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:service_icon="@drawable/ic_injection"
+                        app:service_title="@string/virtual_clinic" />
+
+
+                    <com.saatco.murshadik.views.ServiceCard
+                        android:id="@+id/sc_labs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:service_icon="@drawable/ic_injection"
+                        app:service_title="@string/lab_reports" />
+
+                    <com.saatco.murshadik.views.ServiceCard
+                        android:id="@+id/sc_udhiyah"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:service_icon="@drawable/ship"
+                        app:service_title="@string/book_udhiyah" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:gravity="end"
+                android:letterSpacing="0.01"
+                android:text="@string/news"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="13dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_news_v3" />
+
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="25dp"
+                android:gravity="end"
+                android:letterSpacing="0.01"
+                android:text="@string/statistics"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.025" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="91dp"
+                    android:layout_weight=".5"
+                    android:layout_marginBottom="3dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="1dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/consultants_statistics_bg" />
+
+                    <TextView
+                        android:id="@+id/tv_statistics_consultants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:textColor="@color/colorSecondaryText"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="217K" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|start"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="@string/consultant_benefit_statistics"
+                        android:textColor="#4789c8"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.05" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="91dp"
+                    android:layout_weight=".4"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="1dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/image"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/farmer_statistics_bg" />
+
+                    <TextView
+                        android:id="@+id/tv_statistics_farmer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="217K" />
+
+                    <TextView
+                        android:layout_width="138dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="bottom|start"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="@string/farmer_benefit_statistics"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.legacy.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.025" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:indeterminateTint="@color/colorPrimary"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</ScrollView>

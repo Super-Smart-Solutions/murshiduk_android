@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ag_logo"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        />
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/welcome_2" />
+
+<LinearLayout
+    android:id="@+id/btnAbout"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="6dp"
+        android:src="@drawable/about"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        />
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/tvAbout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="14sp"
+        android:text="@string/about_us" />
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/btnTerms"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/help"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/tvTerms"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:text="@string/terms" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/languange"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+
+            />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="34dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textAlignment="textStart"
+            android:text="@string/language"
+            android:paddingStart="8dp"
+            android:paddingTop="1dp"  />
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"></View>
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="34dp"
+            android:textColor="#A09D9D"
+            android:textSize="14sp"
+            android:textAlignment="textStart"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="1dp"  />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btnContact"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/contact"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/tvSupport"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="14sp"
+        android:text="@string/contact_us" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLogout"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/logout"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:text="@string/logout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutOnlineSwitch"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <Switch
+            android:id="@+id/switchOnline"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+
+        <TextView
+            android:id="@+id/tvOnlineStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center"
+            android:text="@string/available_for_work"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnBook"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/flask_empty_plus"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:text="مختبر" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnQnA"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="6dp"
+            android:src="@drawable/frequently_asked_questions"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="14sp"
+            android:text="سؤال وجواب" />
+    </LinearLayout>
+
+
+</LinearLayout>

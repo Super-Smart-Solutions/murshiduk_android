@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:background="#ecf0f3" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="end|center"
+        android:layout_marginEnd="10dp">
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_header_view"/>
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/themeColor"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:background="@color/off_white"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/layout_dislike_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_dislike_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/unlike_icon"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/tv_dislike_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:id="@+id/layout_like_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_like_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/like_icon"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/tv_like_counter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="0"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|center"
+        android:layout_marginStart="10dp"
+        android:background="#fafafa"
+        android:textSize="18sp"
+        android:textColor="@color/themeColor"
+        android:textStyle="bold"/>
+</FrameLayout>

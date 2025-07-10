@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/layout_package"
+    android:background="@android:color/white"
+    android:layout_height="150dp">
+
+<LinearLayout
+    android:id="@+id/layoutBG"
+    android:orientation="horizontal"
+    android:layout_margin="4dp"
+    android:background="@drawable/blue"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivPackageImage"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:padding="5dp" />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvPackageName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:maxLines="1"
+                        android:text="Unlimited internet fiber 3"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvPackageDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Unlimited internet fiber 3 kksks kskskks ksksskss"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</LinearLayout>

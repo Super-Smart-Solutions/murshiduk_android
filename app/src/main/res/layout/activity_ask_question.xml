@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar_transparent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="اختر الفئة"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_subtitle"
+                android:textStyle="bold" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:clipChildren="true"
+                android:elevation="3dp">
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textSize="@dimen/text_size_subtitle"
+                    app:ms_dropdown_height="52dp"
+                    app:ms_hide_arrow="true"
+                    app:ms_padding_left="20dp"
+                    app:ms_text_color="@color/black" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:padding="10dp"
+                    android:rotation="270"
+                    android:src="@drawable/arrow"
+                    app:tint="@color/black" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tvQuestionTags"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:elevation="3dp"
+                android:gravity="start|center"
+                android:hint="@string/keywords"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_subtitle"
+                app:drawableEndCompat="@drawable/ic_keyboard_arrow_down"
+                app:drawableTint="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone">
+
+                <AutoCompleteTextView
+                    android:id="@+id/tvKeywords"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="@string/keywords"
+                    android:imeOptions="actionNext"
+                    android:padding="4dp"
+                    android:singleLine="true"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnAddKeyword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="أضف" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:text=""
+                android:textColor="#CA903B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+
+                />
+
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:elevation="3dp"
+                android:hint="@string/title_question"
+                android:imeOptions="actionNext"
+                android:padding="4dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_subtitle" />
+
+
+            <EditText
+                android:id="@+id/etQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_background"
+                android:elevation="3dp"
+                android:gravity="start|top"
+                android:hint="@string/write_your_question"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLength="500"
+                android:maxLines="15"
+                android:minLines="6"
+                android:paddingLeft="8dp"
+                android:paddingTop="5dp"
+                android:paddingRight="8dp"
+                android:scrollbars="vertical"
+                android:textAppearance="@style/TextStyleSubtitle"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/tvAttachment"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edittext_background"
+                android:drawablePadding="5dp"
+                android:elevation="1dp"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/add_image"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextStyleSubtitle"
+                app:drawableStartCompat="@drawable/image_24dp"
+                app:drawableTint="@color/colorPrimary" />
+
+
+            <LinearLayout
+                android:id="@+id/files_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnDone"
+                style="@style/GreenButtonStyle.dark"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:text="إرسال" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/llProgressBar"
+        layout="@layout/item_loader"
+        android:visibility="gone" />
+
+
+</FrameLayout>

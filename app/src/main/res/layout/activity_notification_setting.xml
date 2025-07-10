@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar_transparent"></include>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="25dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="طقس"
+                        android:textColor="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchWeather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    />
+
+
+            </LinearLayout>
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="25dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="سوق"
+                        android:textColor="@color/black"
+                        android:textAlignment="viewStart"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchMarket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:padding="6dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:background="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp" />
+
+
+        <LinearLayout
+            android:id="@+id/btnAlert"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="تنبيه المتاجر النشطة"
+                    android:textColor="@color/black"
+                    android:textAlignment="viewStart"
+                    android:textSize="16sp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+
+                    android:layout_marginStart="4dp"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textStyle="bold"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/gray"
+                    android:layout_height="wrap_content"></TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="0.15"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/arrow"
+                    android:layout_width="40dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center"
+                    android:layout_height="40dp"></ImageView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

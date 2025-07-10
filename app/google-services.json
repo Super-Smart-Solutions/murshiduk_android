@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "1091776197007",
+    "firebase_url": "https://murshadik-alzarai.firebaseio.com",
+    "project_id": "murshadik-alzarai",
+    "storage_bucket": "murshadik-alzarai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091776197007:android:276d1b0ca7bc56a9885bfa",
+        "android_client_info": {
+          "package_name": "com.rose76.murshadik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091776197007-3vhcd7rvag6me8h2l2tc40li8dkprel2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rose76.murshadik",
+            "certificate_hash": "e197862b5a150fca2b72e5475f78595859ec5df2"
+          }
+        },
+        {
+          "client_id": "1091776197007-fk4923vttp4c26nslb57bbg20rsppgt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rose76.murshadik",
+            "certificate_hash": "47c92e3738139c83df48271165d4cb405ba0dcb2"
+          }
+        },
+        {
+          "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATOolSm0OfEYLCL5jqQ3dw7c3iY35D-Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1091776197007-bloileem7smiunebninds64an6ha2m6p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saatco.Murshadik"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091776197007:android:b7d9fc7c9184ba20885bfa",
+        "android_client_info": {
+          "package_name": "com.saatco.murshadik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATOolSm0OfEYLCL5jqQ3dw7c3iY35D-Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1091776197007-bloileem7smiunebninds64an6ha2m6p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saatco.Murshadik"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091776197007:android:fda491fa2d4d040f885bfa",
+        "android_client_info": {
+          "package_name": "com.sinch.android.rtc.sample.video"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATOolSm0OfEYLCL5jqQ3dw7c3iY35D-Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091776197007-le2ueen3s1o0d352p9vu5k8snro2l4l3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1091776197007-bloileem7smiunebninds64an6ha2m6p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.saatco.Murshadik"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

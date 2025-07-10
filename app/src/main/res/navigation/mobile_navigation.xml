@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.saatco.murshadik.fragments.DashboardFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_dashboard" >
+
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_services"-->
+<!--        android:name="com.saatco.murshadik.fragments.ConsultationFragment"-->
+<!--        android:label="@string/menu_gallery"-->
+<!--        tools:layout="@layout/fragment_consultation">-->
+<!--        <action-->
+<!--            android:id="@+id/action_nav_services_to_nav_home"-->
+<!--            app:destination="@id/nav_home"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/enter"-->
+<!--            app:popExitAnim="@anim/exit" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_nav_services_to_nav_profile"-->
+<!--            app:destination="@id/nav_profile"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/enter"-->
+<!--            app:popExitAnim="@anim/exit"-->
+<!--            app:popUpTo="@id/nav_services" />-->
+<!--    </fragment>-->
+
+    <fragment
+        android:id="@+id/nav_market"
+        android:name="com.saatco.murshadik.fragments.MarketMainFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_markets"/>
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.saatco.murshadik.fragments.ProfileFragment"
+        android:label="@string/account"
+        tools:layout="@layout/fragment_profile">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.saatco.murshadik.fragments.NotificationFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_pest_detection"
+        android:name="com.saatco.murshadik.fragments.PestDetectionFragment"
+        android:label="@string/pest_detection"
+        tools:layout="@layout/fragment_pest_detection" />
+
+    <action
+        android:id="@+id/action_consultationFragment_to_pestDetectionFragment"
+        app:destination="@id/nav_pest_detection" />
+</navigation>

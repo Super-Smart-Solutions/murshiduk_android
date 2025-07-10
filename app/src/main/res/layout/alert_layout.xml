@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/btn_alert"
+    android:visibility="visible"
+    android:layout_width="45dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:clickable="true"
+    android:layout_marginTop="30dp"
+    android:layout_height="40dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="29dp"
+        android:padding="4dp"
+        android:src="@drawable/bell"
+        android:tint="@android:color/white" />
+
+    <FrameLayout
+        android:visibility="visible"
+        android:id="@+id/layout_counter"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:backgroundTint="@color/red"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/circle">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:fontFamily="sans-serif"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</FrameLayout>

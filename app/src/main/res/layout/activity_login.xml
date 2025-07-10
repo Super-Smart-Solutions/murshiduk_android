@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--    Activity bg -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="14dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_title"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_subtitle"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_size_subtitle" />
+
+
+            <androidx.legacy.widget.Space
+                android:layout_width="wrap_content"
+                android:layout_height="33dp" />
+
+
+            <LinearLayout
+                android:id="@+id/btnChooseCountry"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/edittext_background"
+                android:elevation="1dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/outline_public_24"
+                    app:tint="@color/gray_light" />
+
+                <TextView
+                    android:id="@+id/tvSelectCountry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxWidth="250dp"
+                    android:singleLine="true"
+                    android:text="@string/saudi_arabia"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/down_arrow"
+                    app:tint="@color/light_gray" />
+
+
+            </LinearLayout>
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="21dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:elevation="1dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layoutDirection="ltr"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="none"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:hintEnabled="false"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/phone"
+                app:endIconTint="@color/light_gray"
+                app:prefixText="+966">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/mobile_number"
+                    android:inputType="phone"
+                    android:layoutDirection="ltr"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:maxLines="1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--                        <LinearLayout-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:layout_gravity="center"-->
+            <!--                            android:clipChildren="false"-->
+            <!--                            android:orientation="horizontal"-->
+            <!--                            android:padding="40dp">-->
+
+            <!--                            <FrameLayout-->
+            <!--                                android:id="@+id/cv_region_start_number"-->
+            <!--                                android:layout_width="wrap_content"-->
+            <!--                                android:layout_height="wrap_content">-->
+
+
+            <!--                                <TextView-->
+            <!--                                    android:id="@+id/tvPhoneCode"-->
+            <!--                                    android:layout_width="wrap_content"-->
+            <!--                                    android:layout_height="wrap_content"-->
+            <!--                                    android:layout_gravity="center"-->
+            <!--                                    android:layout_margin="10dp"-->
+            <!--                                    android:text="+966"-->
+            <!--                                    android:textColor="@color/black"-->
+            <!--                                    android:textSize="13sp"-->
+            <!--                                    android:textStyle="bold"-->
+            <!--                                    android:visibility="gone" />-->
+            <!--                            </FrameLayout>-->
+
+
+            <!--                            <com.saatco.murshadik.views.EditWithBorderTitle-->
+            <!--                                android:id="@+id/etMobile"-->
+            <!--                                android:layout_width="match_parent"-->
+            <!--                                android:layout_height="wrap_content"-->
+            <!--                                android:ems="10"-->
+            <!--                                android:inputType="phone"-->
+            <!--                                android:maxLines="1"-->
+            <!--                                android:text=""-->
+            <!--                                android:textAlignment="viewStart"-->
+            <!--                                android:textColor="@color/colorBlack"-->
+            <!--                                android:textStyle="bold"-->
+            <!--                                app:prefix_icon="@drawable/phone"-->
+            <!--                                app:prefix_icon_shown="true"-->
+            <!--                                app:prefix_icon_tint="@color/light_gray"-->
+            <!--                                app:title="@string/mobile_number" />-->
+
+            <!--                        </LinearLayout>-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:visibility="gone"
+                app:passwordToggleContentDescription="Show Password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorBlack">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHint="@color/colorBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/btnForgot"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/register_user"
+                android:textAlignment="textStart"
+                android:textColor="@color/greenLight"
+                android:textStyle="bold"
+                android:visibility="gone">
+
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp">
+
+                <CheckBox
+                    android:id="@+id/switch_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/gray" />
+
+                <TextView
+                    android:id="@+id/term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/click_animate_bg"
+                    android:textSize="@dimen/text_size_subtitle"
+                    android:text="@string/terms_and_condetions"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="133dp"
+        android:background="@drawable/round_corner_simple"
+        android:backgroundTint="@color/themeColor"
+
+        android:text="@string/login"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layoutContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="11dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/phone"
+            app:tint="@color/colorPrimaryText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/contact_us"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/llProgressBar"
+        layout="@layout/item_loader"
+        android:visibility="gone" />
+
+</FrameLayout>
+

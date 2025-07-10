@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <top.defaults.camera.CameraView
+        android:id="@+id/preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:mode="video"
+        app:aspectRatio="16:9"
+        app:autoFocus="false"
+        app:facing="back"
+        app:fillSpace="false"
+        app:flash="off"
+        app:pinchToZoom="false"
+        app:showFocusIndicator="false"/>
+
+    <ImageButton
+        android:visibility="gone"
+        android:id="@+id/flash_torch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/call_accept"
+        android:background="?android:selectableItemBackground"/>
+
+    <TextView
+        android:id="@+id/zoomValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:textColor="#ffffff"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_above="@+id/actions_layout"
+        android:gravity="center_horizontal"
+        android:text="@string/recording"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
+
+    <RelativeLayout
+        android:id="@+id/actions_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#3fffffff">
+
+        <ImageView
+            android:id="@+id/switch_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="16dp"
+            app:tint="@color/white"
+            android:textColor="@android:color/white"
+            android:src="@drawable/ic_camera" />
+
+        <ImageView
+            android:id="@+id/action"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:src="@drawable/video_record"
+            android:background="?android:selectableItemBackground"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

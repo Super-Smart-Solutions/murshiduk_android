@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/btnPdf"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/appointment_border"
+        android:backgroundTint="@color/white"
+        android:elevation="1dp"
+        android:orientation="horizontal">
+
+
+
+
+
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_pdf" />
+
+
+                    <TextView
+                        android:id="@+id/tvSendFile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/pdf_report"
+                        android:textColor="@color/sent_message_title_color"
+                        android:textSize="14sp">
+
+                    </TextView>
+
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_download" />
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.saatco.murshadik.views.HeaderView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundColor_HeaderView="@color/main_bg"
+            app:is_with_icon="false"
+            app:title_HeaderView="@string/soil" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvSampleNumbr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/sample_number" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvElecConductivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/electric_conductivity" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvPH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/PH" />
+
+        </LinearLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvCarbonate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/carbonate" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvPotassium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/potassium" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvPhosphorous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/phosphorous" />
+
+        </LinearLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvSand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/sand" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvCelt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/celt" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvClay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/clay" />
+
+        </LinearLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvTextureType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/texture_type" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/notes" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvRecommendations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/recommendations" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.HeaderView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundColor_HeaderView="@color/main_bg"
+            app:is_with_icon="false"
+            app:title_HeaderView="@string/water" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvWaterPh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/water_PH" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvElecWater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/electric_water" />
+
+        </LinearLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvWaterCarbonate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/water_carbonate" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/tvWaterChloride"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:arrow_icon_shown="false"
+                app:border_corner_radius="0dp"
+                app:is_edit_text="false"
+                app:title="@string/water_chloride" />
+
+        </LinearLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvWaterSalt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/water_salt" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvWaterRecommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/water_recommend" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+        <com.saatco.murshadik.views.EditWithBorderTitle
+            android:id="@+id/tvWaterNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:arrow_icon_shown="false"
+            app:is_edit_text="false"
+            app:title="@string/water_notes" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/divider_layout_lap_report" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+</LinearLayout>
+

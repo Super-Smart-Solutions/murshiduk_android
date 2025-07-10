@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutAudioReceiver"
+    android:visibility="visible"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_gravity="end"
+        android:visibility="gone"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/tv_username_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:background="@drawable/cc_custom_right_bubble"
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/audioLength"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            tools:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/audioSeekBar"
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:thumbTint="@color/white"
+            android:rotation="180"
+            />
+
+        <FrameLayout
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1">
+
+            <ProgressBar
+                android:layout_marginEnd="5dp"
+                android:id="@+id/audioProgressRcv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:indeterminateTintMode="src_in"
+                android:indeterminateTint="@color/white">
+            </ProgressBar>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/playButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="@android:color/white"/>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

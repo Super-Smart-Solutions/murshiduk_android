@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_transparent_with_cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/image"
+        android:src="@drawable/select_skill_img_header" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/select_skill_header_title"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/select_skill_header_subtitle"
+        android:textAlignment="center"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_size_subtitle" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/edittext_background"
+        android:elevation="1dp"
+        android:hint="@string/search_city"
+        app:defaultQueryHint="@string/search_skill"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_grey_border_8dp"
+        android:backgroundTint="@color/white"
+        tools:listitem="@layout/item_select_city" />
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="180dp"
+    android:id="@+id/frame"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/ivBG"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/mashroom"
+        android:layout_height="match_parent"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/layoutBG"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivIcon"
+            android:layout_marginTop="34dp"
+            android:src="@drawable/consulting_fish"
+            android:layout_width="50dp"
+            android:layout_gravity="center"
+            android:layout_height="50dp"></ImageView>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:text="@string/choose_fiber_box"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:layout_height="wrap_content"></TextView>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

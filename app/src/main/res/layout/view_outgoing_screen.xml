@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_background_outgoing_screen"
+    style="@style/MatchParent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <VideoView
+            android:id="@+id/video_view_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            style="@style/WeightWidth"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/text_outgoing_opponents_names"
+            style="@style/MatchWidth"
+            android:gravity="center_horizontal"
+            android:paddingLeft="@dimen/padding_outgoing_screen"
+            android:paddingRight="@dimen/padding_outgoing_screen"
+            android:textSize="@dimen/text_size_call"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            tools:text="John, Bob, Merlin" />
+
+        <TextView
+            android:id="@+id/text_ringing"
+            style="@style/MatchWidth"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            tools:text="رنين"
+            android:textSize="@dimen/text_size_ringing"
+             />
+    </LinearLayout>
+</FrameLayout>

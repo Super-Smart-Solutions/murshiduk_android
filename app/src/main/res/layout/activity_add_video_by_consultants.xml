@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddVideoByConsultantsActivity">
+
+
+    <include
+        layout="@layout/app_bar_transparent_with_btn"
+        android:id="@+id/toolbarTrans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:id="@+id/ll_activity_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:divider="@drawable/empty_tall_divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+
+            <TextView
+                android:id="@+id/tv_layout_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="20sp"
+                android:text="@string/add_clip"
+                android:textAlignment="center"
+                android:textColor="#43A047"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_hide_show_clip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/clip_status"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/greenLight"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/cet_clip_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/clip_title"/>
+
+
+            <com.saatco.murshadik.views.ScrollableEditText
+                android:id="@+id/cet_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:edit_text_hint="@string/description"/>
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/cet_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/video_tag"/>
+
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/c_spinner_areas_indicative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/areas_indicative"
+                app:is_edit_text="false"
+                app:is_spinner="true"/>
+
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/c_spinner_department_indicative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/areas_indicative"
+                app:is_edit_text="false"
+                app:is_spinner="true"/>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_video_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="20dp"
+                    android:backgroundTint="@color/black"
+                    android:visibility="gone"
+                    android:background="@drawable/rounded_corner_calender">
+
+                    <VideoView
+                        android:id="@+id/video_view_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_horizontal"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/btn_start_stop_video"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow"
+                        android:contentDescription="@string/playing_audio" />
+                </androidx.cardview.widget.CardView>
+
+
+
+
+            </FrameLayout>
+            <LinearLayout
+                android:id="@+id/ll_chose_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/btn_chose_video"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:paddingTop="10dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
+                        android:paddingBottom="20dp"
+                        android:src="@drawable/ic_chosse_video"
+                        android:background="@drawable/round_edit_profile"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:contentDescription="@string/chose_indicative_clip"
+                        app:tint="@color/themeColor" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center|bottom"
+                        android:text="@string/chose_indicative_clip"
+                        android:textAlignment="center"
+                        android:textColor="@color/greenLight"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/max_video_length"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/red" />
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/ll_progress_bar"
+        android:visibility="gone"
+        layout="@layout/item_loader"/>
+
+
+</FrameLayout>

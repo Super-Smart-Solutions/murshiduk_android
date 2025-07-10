@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar_transparent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="13dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                style="@style/AppSearchView"
+                android:layout_width="0dp"
+                android:layout_height="39dp"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:elevation="2dp"
+                android:textAppearance="@style/TextStyleBody"
+                app:defaultQueryHint="@string/search"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@color/white"
+                app:searchIcon="@drawable/baseline_search_24" />
+
+
+            <ImageButton
+                android:id="@+id/layoutFilterByCategory"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/click_animate_bg"
+                android:contentDescription="@string/image"
+                android:src="@drawable/filter"
+                app:tint="@color/colorPrimaryDark" />
+
+            <ImageButton
+                android:id="@+id/layoutSortByCategory"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/click_animate_bg"
+                android:contentDescription="@string/image"
+                android:src="@drawable/bars_sort"
+                app:tint="@color/colorPrimaryDark" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_question"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/item_question" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/themeColor"
+        app:cardCornerRadius="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:drawablePadding="3dp"
+            android:gravity="center|start"
+            android:includeFontPadding="false"
+            android:text="@string/new_question"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_subtitle"
+            app:drawableStartCompat="@drawable/baseline_add_24" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

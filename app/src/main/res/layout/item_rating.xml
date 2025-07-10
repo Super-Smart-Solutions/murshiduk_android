@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:visibility="visible"
+        android:background="@drawable/border_grey"
+        android:layout_margin="10dp"
+        android:id="@+id/layoutBG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:id="@+id/layoutUser"
+                android:layout_height="match_parent">
+
+                <FrameLayout
+                    android:layout_weight="0.35"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ag_logo"></ImageView>
+
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@string/choose_fiber_box"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"></TextView>
+
+
+                    <RatingBar
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/rating"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:progressTint="@color/yellow"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="1"
+                        />
+
+
+
+                    <TextView
+
+                        android:id="@+id/tvComment"
+                        android:layout_width="match_parent"
+                        android:layout_marginEnd="4dp"
+                        android:textSize="14sp"
+                        android:ellipsize="end"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/gray"
+                        android:layout_height="50dp"></TextView>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:id="@+id/attachmentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

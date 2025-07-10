@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar_transparent" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:divider="@color/white"
+            android:showDividers="none"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp">
+                    <ImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/profile_photo"/>
+                </androidx.cardview.widget.CardView>
+
+
+
+                <ImageView
+                    android:id="@+id/btnProfilePic"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/ic_edit_circle_pin"
+                    android:contentDescription="@string/edit"
+                    android:elevation="99dp" />
+
+            </FrameLayout>
+
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+
+            <TextView
+                android:id="@+id/changePhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:drawablePadding="16dp"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:padding="4dp"
+                android:singleLine="true"
+                android:text="@string/change_phone_number"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/call_accept" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/etb_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/first_name"
+                app:view_content="@string/first_name" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" >
+            </androidx.legacy.widget.Space>
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/etb_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/last_name"
+                app:view_content="@string/last_name" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/etb_skills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="false"
+                app:title="@string/select_a_skill"
+                app:view_content="" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/etb_region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="false"
+                app:title="@string/select_a_region"
+                app:view_content="" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/etb_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="false"
+                app:title="@string/select_a_city"
+                app:view_content="" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="@dimen/edit_profile_space_height" />
+
+            <com.saatco.murshadik.views.ScrollableEditText
+                android:id="@+id/etb_profile_cv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:edit_text_hint="@string/profile" />
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_corner_simple"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="حفظ"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</FrameLayout>

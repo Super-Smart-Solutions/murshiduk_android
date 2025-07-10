@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="16dp"
+    android:id="@+id/layoutSectionTen"
+    android:layout_height="200dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="5dp"
+        android:elevation="10dp">
+
+
+    <ImageView
+        android:id="@+id/ivBanner4"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent"></ImageView>
+
+
+    <TextView
+        android:id="@+id/tvTitleBanner4"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_marginEnd="16dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"></TextView>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</FrameLayout>

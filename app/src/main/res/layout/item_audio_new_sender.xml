@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layoutAudioSender"
+    android:visibility="visible"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:background="@drawable/cc_custom_left_bubble"
+        android:orientation="horizontal"
+        android:layout_gravity="start"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/audioLengthSender"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
+            tools:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/audioSeekBarSender"
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:rotation="180"
+            android:thumbTint="@color/colorPrimary"
+            />
+
+        <FrameLayout
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp">
+        <ProgressBar
+            android:layout_marginEnd="5dp"
+            android:id="@+id/audioProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_in"
+            android:indeterminateTint="@color/colorPrimary">
+        </ProgressBar>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/playButtonSender"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="@color/colorPrimary"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

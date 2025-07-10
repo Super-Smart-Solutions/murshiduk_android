@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".fragments.consultationAppointments.ConsultationAppointmentsNextAppointmentsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_next_appointments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:visibility="visible"
+        tools:listitem="@layout/item_next_appointment" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/themeColor"
+        android:visibility="visible"
+        app:cardCornerRadius="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:drawablePadding="3dp"
+            android:gravity="center|start"
+            android:includeFontPadding="false"
+            android:text="@string/new_appointment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_subtitle"
+            app:drawableStartCompat="@drawable/baseline_add_24" />
+    </androidx.cardview.widget.CardView>
+
+
+    <!--    no data-->
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/no_data"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+</FrameLayout>

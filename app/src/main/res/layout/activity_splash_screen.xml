@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InitialActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        android:padding="50dp"
+        android:src="@drawable/saudi_call_logo" />
+
+    <LinearLayout
+        android:id="@+id/layoutBG"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/new_bg"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+
+            android:id="@+id/tvHighSpeed"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"></TextView>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
+
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:background="@drawable/round_corner_search"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="visible"
+        android:layout_height="45dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            app:closeIcon="@null"
+            android:layout_height="match_parent">
+
+        </androidx.appcompat.widget.SearchView>
+        
+        <ImageView
+            android:id="@+id/btnSaveKeyword"
+            android:src="@drawable/plus"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="match_parent"
+            app:tint="@color/colorPrimary"></ImageView>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="تتجه الكلمات الرئيسية"
+        android:textAlignment="viewStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_keywords"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <include layout="@layout/progress"></include>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_marginTop="4dp"
+        android:visibility="visible"
+        android:layout_height="40dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/round_corner_simple"
+        android:text="حفظ"
+        />
+
+</LinearLayout>

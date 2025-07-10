@@ -1,0 +1,1055 @@
+<resources>
+    <array name="autodownload_roaming_defaults" />
+
+    <integer name="pref_default_int_value">0</integer>
+    <integer name="pref_frame_rate_min_value">0</integer>
+    <integer name="pref_frame_rate_max_value">30</integer>
+    <integer name="pref_frame_rate_stepSize">5</integer>
+    <integer name="pref_startbitratevalue_min_value">0</integer>
+    <integer name="pref_startbitratevalue_max_value">2000</integer>
+    <integer name="pref_startbitratevalue_step_size">100</integer>
+    <integer name="pref_answer_time_interval_min_value">15</integer>
+    <integer name="pref_answer_time_interval_max_value">90</integer>
+    <integer name="pref_answer_time_interval_step_size">5</integer>
+    <integer name="pref_disconnect_time_interval_min_value">10</integer>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <integer name="pref_disconnect_time_interval_max_value">90</integer>
+    <integer name="pref_disconnect_time_interval_step_size">5</integer>
+    <integer name="pref_dialing_time_interval_min_value">3</integer>
+    <integer name="pref_dialing_time_interval_max_value">10</integer>
+    <integer name="pref_dialing_time_interval_step_size">1</integer>
+    <string name="app_name">مرشدك الزراعي</string>
+    <string name="subscribe_in_fiber_opt">Subscribe in fiber optical high speed internet service</string>
+    <string name="order_now">Order Now</string>
+    <string name="continue_order">Continue</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="city">City</string>
+    <string name="neighbor">Neighborhood</string>
+    <string name="where_install">Where to Install</string>
+    <string name="proceed">Proceed</string>
+    <string name="choose_fiber_box">Choose Fiber Box</string>
+    <string name="choose_city">Choose city</string>
+
+    <!-- Chat -->
+
+    <string name="first_name_required">First Name is required</string>
+
+
+    <string name="last_name_required">Last name is required</string>
+
+    <string name="phone_required">Phone number is required</string>
+    <string name="city_required">City is required</string>
+
+    <string name="neighbor_required">Neighbor is required</string>
+
+    <string name="location_required">Location is required</string>
+    <string name="change_language">Change Language</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="success_msg">We received your order and will contact you soon</string>
+    <string name="fastest_internet">Fastest Internet in The Kingdom</string>
+    <string name="success_desc">On it\'s way, our representative will contact you</string>
+    <string name="back_main">Back to Main Menu</string>
+    <string name="high_speed">high speed internet service</string>
+
+    <string name="looking_for">What are you looking for?</string>
+
+    <string name="about_us">About Us</string>
+
+    <string name="terms">Terms and Conditions</string>
+    <string name="language">Language</string>
+
+    <string name="contact_support">Contact Support</string>
+    <string name="whats_app">WhatsApp</string>
+    <string name="password">Password</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot your password</string>
+    <string name="welcome">Welcome to your</string>
+    <string name="welcome_2">agricultural guide</string>
+    <string name="agri_notebook">Agricultural Notebook</string>
+    <string name="read_more">Read more…</string>
+    <string name="show_all">Show all</string>
+    <string name="vision">All rights reserved</string>
+    <string name="agri_calender">Agricultural Calendar</string>
+    <string name="register_user">Register User</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="unable_to_login" translatable="false">Unable to login</string>
+    <string name="logout">Logout</string>
+    <string name="Category" />
+    <string name="Consultants" />
+    <string name="consultants">Conversations</string>
+    <string name="category">Agricultural Guides</string>
+    <string name="groups">Groups</string>
+    <string name="enter_verfication_code">Enter the verification code sent to</string>
+    <string name="code" translatable="false">code</string>
+    <string name="sms_verfication">SMS Verification</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="area">Location</string>
+    <string name="country">Country</string>
+    <string name="save">Save</string>
+    <string name="verify">Verify</string>
+    <string name="contact_us_details">Follow us on</string>
+    <string name="attachment" translatable="false">Attachment</string>
+    <string name="title_activity_user_details">UserDetailsActivity</string>
+    <string name="img_transition">img_transition</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="typing">Typing…</string>
+    <string name="recording">Recording…</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_profile">Profile</string>
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="key_autodownload_roaming" translatable="false">key_autodownload_roaming</string>
+    <string name="key_autodownload_wifi" translatable="false">key_autodownload_wifi</string>
+    <string name="key_autodownload_cellular" translatable="false">key_autodownload_cellular</string>
+    <string name="pref_header_chat">Chat</string>
+    <string name="pref_header_about">About</string>
+
+    <string name="camera_tip">Tap to Take a Photo,Hold to Record Video</string>
+    <string name="audio_permission_error">Audio Permissions are Missing</string>
+    <string name="space_or_permissions_error_toast">Error :( ,Please check Space or Permissions</string>
+    <string name="voice_message_is_short_toast">Voice Message is Too Short</string>
+    <string name="file_is_too_big">file is Too BIG</string>
+    <string name="type_not_supported">type not supported!</string>
+    <string name="unblock_contact">Unblock Contact</string>
+    <string name="block_contact">Block Contact</string>
+    <string name="unmute_notifications">UnMute Notifications</string>
+    <string name="mute_notifications">Mute Notifications</string>
+    <string name="loading">Loading..</string>
+    <string name="copied_to_clipboard">Copied To Clipboard…</string>
+    <string name="image_video_not_found">CHOSEN IMAGE/Video Not Found</string>
+    <string name="sending_messages">Sending Messages…</string>
+    <string name="message_is_too_long">Message is Too long please try to reduce it</string>
+    <string name="error_playing_this">Error playing this :(</string>
+    <string name="cannot_open_this_file">cannot open this file</string>
+    <string name="checking">Checking..</string>
+    <string name="does_not_have_fireapp">does not have %s</string>
+    <string name="user_is_blocked">User is Blocked</string>
+    <string name="unblock">UnBlock</string>
+    <string name="cancel">إلغاء</string>
+    <string name="not_contact_selected">No Contact Selected</string>
+    <string name="missing_permissions">Missing Permissions</string>
+    <string name="ok">OK</string>
+    <string name="no_close_the_app">NO Close The App</string>
+    <string name="you_have_to_grant_permissions">You have to grant permissions in order to use this App</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="delete_conversation_confirmation">Are you sure you want to delete this conversation?</string>
+    <string name="yes">نعم</string>
+    <string name="select_contact">Select Contact</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="image_changed">Image has been changed</string>
+    <string name="username_is_empty">user name cannot be empty</string>
+    <string name="default_status">Heeey I am using %s!</string>
+    <string name="reply">Reply</string>
+    <string name="choose_number">Choose a Number</string>
+    <string name="delete_messages_confirmation">Delete Message?</string>
+    <string name="you">You</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_status">Enter your status</string>
+    <string name="status_is_empty">Status is Empty</string>
+    <string name="no_media_summary">no media</string>
+    <string name="photos">Photos</string>
+    <string name="videos">Videos</string>
+    <string name="files">Files</string>
+    <string name="no">لا</string>
+    <string name="file">File</string>
+    <string name="camera">كاميرا</string>
+    <string name="gallery">معرض الصور</string>
+    <string name="audio">Audio</string>
+    <string name="location">Location</string>
+    <string name="contact">Contact</string>
+    <string name="media">Media</string>
+    <string name="count">Count</string>
+    <string name="about_and_phone_number">About and phone number</string>
+    <string name="delete">حذف</string>
+    <string name="copy">Copy</string>
+    <string name="forward">Forward</string>
+    <string name="share">Share</string>
+    <string name="add_to_contacts">Add to Contacts</string>
+    <string name="edit">تعديل</string>
+    <string name="checking_contact">Checking Contact</string>
+    <string name="online">Online</string>
+    <string name="could_not_get_audio_file">could not get audio file</string>
+    <string name="could_not_get_this_image">Could not get this image</string>
+    <string name="delete_media_from_phone">Delete Media From Phone</string>
+    <string name="media_player_error">file not found or permissions missing</string>
+    <string name="select_numbers">Select Numbers</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="not_found">Not found</string>
+    <string name="enter_is_sent_smmary">Enter is Send</string>
+    <string name="enter_is_send_title">Enter key will send your message</string>
+    <string name="mobile_data_title">when using mobile data</string>
+    <string name="roaming_title">when roaming</string>
+    <string name="wifi_title">when using Wifi</string>
+
+    <string name="media_auto_download_title">Media auto download</string>
+    <string name="could_not_get_this_file">could not get this file</string>
+    <string name="send_to_toolbar_title">Send To ..</string>
+    <string name="item_deleted_from_storage">this item was deleted from your storage</string>
+    <string name="app_info">لزراعة أفضل </string>
+    <string name="feedback">Feedback</string>
+    <string name="choose_email_app">Choose Email App</string>
+    <string name="new_group">New Group</string>
+    <string name="add_participants">Add Participants</string>
+    <string name="max_number_of_users_reached">Max Number of users reached</string>
+    <string name="group_title">Group Title</string>
+    <string name="set_title_for_group">Set a title for Group</string>
+    <string name="group_hint">Group name</string>
+    <string name="exit_group">Exit group</string>
+    <string name="participants">Participants</string>
+    <string name="delete_member">Delete Member</string>
+    <string name="delete_member_message">are you sure you want to delete this member?</string>
+    <string name="removing_member">Removing member…</string>
+
+
+    <string name="member_removed">Member removed</string>
+    <string name="error_removing_member">error removing member</string>
+    <string name="user_already_added_to_group">user already added to group</string>
+
+    <string name="adding">Adding…</string>
+    <string name="added_successfully">added successfully</string>
+    <string name="group_name_changed">group name changed</string>
+    <string name="exiting_group">Exiting group…</string>
+    <string name="you_cant_send_messages_to_group">You cant\'t send message to this group because you are no longer a participant</string>
+    <string name="no_longer_participant">You are no longer a participant in this group</string>
+    <string name="delete_group">Delete group</string>
+    <string name="created_this_group">created this group</string>
+    <string name="removed">Removed</string>
+    <string name="is_now_an_admin">is now an Admin</string>
+    <string name="exit_the_group">Exit the group</string>
+    <string name="added">Added</string>
+    <string name="group_info">Group info</string>
+    <string name="are_now_an_admin">are now an Admin</string>
+    <string name="at">at</string>
+    <string name="created_by">Created by</string>
+    <string name="you_deleted_this_message">You deleted this message</string>
+    <string name="this_message_was_deleted">This message was deleted</string>
+    <string name="delete_for_me">DELETE FOR ME</string>
+    <string name="delete_for_everyone">DELETE FOR EVERYONE</string>
+    <string name="message_member">Message</string>
+    <string name="make_group_admin">Make group admin</string>
+    <string name="dismiss_admin">Dismiss admin</string>
+    <string name="remove_member">Remove</string>
+    <string name="only_admins_can_post">Only admins can post</string>
+    <string name="are_no_longer_an_admin">are no longer an admin</string>
+    <string name="is_no_longer_an_admin">is no longer an admin</string>
+    <string name="you_added">You added</string>
+    <string name="you_left">You Left</string>
+    <string name="left_group">Left group</string>
+    <string name="you_removed">You removed</string>
+    <string name="you_created_this_group">You created this group</string>
+    <string name="you_changed_group_preferences">You changed group preferences</string>
+    <string name="changed_group_preferences">changed group preferences</string>
+    <string name="this_user_has_old_version">This user has old version of this app</string>
+    <string name="exit_group_confirmation_dialog">are you sure you want to exit this group?</string>
+    <string name="delete_group_confirmation">are you sure you want to delete this chat</string>
+    <string name="playing_audio">Playing Audio</string>
+    <string name="chats">Chats</string>
+    <string name="status">Status</string>
+    <string name="calls">Calls</string>
+    <string name="recent_updates">Recent Updates</string>
+    <string name="my_status">My Status</string>
+    <string name="tap_to_add_status">Tap to add status update</string>
+    <string name="title_activity_view_status">ViewStatusActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_my_status">My Status</string>
+    <string name="your_status_will_disappear_note">Your status updates will disappear after 24 hours.</string>
+    <string name="deleting">Deleting…</string>
+    <string name="delete_status_confirmation">are you sure you want to delete this status?</string>
+    <string name="uploading_status">Uploading status…</string>
+    <string name="voice_call_hint">Voice Call</string>
+    <string name="video_call_hint">Video Call</string>
+    <string name="connecting">Connecting</string>
+    <string name="fireapp_video_call">%s Video Call</string>
+    <string name="fireapp_voice_call">%s Voice Call</string>
+    <string name="call_ended">Call ended</string>
+    <string name="call_denied">Denied</string>
+    <string name="call_failure">Failed to connect</string>
+    <string name="call_cancelled">Cancelled</string>
+    <string name="user_hungup">User Hung up</string>
+    <string name="call_no_answer">No answer</string>
+    <string name="voice_call_confirmation">Are you sure want to make a voice call?</string>
+    <string name="video_call_confirmation">are you sure you want to make a video call?</string>
+    <string name="error_calling">Error performing call</string>
+    <string name="missed_call_notification">Missed call from:</string>
+    <string name="answer">ANSWER</string>
+    <string name="decline">DECLINE</string>
+    <string name="incoming_voice_call">Incoming Voice Call</string>
+    <string name="hangup">HANGUP</string>
+    <string name="video_call">مكالمة فيديو</string>
+    <string name="voice_call">مكالمة صوت</string>
+    <string name="delete_calls_confirmation">Delete Selected Calls?</string>
+    <string name="viewed_statuses">Viewed updates</string>
+    <string name="video_length_is_too_long">Video length is too long</string>
+    <string name="there_is_active_call_currently">There is already an active call</string>
+    <string name="status_uploaded">Status uploaded Successfully</string>
+    <string name="error_uploading_status">Error uploading status</string>
+    <string name="invite">Invite</string>
+    <string name="share_app_text">Download now %s App for Instant messaging,groups support,Video Calls, and more. </string>
+    <string name="no_contacts">No %s Contacts</string>
+    <string name="minutes_ago">minutes ago</string>
+    <string name="hours_ago">hours ago</string>
+    <string name="yesterday_at">Yesterday at</string>
+    <string name="today_at">Today at</string>
+    <string name="days_ago">days ago</string>
+    <string name="just_now">Just now</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="now">now</string>
+    <string name="clear_chat">Clear chat</string>
+    <string name="clear_chat_message">are you sure you want to delete all messages in this chat?</string>
+    <string name="chat_settings">Chat settings</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="failed_to_load_wallpaper">Failed to load Wallpaper</string>
+    <string name="mark_as_read">mark as read</string>
+    <string name="choose_wallpaper">Choose Wallpaper</string>
+    <string name="restore_default_wallpaper">Restore Default Wallpaper</string>
+    <string name="unsupported_type">Unsupported type, please update the app</string>
+    <string name="write_your_message">Write your message</string>
+    <string name="profile_translation_name" translatable="false">profile_translation_name</string>
+    <string name="chat_backup">Chat backup</string>
+    <string name="title_activity_backup_chat">BackupChatActivity</string>
+    <string name="last_backup">Last Backup</string>
+    <string name="backup">BACK UP</string>
+    <string name="backing_up">Backing up …</string>
+    <string name="backing_up_message">Backing up message, please don\'t exit the app</string>
+    <string name="backup_success">Backup success</string>
+    <string name="backup_failed">Backup failed</string>
+    <string name="restore_backup">Restore backup</string>
+    <string name="error_restoring_backup">Error restoring backup</string>
+    <string name="backup_file_mismatched">Backup file does not match your phone number!</string>
+    <string name="invalid_group_link">invalid group link</string>
+    <string name="share_invite_link">Share Invite link</string>
+
+    <string name="share_link_notice">anyone has this link can join this group</string>
+    <string name="send_link_via_fireapp">Send Link via %s</string>
+    <string name="copy_link">Copy link</string>
+    <string name="share_link">Share link</string>
+
+
+    <!-- Settings strings. -->
+    <string name="revoke_link">Revoke link</string>
+    <string name="fetching_group">Fetching Group…</string>
+
+    <string name="join_group">Join group</string>
+    <string name="you_are_already_joined_the_group">You already joined the group!</string>
+
+    <string name="banned_from_group">You are banned from this group</string>
+    <string name="joined_via_invite_link">joined via invite link</string>
+    <string name="new_broadcast">New broadcast</string>
+    <string name="broadcast_name">Broadcast name</string>
+
+    <string name="broadcast_list_info">Broadcast list info</string>
+    <string name="created">Created</string>
+    <string name="recipients">recipients</string>
+    <string name="edit_recipients">Edit recipients</string>
+    <string name="delete_broadcast_list">Delete broadcast list</string>
+    <string name="add_recipients">Add recipients</string>
+
+    <string name="user_already_added_to_broadcast">user already added to broadcast</string>
+    <string name="delete_broadcast_confirmation">Delete this broadcast?</string>
+    <string name="no_link_gnerated">No link generated</string>
+    <string name="select_this_location">Select this Location</string>
+
+    <string name="nearby_places">Nearby Places</string>
+    <string name="user_this_location">Use this location?</string>
+    <string name="change_location">Change location</string>
+    <string name="select">Select</string>
+
+    <string name="message">Message</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="add">إضافة</string>
+    <string name="photo">Photo</string>
+    <string name="video">Video</string>
+    <string name="voice_message">Voice Message</string>
+
+
+    <string name="do_not_show_again">Do not show this message again</string>
+    <string name="ignore_battery_dialog_title">Ignore Battery Optimization</string>
+    <string name="ignore_battery_dialog_message">In order to make sure that all messages delivered correctly you have to disable Battery Optimization.\n after clicking OK , choose %s and click on \'Don\'t optimize\'</string>
+    <string name="ignore_battery_summary">In order to make sure that all messages delivered correctly you have to disable Battery Optimizations</string>
+    <string name="status_hint">Type a status</string>
+
+    <!-- Dialogs strings -->
+    <string name="call_type">%s Call</string>
+    <string name="select_status">Select Status</string>
+    <string name="help">Help</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="description">Description</string>
+    <string name="choose_user">Choose a user</string>
+    <string name="user_info">User Info</string>
+    <string name="select_a_region">Select Region</string>
+    <string name="rate_consultant">Rate Consultant</string>
+    <string name="how_was_it">How was it?</string>
+    <string name="done">Done</string>
+
+    <!-- Notification -->
+    <string name="splash_create_session_error" translatable="false">Create session errors:</string>
+    <string name="dlg_signal_error" translatable="false">Disconnected… Please check your Internet connection!</string>
+
+    <!-- Notifications Channels -->
+    <string name="msg_channel" translatable="false">msgs_channel</string>
+    <string name="call_channel" translatable="false">call_channel</string>
+
+    <!-- Notifications Channels names -->
+    <string name="msg_channel_name">Messages notification</string>
+    <string name="call_channel_name">Call notification</string>
+
+    <!-- Errors strings -->
+    <string name="dlg_relogin_wait" translatable="false">You are still connecting.. Please try once more</string>
+    <string name="dlg_login" translatable="false">Login…</string>
+    <string name="dlg_sign_in" translatable="false">Sign In…</string>
+    <string name="dlg_updating_user" translatable="false">Updating user…</string>
+    <string name="dlg_creating_new_user" translatable="false">Creating new user…</string>
+    <string name="dlg_logout" translatable="false">Logout…</string>
+    <string name="dlg_loading_opponents" translatable="false">Loading opponents…</string>
+    <string name="dlg_retry" translatable="false">Retry</string>
+    <string name="dlg_allow" translatable="false">Allow</string>
+    <string name="login_chat_retry" translatable="false">Trying Relogin. Please wait a moment</string>
+    <string name="notification_title">You have an active call</string>
+    <string name="notification_text">Touch takes you back to the call %1$s</string>
+    <string name="error">Error</string>
+
+    <string name="error_credentials_empty" translatable="false">Credentials are wrong or empty. You have to set:
+        Application ID, Authentification Key, Authentification Secret, Account Key in constants in App.java
+        and you have to set Sender ID in the string resources to launch application.
+        If you haven\'t them you can register new account and application at https://admin.quickblox.com
+        then put Application credentials from Overview page + Account key from https://admin.quickblox.com/account/settings</string>
+    <string name="login_data_error" translatable="false">Wrong login</string>
+    <string name="username_data_error" translatable="false">Wrong username</string>
+    <string name="error_max_opponents_count" translatable="false">You can select up to %d opponents</string>
+
+    <string name="sign_up_error" translatable="false">Error creating new user, please try again</string>
+    <string name="sign_in_error" translatable="false">Error SignIn user, please try again</string>
+    <string name="sign_in_error_with_error" translatable="false">Sign In error. Error</string>
+
+    <string name="sign_in_error_without_error" translatable="false">Sign In error</string>
+
+    <string name="logout_user_with_error" translatable="false">Logout user error. Error</string>
+    <string name="no_internet_connection">No internet connection</string>
+
+    <string name="no_connection_error" translatable="false">Connection failed. Please check your internet connection.</string>
+
+    <!-- menu -->
+    <string name="no_responce_timeout" translatable="false">No response received within reply timeout</string>
+    <string name="error_empty_login" translatable="false">Login can not be empty</string>
+    <string name="error_empty_chat_room_name" translatable="false">Chat room name can not be empty</string>
+    <string name="error_permission_video" translatable="false">You should allow Camera permission</string>
+    <string name="error_permission_audio" translatable="false">You should allow Microphone permission</string>
+    <string name="login_chat_login_error" translatable="false">Login Chat error. Please relogin. Error</string>
+    <string name="update_user_error" translatable="false">Update user error. Error</string>
+    <string name="loading_users_error" translatable="false">Loading users error. Error</string>
+
+    <!-- action bar -->
+    <string name="permission_unavailable" translatable="false">%s is not available now!</string>
+    <string name="field_name_user_login" translatable="false">User name</string>
+    <string name="field_name_user_fullname" translatable="false">User Full Name</string>
+    <string name="error_name_must_not_contain_special_characters_from_app" translatable="false">%1$s must contain 3 &#8212; %2$s alphanumeric Latin characters without spaces, the first char must be a letter</string>
+    <string name="action_start_login" translatable="false">Done</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_screen_share" translatable="false">Screen share</string>
+    <string name="action_update_opponens_list" translatable="false">Update opponents list</string>
+    <string name="action_logout" translatable="false">Logout</string>
+    <string name="action_start_video_call" translatable="false">Video call</string>
+    <string name="action_start_audio_call" translatable="false">Audio call</string>
+    <string name="action_dialogs_app_info" translatable="false">App Info</string>
+
+    <string name="actionbar_title_settings" translatable="false">Settings</string>
+    <string name="title_login_activity" translatable="false">Enter to Videochat</string>
+    <string name="subtitle_text_logged_in_as" translatable="false">Logged in as %s</string>
+    <string name="title_one_user_selected" translatable="false">%s user selected</string>
+    <string name="tile_many_users_selected" translatable="false">%s users selected</string>
+    <string name="incoming_call" translatable="false">Incoming Call</string>
+    <string name="also_on_call" translatable="false">Also on call:</string>
+    <string name="edit_opponents_list" translatable="false">Edit opponents list</string>
+
+    <string name="incoming_audio_call" translatable="false">مكالمة صوتيه وارده</string>
+    <string name="incoming_video_call">مكالمة فيديو</string>
+    <string name="outgoing_audio_video_call_title" translatable="false">%s\n\nRinging</string>
+    <string name="user_list_on_call" translatable="false">User 1, User 2, User 3, User 4, User 5, User 6</string>
+    <string name="opponent_pending" translatable="false">Pending</string>
+    <string name="opponent_closed" translatable="false">Closed</string>
+
+    <string name="text_incoming_audio_call" translatable="false">Incoming Audio Call</string>
+    <string name="text_incoming_video_call" translatable="false">Incoming Video Call</string>
+    <string name="text_status_connect" translatable="false">Connect…</string>
+
+    <string name="text_status_checking" translatable="false">Checking…</string>
+
+    <string name="text_status_connected" translatable="false">Connected</string>
+    <string name="text_status_disconnected" translatable="false">Disconnected</string>
+
+    <string name="text_status_rejected" translatable="false">Rejected</string>
+
+    <!-- Settings strings. -->
+    <string name="text_status_no_answer" translatable="false">No answer</string>
+    <string name="text_status_hang_up" translatable="false">Hung up</string>
+
+    <string name="text_status_closed" translatable="false">Closed</string>
+    <string name="text_status_time_out" translatable="false">Time Out</string>
+
+    <string name="text_status_failed" translatable="false">Failed</string>
+    <string name="text_welcoming_message" translatable="false">Please enter Login and Username.</string>
+    <string name="hint_user_login" translatable="false">Login</string>
+    <string name="hint_user_full_name" translatable="false">Username</string>
+
+    <string name="text_select_users_to_call" translatable="false">Select users you want to call</string>
+    <string name="call_was_stopped_connection_lost" translatable="false">Call was stopped because connection was lost</string>
+    <string name="connection_lost">Connection lost</string>
+    <string name="text_push_notification_message" translatable="false">"%s is calling you"</string>
+    <string name="title_video_category" translatable="false">Video</string>
+
+    <string name="pref_default_value" translatable="false">Default</string>
+    <string name="pref_default_camera_key" translatable="false">default_camera_preference</string>
+    <string name="pref_default_camera_title" translatable="false">Default Camera</string>
+    <string name="pref_default_camera_dlg" translatable="false">Select default camera</string>
+
+    <string name="pref_default_camera_default" translatable="false">0</string>
+    <string name="pref_frame_rate_key" translatable="false">frame_rate</string>
+    <string name="pref_frame_rate_title" translatable="false">Frame Rate (0&#8211;30)</string>
+    <string name="pref_frame_rate_default" translatable="false">0</string>
+
+    <string name="pref_resolution_key" translatable="false">resolution_preference</string>
+    <string name="pref_resolution_title" translatable="false">Video Format</string>
+    <string name="pref_resolution_dlg" translatable="false">Enter RTC local video resolution</string>
+    <string name="pref_resolution_default" translatable="false">-1</string>
+    <string name="pref_startbitrate_key" translatable="false">startbitrate_preference</string>
+    <string name="pref_startbitrate_title" translatable="false">Start bitrate setting</string>
+
+    <string name="pref_startbitrate_dlg" translatable="false">Start bitrate setting</string>
+    <string name="pref_startbitrate_default" translatable="false">Default</string>
+    <string name="pref_startbitratevalue_key" translatable="false">startbitratevalue_preference</string>
+    <string name="pref_startbitratevalue_title" translatable="false">Bandwidth (0&#8211;2000)</string>
+    <string name="pref_startbitratevalue_default" translatable="false">0</string>
+
+    <string name="pref_disable_built_in_aec_key" translatable="false">disable_built_in_aec_preference</string>
+    <string name="pref_disable_built_in_aec_title" translatable="false">Disable built-in AEC</string>
+    <string name="pref_disable_built_in_aec_dlg" translatable="false">Disable built-in AEC</string>
+    <string name="pref_disable_built_in_aec_default" translatable="false">false</string>
+
+    <string name="pref_built_in_aec_not_available" translatable="false">Built-in AEC is not available</string>
+    <string name="pref_opensles_key" translatable="false">opensles_preference</string>
+    <string name="pref_opensles_title" translatable="false">Use OpenSL ES for audio playback</string>
+    <string name="pref_opensles_dlg" translatable="false">Use OpenSL ES for audio playback</string>
+
+    <string name="pref_opensles_default" translatable="false">false</string>
+    <string name="pref_noaudioprocessing_key" translatable="false">audioprocessing_preference</string>
+    <string name="pref_noaudioprocessing_title" translatable="false">Disable audio processing</string>
+    <string name="pref_noaudioprocessing_dlg" translatable="false">Disable audio processing pipeline</string>
+    <string name="pref_noaudioprocessing_default" translatable="false">false</string>
+
+    <!--Call Settings-->
+    <string name="pref_manage_speakerphone_by_proximity_key" translatable="false">manage_speakerphone_by_proximity_preference</string>
+    <string name="pref_manage_speakerphone_by_proximity_title" translatable="false">Manage Speaker Phone by Proximity Sensor</string>
+    <string name="pref_manage_speakerphone_by_proximity_dlg" translatable="false">Manage Speaker Phone by Proximity Sensor</string>
+    <string name="pref_manage_speakerphone_by_proximity_summary" translatable="false">Enables managing of Speaker Phone by Proximity Sensor for Audio calls</string>
+    <string name="pref_manage_speakerphone_by_proximity_default" translatable="false">false</string>
+    <string name="pref_answer_time_interval_key" translatable="false">answer_time_interval</string>
+
+    <string name="pref_answer_time_interval_title" translatable="false">Answer Time Interval (15&#8211;90s)</string>
+    <string name="pref_answer_time_interval_default_value" translatable="false">60</string>
+    <string name="pref_disconnect_time_interval_key" translatable="false">disconnect_time_interval</string>
+    <string name="pref_disconnect_time_interval_title" translatable="false">Disconnect Time Interval (10&#8211;90s)</string>
+    <string name="pref_disconnect_time_interval_default_value" translatable="false">10</string>
+    <string name="pref_dialing_time_interval_key" translatable="false">Dialing_time_interval</string>
+
+    <string name="pref_dialing_time_interval_title" translatable="false">Dialing Time Interval (3&#8211;10s)</string>
+    <string name="pref_dialing_time_interval_default_value" translatable="false">5</string>
+    <string name="pref_videocodec_key" translatable="false">videocodec_preference</string>
+    <string name="pref_videocodec_title" translatable="false">Default video codec</string>
+    <string name="pref_videocodec_dlg" translatable="false">Select default video codec</string>
+    <string name="pref_videocodec_default" translatable="false">0</string>
+
+    <string name="pref_hwcodec_key" translatable="false">hwcodec_preference</string>
+    <string name="pref_hwcodec_title" translatable="false">Video codec hardware acceleration</string>
+    <string name="pref_hwcodec_default" translatable="false">true</string>
+    <string name="pref_value_enabled" translatable="false">Enabled</string>
+
+    <string name="pref_value_disabled" translatable="false">Disabled</string>
+    <string name="pref_room_server_url_key" translatable="false">room_server_url_preference</string>
+    <string name="pref_room_server_url_title" translatable="false">Room server URL.</string>
+
+    <string name="pref_room_server_url_dlg" translatable="false">Enter a room server URL.</string>
+    <string name="pref_room_server_url_default" translatable="false">https://apprtc.appspot.com</string>
+
+    <string name="pref_displayhud_key" translatable="false">displayhud_preference</string>
+    <string name="pref_displayhud_title" translatable="false">Display call statistics.</string>
+    <string name="pref_displayhud_dlg" translatable="false">Display call statistics.</string>
+    <string name="pref_displayhud_default" translatable="false">false</string>
+
+    <string name="pref_audiocodec_key" translatable="false">pref_audio_codec</string>
+    <string name="pref_audiocodec_title" translatable="false">Default audio codec</string>
+    <string name="pref_audiocodec_def" translatable="false">ISAC</string>
+    <string name="pref_audiocodec_dlg" translatable="false">Select default audio codec</string>
+    <string name="pref_version" translatable="false">QuickBlox WebRTC\nBuild version 1.12</string>
+    <string name="btn_screen_capture" translatable="false">screenShot</string>
+    <string name="accepted" translatable="false">Accepted</string>
+    <string name="connection_was_lost" translatable="false">Connection was lost</string>
+    <string name="opponents" translatable="false">and %s other</string>
+    <string name="opponent" translatable="false">and %s </string>
+    <string name="ringing" translatable="false">Ringing</string>
+    <string name="stop_share" translatable="false">Stop</string>
+
+    <string name="camera_swicth_failed" translatable="false">\"Failed switch camera\"</string>
+    <string name="appinfo_application_version" translatable="false">Application version:</string>
+    <string name="appinfo_qbsdk_version" translatable="false">QuickBlox SDK version:</string>
+    <string name="appinfo_application_id" translatable="false">Application ID:</string>
+    <string name="appinfo_authorization_key" translatable="false">Authorization key:</string>
+
+    <!-- App info -->
+    <string name="appinfo_authorization_secret" translatable="false">Authorization secret:</string>
+    <string name="appinfo_account_key" translatable="false">Account key:</string>
+    <string name="appinfo_api_domain" translatable="false">API domain:</string>
+    <string name="appinfo_chat_domain" translatable="false">Chat domain:</string>
+    <string name="appinfo_title" translatable="false">App Info</string>
+    <string name="appinfo_qa_verion" translatable="false">QA version:</string>
+
+    <!--   production sender id -->
+    <string name="sender_id" translatable="false">1091776197007</string>
+
+    <!--    <string name="sender_id">624370963030</string>-->
+
+    <string name="version" translatable="false">2.4.1</string>
+    <string name="available_for_work" translatable="false">Available for Work</string>
+    <string name="not_available_for_work" translatable="false">Not Available for Work</string>
+    <string name="account">حسابي</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="pest_detection">Pest Detection</string>
+    <string name="consultation">الخدمات</string>
+    <string name="market">السوق</string>
+    <string name="home">الرئيسية</string>
+    <string name="question">Question</string>
+    <string name="keywords">الكلمات الدالة</string>
+    <string name="title_question">عنوان السؤال</string>
+    <string-array name="autodownload">
+        <item>Photos</item>
+        <item>Audio</item>
+        <item>Videos</item>
+        <item>Files</item>
+    </string-array>
+    <string-array name="autodownload_cellular_defaults">
+        <item>0</item>
+    </string-array>
+    <string-array name="autodownload_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="autodownload_wifi_defaults">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string name="title_activity_edit_name_acitivity" translatable="false">EditNameAcitivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="report_bug" translatable="false">"أبلغ عن الخطأ "</string>
+    <string name="saatco" translatable="false">SAATCO</string>
+    <string name="powered_by" translatable="false">Powered By</string>
+    <string name="faqs">FAQS</string>
+    <string name="calender">التقويم الزراعي</string>
+    <string name="articles">الإرشاد الزراعي</string>
+    <string name="complete_profile_msg">الرجاء استكمال ملف التعريف الخاص بك</string>
+    <string name="account_pending">موافقتك معلقة</string>
+    <string name="remove_success">تمت إزالة جميع الإخطارات</string>
+    <string name="on_market_alerts_from_setting">من فضلك في تنبيهات السوق من الإعدادات</string>
+    <string name="success_product_subscribtion">تم الاشتراك في تنبيهات المنتج بنجاح</string>
+    <string name="products">منتجات</string>
+    <string name="filter_by_category">تصفية حسب الفئة</string>
+    <string name="sorted_by"> ترتب حسب</string>
+    <string name="high_to_low">سعر مرتفع إلى سعر منخفض</string>
+    <string name="low_to_hight">السعر المنخفض إلى السعر المرتفع</string>
+    <string name="remove_confirmation">هل انت متاكد انك تريد الازالة؟</string>
+    <string name="offline_status">غير متصل الان</string>
+    <string name="online_status">متصل الان</string>
+    <string name="work_status">حالة العمل</string>
+    <string name="not_available_msg">" لا يمكنك الاتصال بالمرشد لأنه غير متوفر للعمل في هذا الوقت"</string>
+    <string name="success_rate">تم التقييم بنجاح</string>
+    <string name="still_connected">لاتزال متصل..  نرجو المحاولة مرة أخرى</string>
+    <string name="agree_terms">الرجاء الموافقة على الشروط والاحكام</string>
+    <string name="consultant">مرشد</string>
+    <string name="farmer">مزارع</string>
+    <string name="select_city">منطقة مطلوب</string>
+    <string name="enter_first_name">الإسم الأول مطلوب</string>
+    <string name="enter_last_name">إسم العائلة مطلوب</string>
+    <string name="select_skill">تخصص مطلوب</string>
+    <string name="select_region">منطقة مطلوب</string>
+    <string name="enter_profile">الملف الشخصي مطلوب</string>
+    <string name="unable_register">غير قادر على التسجيل</string>
+    <string name="select_option">حدد اختيارا</string>
+    <string name="best_result_crop">للحصول على أفضل النتائج ، يرجى قص الأوراق فقط</string>
+    <string name="crop">قص</string>
+    <string name="warning">إنذار</string>
+    <string name="filter_by">تصنيف حسب</string>
+    <string name="top_rated">الأعلى تقييما</string>
+    <string name="last_question">الأسئلة الأخيرة</string>
+    <string name="planting">النباتات</string>
+    <string name="disease">الآفات</string>
+    <string name="fields_required">كل الحقول إلزامية</string>
+    <string name="attach_a_picture">يرجى إرفاق صورة</string>
+    <string name="enter_anwser">الرجاء تقديم إجابتك</string>
+    <string name="answer_success">تم إضافة إجابتك</string>
+    <string name="file_limit_msg">حجم الملف يجب ان لايتجاوز ١٠ ميجابايت</string>
+    <string name="consultation_title">اطلب استشارة</string>
+    <string name="title_activity_post_video_by_consultant" translatable="false">PostVideoByConsultantActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="add_clip">إضافة لقطة إرشادية</string>
+    <string name="clip_title">عنوان اللقطة الإرشادية</string>
+    <string name="clip_description">الوصف</string>
+
+
+    <!--    areas indicative names-->
+    <string name="plants_area">المجال النباتي</string>
+    <string name="animals_area">المجال الحيواني</string>
+    <string name="fish_area">المجال السمكي</string>
+    <string name="areas_indicative">المجال الإرشادي</string>
+    <string name="department_indicative">القسم </string>
+    <string name="planting_plants_department">زراعة نبات</string>
+    <string name="disease_plants_department">أمراض نبات</string>
+    <string name="planting_animals_department">أمراض نبات</string>
+    <string name="disease_animals_department">أمراض نبات</string>
+    <string name="fishing_fish_department">صيد الاسماك</string>
+    <string name="disease_fish_department">أمراض الأسماك</string>
+    <string name="chose_indicative_clip">تحديد المقطع</string>
+    <string name="max_video_length">\u25CF يجب ان لا يتجاوز طول الفيديو عن 60 ثانية </string>
+    <string name="reviewing">قيد المراجعة</string>
+    <string name="requist_accepted">تمت الموافقة</string>
+    <string name="chose_indicative_img">إرفاق صورة للقطة</string>
+    <string name="indicative_clips">اللقطات الإرشادية</string>
+    <string name="my_clips">لقطاتي الإرشادية</string>
+    <string name="clips">لقطات</string>
+    <string name="long_video_size">"عذراً يجب ان لا يتجاوز طول الفيديو عن "</string>
+    <string name="second">" ثانية"</string>
+    <string name="video_tag">كلمات دلالية</string>
+    <string name="attach_a_video">يجب ارفاق الفيديو!!</string>
+    <string name="no_data">عذراً لا توجد بيانات</string>
+    <string name="write_comment">كتابة تعليق</string>
+    <string name="send">إرسال</string>
+    <string name="not_a_video_file">الرجاء إختيار ملف فيديو..!</string>
+    <string name="small_comment">نص التعليق قصير جداً !</string>
+    <string name="reply_on">رد على</string>
+    <string name="edit_clip">تعديل اللقطة الإرشادية</string>
+    <string name="delete_clip">حذف اللقطة</string>
+    <string name="clip_status">اظهار أو إخفاء اللقطة</string>
+    <string name="clip_is_visible_to_all">اللقطة الآن ظاهرة للجميع </string>
+    <string name="clip_is_invisible_to_all">اللقطة الآن مخفية عن الجميع </string>
+    <string name="clip_visible_to_all">ظاهرة</string>
+    <string name="clip_invisible_to_all">مخفية</string>
+    <string name="areas_indicative_and_department_indicative_required">يجب تحديد المجال الإرشادي والقسم أيضاً</string>
+    <string name="please_wait">أرجو الإنتظار</string>
+    <string name="rate_app_message">هل أعجبك التطبيق؟ يمكن تقييمه على متجر جوجل</string>
+
+
+    <string name="rate_dialog_title">قيم التطبيق</string>
+    <string name="rate_dialog_message">اذا اعجبك التطبيق نامل تقييمه </string>
+    <string name="rate_dialog_ok">قيم التطبيق الآن</string>
+    <string name="rate_dialog_cancel">ذكرني لاحقاً</string>
+    <string name="rate_dialog_no">لا، شكراً</string>
+    <string name="send_guide_notification">إرسال تنبيه إرشادي</string>
+    <string name="guide_notify_text">النص الإرشادي</string>
+    <string name="region_name">المنطقة</string>
+    <string name="skills">التخصصات</string>
+    <string name="cities">المدن</string>
+    <string name="select_cities">اختر المدن</string>
+    <string name="plaes_enter_text">من فضلك ادخل النص</string>
+    <string name="sent_done">تم الإرسال</string>
+    <string name="sent_failed">فشل الإرسال</string>
+    <string name="confirm">تأكيد!</string>
+    <string name="are_you_sure">هل أنت متأكد؟</string>
+    <string name="live_now">بث مباشر الآن!</string>
+    <string name="select_skills">اختر التخصصات</string>
+    <string name="live_off">لا يوجد بث حالياً</string>
+    <string name="is_online_btn_title">ايقاف زر العمل</string>
+    <string name="is_online_btn_msg">تم إيقاف زر العمل لكونك لم تفتح التطبيق لمدة تجاوزت الساعة… يمكنك الضغط على الإشعار لكي تفعل الزر مرة أخرى</string>
+    <string name="is_online_btn_notification_channel_name">إشعارات زر العمل</string>
+    <string name="is_online_btn_on_agine">تم تفعيل زر العمل مجدداً</string>
+    <string name="is_online_btn_off">تنبيه!! زر العمل غير مفعل</string>
+    <string name="sended_guide_notification_history">سجل الإشعارات المرسلة</string>
+    <string name="alert">تنبيه</string>
+    <string name="all">الكل</string>
+    <string name="do_you_need_guide">هل تحتاج لاستشارة؟</string>
+    <string name="search">بحث…</string>
+    <string name="skills_type">نوع التخصصات</string>
+    <string name="skill">التخصص</string>
+    <string name="select_a_skill">اختر التخصص</string>
+    <string name="skills_type_requierd">نوع التخصصات مطلوب</string>
+    <string name="all_required">الحقول مطلوبة</string>
+    <string name="ask_for_advice">اطلب استشارة</string>
+    <string name="ask_for_advice_description">"لطلب استشارة من خلال المرشدين "</string>
+    <string name="chat_bot">المرشد الذكي</string>
+    <string name="chat_bot_description"> توفر المساعدة للمزارع باستخدام الذكاء الاطناعي</string>
+    <string name="ask_general_question">السؤال عن نبات أو آفة</string>
+    <string name="ask_general_question_description">لمساعدتك على كتابة سؤال يراه مستخدمي التطبيق</string>
+    <string name="lab_reports">التحاليل الزراعية</string>
+    <string name="lab_reports_description">خدمة توفر لك امكانية حجز موعد لعمل تحليل للتربة أو المياه</string>
+    <string name="coffee_disease">آفات شجر البن</string>
+    <string name="coffee_disease_description">"التعرف على آفة شجرة البن عبر الذكاء الاصطناعي "</string>
+    <string name="not_connected">غير متصل</string>
+    <string name="consultation_for_adha">مستشارك للأضحية</string>
+    <string name="request_advice">طلب استشارة</string>
+    <string name="farm_visit_request">طلب زيارة للمزرعة</string>
+    <string name="new_farm_visit_request">طلب جديد</string>
+    <string name="farm_name">اسم المزرعة</string>
+    <string name="reason_farm_request">سبب طلب الزيارة</string>
+    <string name="send_request">تقديم الطلب</string>
+    <string name="cut_img">قطع الصورة</string>
+    <string name="chose_problem_img">ارفاق صورة للمشكلة</string>
+    <string name="app_need_permission">التطبيق يحتاج إلى اذن الوصول</string>
+    <string name="date">التاريخ</string>
+    <string name="visit_date">تاريخ الزيارة</string>
+    <string name="select_a_city">اختر المدينة</string>
+    <string name="you_should_add_image">يجب إضافة صورة واحدة للمشكلة على الأقل</string>
+    <string name="you_should_add_farm_location">يجب إضافة موقع المزرعة</string>
+    <string name="request_state">حالة الطلب: </string>
+    <string name="farm_visit_detailes">تفاصيل طلب الزيارة</string>
+    <string name="ministry_branch_will_visit">فرع الوزارة الذي سوف يزور المزرعة</string>
+    <string name="ministry_branch_in">"فرع الوزاة في  "</string>
+    <string name="welcome_back">أهلا بك</string>
+    <string name="farm_visit_request_details">"طلب زيارة للمزرعة من قبل المرشدين والخبراء "</string>
+    <string name="reports">تقارير</string>
+    <string name="chooser_title">اختر تطبيق لفتح الملف</string>
+    <string name="requests">الطلبات</string>
+    <string name="do_you_want_to_delete_account"><u>هل تريد حذف الحساب؟</u></string>
+    <string name="error_happend">حدث خطأ حاول مرة اخرى</string>
+    <string name="delete_account"><u>حذف الحساب</u></string>
+    <string name="account_deleted">تم حذف الحساب شكراً لاستخدامك تطبيق مرشدك الزراعي</string>
+    <string name="account_deletion_msg">"سيتم حذف الحساب نهائياً ولن تستطيع فتحه مرة أخرى "</string>
+    <string name="for_sure_press_yes_agin">للتاكيد اضغط نعم مرة أخرى</string>
+    <string name="title_activity_new_main_design" translatable="false">NewMainDesign</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
+    <string name="digital_library">المكتبة الرقمية</string>
+    <string name="digital_library_description">"لتصفح المنشورات الخاصة بالزراعة "</string>
+    <string name="other"><u>أخرى</u></string>
+    <string name="call_consultant">اتصل بمرشدك</string>
+    <string name="consults_history">سجل الاستشارات</string>
+    <string name="searching_for_consultant">جاري البحث عن مرشد ...</string>
+    <string name="available">متاح</string>
+    <string name="ask_about_plant_virus">اسأل عن نبات او آفة</string>
+    <string name="search_again">مرشد آخر</string>
+    <string name="show_profile">الملف الشخصي</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="about_consultant">عن المرشد</string>
+    <string name="chat_history">الاستشارات</string>
+    <string name="show_all_services"><u> عرض جميع الخدمات</u></string>
+    <string name="news">ابرز الأخبار</string>
+    <string name="posts">المنشورات</string>
+    <string name="show_cv"> <u>عرض السيرة الذاتية</u></string>
+    <string name="show_less"><u> عرض أقل</u></string>
+    <string name="show_more"><u> عرض أكثر</u></string>
+    <string name="reach_max_num">الحد الأقصى هو %s</string>
+    <string name="image">صورة</string>
+    <string name="soil">التربة</string>
+    <string name="sample_number">رقم العينة</string>
+    <string name="electric_conductivity">التوصيل الكهربائي</string>
+    <string name="PH">الاس الهيدروجيني</string>
+    <string name="carbonate">كربونات</string>
+    <string name="potassium">بوتاسيوم</string>
+    <string name="phosphorous">فوسفور</string>
+    <string name="sand">رمل</string>
+    <string name="celt">سلت</string>
+    <string name="clay">طين</string>
+    <string name="texture_type">نوع القوام</string>
+    <string name="notes">ملاحظات</string>
+    <string name="recommendations">توصيات</string>
+    <string name="water">المياه</string>
+    <string name="electric_water">توصيل المياه الكهربائي</string>
+    <string name="water_PH">مياه الأس الهيدروجيني</string>
+    <string name="water_chloride">كلوريد الماء</string>
+    <string name="water_carbonate">كربونات الماء</string>
+    <string name="water_salt">أملاح الماء</string>
+    <string name="water_recommend">توصيات المياه</string>
+    <string name="water_notes">ملاحظات على المياه</string>
+    <string name="available_workers">Available workers</string>
+    <string name="the_name">The name: </string>
+    <string name="age">age</string>
+    <string name="gender">gender</string>
+    <string name="nationality">nationality</string>
+    <string name="communication_info">Communication Information</string>
+    <string name="work_aria">Work Aria</string>
+    <string name="career">career</string>
+    <string name="previous_expert">Previous expert</string>
+    <string name="search_for_workers">البحث عن عمالة</string>
+    <string name="register_as_worker">التسجيل كعامل</string>
+    <string name="back">رجوع</string>
+    <string name="worker_service"> الأيدي العاملة</string>
+    <string name="id_number">رقم الهوية أو الإقامة</string>
+    <string name="expected_salary">الراتب المتوقع:</string>
+    <string name="worker_age_error">يجب ان يكون العمر بين 15 إلى 50 سنة</string>
+    <string name="worker_id_number_error">رقم الإقامة أو الهوية غير صحيح!</string>
+    <string name="worker_salary_error">يجب ان يكون الراتب بين 500 &#8211; 10,000</string>
+    <string name="worker_nationality_error">يجب تحديد الجنسية!</string>
+    <string name="worker_register_done">تم تسجيلك كعامل!</string>
+    <string name="no_worker_jobs_added">يجب إضافة وظيفة واحدة على الأقل</string>
+    <string name="write_about_your_experience">اكتب عن خبرتك في المجال</string>
+    <string name="experience">الخبرة</string>
+    <string name="date_from">التاريخ من:</string>
+    <string name="from">من </string>
+    <string name="to">إلى </string>
+    <string name="worker_id_not_available">بيانات العامل غير متاحة (id)</string>
+    <string name="field_required">هذا الحقل مطلوب</string>
+    <string name="worker_experience_date_required">"يجب ادخال التاريخ من إلى "</string>
+    <string name="worker_experience_date_error_input">"يجب ان يكون التاريخ \"من\" اصغر من التاريخ \"إلى\" "</string>
+    <string name="day_of_birth">تاريخ الميلاد</string>
+    <string name="jobs">الوظائف</string>
+    <string name="experiences">الخبرات</string>
+    <string name="members_count">عدد الأفراد</string>
+    <string name="active_market_alert">تنبيهات المنتجات التي اشتركت فيها </string>
+    <string name="title_call_settings_category" translatable="false">sittings</string>
+    <string name="notification_permission_denide_message">لقد رفضت السماح للتطبيق باستقبال الاشعارات ولن يستطيع التطبيق استقبال اي اشعارات لك او استقبال المكالمات عندما يكون التطبيق مغلق \n(يمكنك تغيير ذلك عبر اعدادات التطبيق)</string>
+    <string name="permission_needed">الإذن مطلوبة!</string>
+    <string name="notification_permission_denide_message_with_rerequest">لقد رفضت السماح للتطبيق باستقبال الاشعارات ولن يستطيع التطبيق استقبال اي اشعارات لك او استقبال المكالمات عندما يكون التطبيق مغلق \nهل تريد اعادة السماح؟</string>
+    <string name="virtual_clinic">العيادة الإفتراضية</string>
+    <string name="current_appointments">"المواعيد الحالية "</string>
+    <string name="history_appointments">المواعد السابقة</string>
+    <string name="make_appointment">حجز الموعد</string>
+    <string name="previous_appointments">المواعيد السابقة</string>
+    <string name="make_appointment_now">إحجز موعدك الآن</string>
+    <string name="select_clinic">اختر العيادة</string>
+    <string name="waiting">قيد الانتظار</string>
+    <string name="clinic">عيادة: %s</string>
+    <string name="time">الوقت</string>
+    <string name="cancel_appointment">إلغاء الموعد</string>
+    <string name="select_date_time">اختر التاريخ والوقت:</string>
+    <string name="available_times">الأوقات المتاحة:</string>
+    <string name="selected_date">التاريخ المحدد:</string>
+    <string name="reserve">حجز</string>
+    <string name="no_available_times">عذراً، لا يوجد أوقات متاحة في هذا التاريخ</string>
+    <string name="rate_doctor">تقييم الدكتور</string>
+    <string name="write_note">اكتب ملاحظتك...</string>
+    <string name="call_done">تم الاتصال</string>
+    <string name="call_not_done">لم يتصل</string>
+    <string name="call_duration">المدة: %s</string>
+    <string name="appointment_success">تم الحجز بنجاح!!</string>
+    <string name="doctor">الدكتور: %s</string>
+    <string name="appointment_cancelled">تم إلفاء الموعد!!!</string>
+    <string name="clinics">العيادات</string>
+    <string name="hide">إخفاء</string>
+    <string name="show">عرض</string>
+    <string name="no_current_appointments">"لا يوجد لديك حالياً اي موعد قادم "</string>
+    <string name="no_next_appointment_msg">لم تقم بحجز اي موعد بعد، قم بحجز موعد افتراضي في العيادة المناسبة</string>
+    <string name="next_appointment">الموعد التالي</string>
+    <string name="clinic_reminder">اشعارات العايدة الافتراضية</string>
+    <string name="clinic_reminder_msg">لديك موعد في خدمة العيادات الإفتراضية بعد 5 دقائق</string>
+    <string name="management_branches">خدمات الفروع والمستفيدين</string>
+    <string name="management_consulting_msg">اوقات العمل من الأحد إلى الخميس \nومن الساعة 8 صباحاً حتى ال2 ظهراً</string>
+    <string name="management_ministry">الإدارات المختصة بالوزارة</string>
+    <string name="reef_components">قطاعات ريف</string>
+    <string name="reef_component">قطاع: %s</string>
+    <string name="saudi_arabia">المملكة العربية السعودية</string>
+    <string name="welcome_title">مرحباً عزيزي المزارع</string>
+    <string name="welcome_subtitle">للحصول على خدمات مرشدك الزراعي يرجى تسجيل الدخول</string>
+    <string name="terms_and_condetions"><u>الموافقة على الشروط والأحكام</u></string>
+    <string name="user_avatar">صورة المستخدم</string>
+    <string name="weather_icon">حالة الطقس</string>
+    <string name="consultation_subtext">عندنا الحل لكل مشاكلك الزراعية</string>
+    <string name="request_consultation">اطلب إستشارة</string>
+    <string name="services">الخدمات</string>
+    <string name="live_stream">البث المباشر</string>
+    <string name="statistics">الإحصائيات</string>
+    <string name="farmer_benefit_statistics">مزارع يستفيد من التطبيق</string>
+    <string name="consultant_benefit_statistics">مرشد يسعد بتقديم المساعدة</string>
+    <string name="my_appointments">مواعيدي</string>
+    <string name="select_city_header_title">نأمل منك تحديد موقع مزرعتك</string>
+    <string name="select_city_header_subtitle">تحديد موقع مزرعتك سوف يساعدنا على تقديم خدمة استشارية افضل</string>
+    <string name="search_city">البحث عن المدينة</string>
+    <string name="search_skill">البحث عن تخصص</string>
+    <string name="select_skill_header_title">ما هو التخصص الذي ترغب بالسؤال عنه</string>
+    <string name="select_skill_header_subtitle">تحديد التخصص المناسب سوف يساعدنا على اختيار المرشد المناسب لتقديم الاستشارة</string>
+    <string name="more_information">معلومات إضافية</string>
+    <string name="reason_header_subtitle">عزيزي المزارع نرجو منك كتابة بعض المعلومات عن المشكلة التي تواجهها</string>
+    <string name="appointment_city">"المدينة: "</string>
+    <string name="appointment_skill">"التخصص: "</string>
+    <string name="confirm_appointment">تأكيد الحجز</string>
+    <string name="empty_field">يجب تعبئة الحقل</string>
+    <string name="no_consultants_found">عذراً، لا يوجد مرشدين متاحين حالياً</string>
+    <string name="select_consultant">اختيار المرشد</string>
+    <string name="appointment_reason">معلومات إضافية:</string>
+    <string name="please_select_time">من فضلك اختر الوقت.</string>
+    <string name="research_app">الأبحاث التطبيقية</string>
+    <string name="field_school">المدارس الحقلية</string>
+    <string name="new_question">سؤال جديد</string>
+    <string name="answers">الإجابات</string>
+    <string name="write_your_answer">اكتب اجابتك</string>
+    <string name="the_question">السؤال</string>
+    <string name="write_your_question">أكتب سؤالك</string>
+    <string name="add_image">"إضافة صورة "</string>
+    <string name="call">مكالمة</string>
+    <string name="next_appointments">المواعيد القادمة</string>
+    <string name="past_appointments">المواعيد السابقة</string>
+    <string name="appointment_canceled">تم إلفاء الموعد</string>
+    <string name="new_appointment">حجز موعد جديد</string>
+    <string name="work">العمل</string>
+    <string name="ratings">التقييمات</string>
+    <string name="delete_account_desc">ستم حذف الحساب نهائيا ولن تستطيع فتحه مرة أخرى.</string>
+    <string name="select_doctor">اختر الدكتور</string>
+    <string name="select_day">اختر اليوم</string>
+    <string name="select_time">اختر الوقت</string>
+    <string name="open">مفتوح</string>
+    <string name="close">مغلق</string>
+    <string name="markets_list">قائمة الأسواق</string>
+    <string name="markets_map">خريطة الاسواق</string>
+    <string name="refresh">تحديث</string>
+    <string name="register_as_worker_title">يمكنك الآن التسجيل كعامل</string>
+    <string name="register_now">سجل الآن</string>
+    <string name="resend_code">إعادة إرسال الرمز</string>
+    <string name="change_phone_number"><u>تغيير رقم الجوال</u></string>
+    <string name="pdf_report">التقرير pdf</string>
+    <string name="ai_service">الذكاء الاصطناعي</string>
+    <string name="book_udhiyah">إحجز اضحيتك</string>
+
+    <string name="plant_grape">Grape</string>
+    <string name="plant_citrus">Citrus</string>
+    <string name="plant_honey_bees">Honey Bees</string>
+    <string name="plant_roses">Roses</string>
+    <string name="plant_pomegranate">Pomegranate</string>
+    <string name="plant_fish">Fish</string>
+    <string name="plant_coffee">Coffee</string>
+    <string name="plant_animals">Animals</string>
+
+    <string-array name="pest_types">
+        <item>@string/plant_grape</item>
+        <item>@string/plant_citrus</item>
+        <item>@string/plant_honey_bees</item>
+        <item>@string/plant_roses</item>
+        <item>@string/plant_pomegranate</item>
+        <item>@string/plant_fish</item>
+        <item>@string/plant_coffee</item>
+        <item>@string/plant_animals</item>
+    </string-array>
+
+    <string name="tap_to_add_image">Tap to add image</string>
+    <string name="checking_image">Checking image...</string>
+    <string name="image_not_valid">Image is not valid, please choose another image.</string>
+    <string name="detecting_disease">Detecting disease...</string>
+    <string name="detection_completed">Detection completed successfully!</string>
+    <string name="detection_inconclusive">Detection inconclusive. Deep analysis needed.</string>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardlist_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card:cardCornerRadius="30dp"
+    android:layout_gravity="center"
+    android:background="@color/white">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/white"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:text="هل انت متأكد؟"
+            android:fontFamily="@font/cairobold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:text="التسجيل كمرشد: متاح فقط للمرشدين الزراعيين المعتمدين بوزارة البيئة والمياه والزراعة."
+            android:fontFamily="@font/cairoregular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_width="match_parent"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/yes"
+                android:layout_height="50dp"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorPrimary"
+                android:background="@drawable/round_corner_simple"
+                android:text="نعم"
+                />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="match_parent"></View>
+
+        <Button
+            android:id="@+id/no"
+            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:backgroundTint="@color/red"
+            android:background="@drawable/round_corner_simple"
+            android:text="لا"
+            />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"></View>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

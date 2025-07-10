@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterWorkerActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar_transparent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/et_id_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/id_number" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="1px"
+                android:layout_height="@dimen/worker_register_devider" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/et_Age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="false"
+                app:arrow_icon_shown="false"
+                app:title="@string/day_of_birth" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="1px"
+                android:layout_height="@dimen/worker_register_devider" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/et_expected_salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="true"
+                app:title="@string/expected_salary" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="1px"
+                android:layout_height="@dimen/worker_register_devider" />
+
+            <com.saatco.murshadik.views.EditWithBorderTitle
+                android:id="@+id/et_nationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:is_edit_text="false"
+                app:title="@string/nationality" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="1px"
+                android:layout_height="0px"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/themeColor"
+                android:text="@string/next"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <include layout="@layout/item_loader"
+            android:id="@+id/layout_loader"
+            android:visibility="gone"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</LinearLayout>

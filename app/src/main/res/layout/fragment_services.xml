@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.ServicesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_header"
+            layout="@layout/item_weather_header" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/services"
+            android:textAppearance="@style/TextStyleSubtitle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_QNA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/newton_law"
+                app:service_title="@string/ask_general_question" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ic_weather_25dp"
+                app:service_title="@string/weather_icon" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_labs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ic_injection"
+                app:service_title="@string/lab_reports" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_clinics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ic_injection"
+                app:service_title="@string/virtual_clinic" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/price_tag"
+                app:service_title="@string/market" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/old_book"
+                app:service_title="@string/digital_library" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_ministry_managements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/cloud_management"
+                app:service_title="@string/management_ministry" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_chat_bot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ic_robot"
+                app:service_title="@string/chat_bot" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_branch_services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/branch_locator"
+                app:service_title="@string/management_branches" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_guide_clips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/play_rectangel_24"
+                app:service_title="@string/indicative_clips" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/live_streaming"
+                app:service_title="@string/live_stream" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_agriculture_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/baseline_library_books_24"
+                app:service_title="@string/agri_notebook" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_workers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/worker_protection"
+                app:service_title="@string/worker_service" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_research_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/marketing_research"
+                app:service_title="@string/research_app" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_field_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/logo"
+                app:service_title="@string/field_school" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_reef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ic_reef"
+                app:service_title="@string/reef_components" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_ai_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/g1"
+                app:service_title="@string/ai_service" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_udhiyah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/ship"
+                app:service_title="@string/book_udhiyah" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_coffee_disease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:service_icon="@drawable/coffee_beans"
+                app:service_title="@string/coffee_disease" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:service_icon="@drawable/coffee_beans"
+                app:service_title="@string/coffee_disease" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <com.saatco.murshadik.views.ServiceCard
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:service_icon="@drawable/coffee_beans"
+                app:service_title="@string/coffee_disease" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

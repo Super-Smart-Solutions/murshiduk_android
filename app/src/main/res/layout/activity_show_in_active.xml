@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg"
+    tools:context=".InitialActivity">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:visibility="visible"
+        android:src="@drawable/logo"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="100dp"></ImageView>
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:text="تم حظر حسابك بسبب نشاط مشبوه"></TextView>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/round_grey_border"
+            android:layout_width="wrap_content"
+            android:text="@string/login"
+            android:fontFamily="@font/cairobold"
+            android:layout_height="50dp">
+
+        </Button>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

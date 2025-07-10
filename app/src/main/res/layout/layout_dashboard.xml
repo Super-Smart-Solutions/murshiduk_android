@@ -1,0 +1,1832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:nestedScrollingEnabled="true"
+        android:scrollbarSize="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:layout_margin="@dimen/margin_start_end_linear_layout_of_consults">
+
+<!--                <cn.lightsky.infiniteindicator.InfiniteIndicator-->
+<!--                    android:id="@+id/indicator_farm_problem_images"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:indicator_type="indicator_anim_line" />-->
+
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_end_linear_layout_of_consults"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/margin_start_end_linear_layout_of_consults"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+
+                <!-- search layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_consult_item"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".3"
+                        android:background="@drawable/round_border_service"
+                        android:backgroundTint="@color/white">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/search"
+                            android:textAlignment="center"
+                            android:textColor="@color/themeColor"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </FrameLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_gravity="top|center"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight=".1"
+                        android:transitionName="intro_trans"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                        app:cardElevation="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:layout_marginStart="30dp"
+                            android:text="......."
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/gray" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="end"
+                            android:layout_margin="10dp"
+                            android:padding="2dp"
+                            android:src="@drawable/search"
+                            app:tint="@color/black" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="1"
+                        android:text="@string/consultation"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/tv_show_rest_of_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:text="@string/show_all_services"
+                        android:textColor="@color/themeColor"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!--  start   removed card-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/request_consult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_margin="@dimen/margin_consult_item"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                    app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/bottom_bar_bg">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/click_animate_bg"
+                            android:transitionName="intro_trans">
+
+                            <ImageView
+                                android:layout_width="@dimen/dashboard_services_img_size"
+                                android:layout_height="@dimen/dashboard_services_img_size"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/icon_chatbot" />
+
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end|bottom"
+                                android:layout_margin="3dp"
+                                android:text="@string/consults_history"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size" />
+
+
+                        </FrameLayout>
+
+                    </FrameLayout>
+
+
+                </androidx.cardview.widget.CardView>
+                <!--end-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_row1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/ll_Report"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/lab_ic"
+                                    app:tint="@color/themeColor" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/lab_reports"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_weather_info"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/wi_day_cloudy"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:id="@+id/tvSection4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="أحوال الطقس"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/virtual_clinic_cv"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/virtual_clinic_ic" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/virtual_clinic"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_row2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btnShowQA"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/ic_q_about_plants" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|start"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:background="@drawable/click_animate_bg"
+                                    android:text="@string/ask_about_plant_virus"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_markets"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/inactive_market"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:id="@+id/tvSection4aaa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="أسعار الخضار والفواكه"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/ivBanner2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_digital_lib" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="المكتبة الرقمية"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_row3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_management_ministry"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/group_ic"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="@string/management_ministry"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_reef_components"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="end|top"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/ic_reef"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/reef_components"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_management_consulting"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/ic_call"
+                                    app:tint="@color/themeColor" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/management_branches"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_row4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_guide_clips"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:src="@drawable/ic_agri_clips" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/indicative_clips"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btnLive"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:id="@+id/iv_live_icon"
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@drawable/shape_oval_gray" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_live_stream" />
+
+                            <TextView
+                                android:id="@+id/tvLiveTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="البث المباشر"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_section1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/book_agri"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="المفكرة الزراعية"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_row5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_workers_service"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/ic_worker"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text=" الأيدي العاملة"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/projects_research_app"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/search"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="الأبحاث التطبيقية"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_farm_visit"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/map_market_icon"
+                                    app:tint="@color/themeColor" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|start"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/farm_visit_request"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_row6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/ll_ChatBot"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/ic_chat_bot"
+                                    app:tint="@color/themeColor" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/chat_bot"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/q_a_agricultural"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="@dimen/card_view_radius_other_dashboard"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <ImageView
+                                android:layout_width="@dimen/size_img_other_dashboard_content"
+                                android:layout_height="@dimen/size_img_other_dashboard_content"
+                                android:layout_gravity="top|end"
+                                android:layout_margin="5dp"
+                                android:src="@drawable/q_a_agricultural"
+                                app:tint="@color/themeColor" />
+
+                            <TextView
+                                android:id="@+id/tvSection5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|start"
+                                android:layout_margin="@dimen/dashboard_items_margin"
+                                android:text="أسئلة وأجوبة إرشادية"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/dashboard_items_text_size"
+                                android:textStyle="bold" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_coffee_disease"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_consult_item"
+                            android:layout_weight="1"
+                            app:cardCornerRadius="@dimen/corner_radius_consult_item"
+                            app:cardElevation="@dimen/card_view_layout_dashboard_dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/bottom_bar_bg" />
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/click_animate_bg"
+                                android:transitionName="intro_trans">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dashboard_services_img_size"
+                                    android:layout_height="@dimen/dashboard_services_img_size"
+                                    android:layout_gravity="end|top"
+                                    android:layout_margin="5dp"
+                                    android:backgroundTint="@color/white"
+                                    android:src="@drawable/ic_coffee"
+                                    app:tint="@color/themeColor" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start|bottom"
+                                    android:layout_margin="@dimen/dashboard_items_margin"
+                                    android:text="@string/coffee_disease"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold" />
+
+
+                            </FrameLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_btn_show_rest_of_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/all"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/themeColor"
+                    android:textSize="16sp"
+                    android:textStyle="normal|bold|italic"
+
+                    />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:rotation="270"
+                    android:src="@drawable/arrow"
+                    app:tint="@color/themeColor" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_btn_show_rest_of_layout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp">
+
+                <ImageView
+                    android:id="@+id/iv_arrow_of_show_rest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="13dp"
+                    android:rotation="270"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_arrow_back_w"
+                    android:translationY="3dp"
+                    app:tint="@color/themeColor" />
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:id="@+id/ll_rest_of_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_start_end_linear_layout_of_consults"
+                android:layout_marginEnd="@dimen/margin_start_end_linear_layout_of_consults"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+<!--                Reef Logo and ministry-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/logo"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/reef_logo" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <!--                    weather views-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:id="@+id/btnWeather"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center|end"
+                            android:layout_marginStart="10dp"
+                            android:orientation="horizontal"
+                            android:transitionName="intro_trans"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvWeather"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/dashboard_items_text_size"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/tvWeatherCondition"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="-2dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ivWeather"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="fitXY" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="20dp">
+
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+
+                <!--                    announcement view-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center"
+                        android:layout_weight="1"
+                        android:text="@string/news"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/announcementIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end" />
+
+                </LinearLayout>
+
+                <!--- -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnAnnouncement"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="7dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:transitionName="intro_trans">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/announcementTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/cairobold"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/announcementType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/cairoregular"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!--        below is digital library-->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/media_library"
+                    android:visibility="gone" />
+
+
+                <!-- new edited sections-->
+
+
+                <!-- part 1 -->
+
+                <!-- part 2 -->
+                <!-- end =================-->
+
+                <!-- Section 2 -->
+
+                <LinearLayout
+                    android:id="@+id/section1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="14dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/cairobold"
+                        android:text="المفكرة الزراعية"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dashboard_items_text_size"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+                <!-- Section 2 -->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_section1"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="gone" />
+
+
+                <!-- Section calender and article -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/shape_oval_gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/cairobold"
+                            android:text="@string/live_now"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dashboard_items_text_size"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:cardCornerRadius="10dp">
+
+                        <FrameLayout
+                            android:id="@+id/fl_cover_video"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp" />
+
+                        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                            android:id="@+id/youtube_player_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="fitXY"
+                            android:visibility="visible" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <!-- Section testimonials -->
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:layout_marginTop="60dp"
+                        android:background="@drawable/rectangle_corner">
+
+
+                    </FrameLayout>
+
+
+                </FrameLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_section2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="-140dp"
+                    android:layout_marginEnd="10dp"
+                    android:nestedScrollingEnabled="true"
+                    android:visibility="gone" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp" />
+
+<!--                <com.viewpagerindicator.CirclePageIndicator-->
+<!--                    android:id="@+id/indicator"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="bottom"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:padding="10dip" />-->
+
+                <!-- Section Products  -->
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/section4"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="14dp"
+                            android:fontFamily="@font/cairobold"
+                            android:text="المنتجات الزراعية"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dashboard_items_text_size"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/tvAllAg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="14dp"
+                            android:fontFamily="@font/cairobold"
+                            android:text="اظهار الكل"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Section 4  -->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="14dp"
+                            android:layout_marginEnd="14dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btnItemYellowOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/ivItemYellowOne"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:alpha="40"
+                                    android:background="@drawable/round_corner_simple"
+                                    android:backgroundTint="#66F7CF3C"
+                                    android:scaleType="fitXY" />
+
+                                <TextView
+                                    android:id="@+id/tvItemYellowOne"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_margin="8dp"
+                                    android:textColor="@color/white" />
+                            </androidx.cardview.widget.CardView>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.5" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btnItemYellowTwo"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/ivItemYellowTwo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="fitXY" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:alpha="40"
+                                    android:background="@drawable/round_corner_simple"
+                                    android:backgroundTint="#66F7CF3C"
+                                    android:scaleType="fitXY" />
+
+                                <TextView
+                                    android:id="@+id/tvItemYellowTwo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_margin="8dp"
+                                    android:textColor="@color/white" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btnItemGreen"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="14dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#66007940"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:id="@+id/ivItemGreen"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"></ImageView>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:alpha="40"
+                                android:background="@drawable/round_corner_simple"
+                                android:backgroundTint="#66007940"
+                                android:scaleType="fitXY" />
+
+                            <TextView
+                                android:id="@+id/tvItemGreen"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom"
+                                android:layout_margin="8dp"
+                                android:text="أهمية الأكسجين"
+                                android:textColor="@color/white" />
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Section media library  -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ivCalender"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="40dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:src="@drawable/calendar_green" />
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="-10dp"
+                                android:fontFamily="@font/cairobold"
+                                android:text="السنة الدولية للفواكه والخضروات"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="10dp" />
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Section Products  -->
+
+
+                    <LinearLayout
+                        android:id="@+id/section5"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="14dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/cairobold"
+                            android:text="منتاجات الزراعية"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dashboard_items_text_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_section5"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:nestedScrollingEnabled="false"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="visible">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/farmerCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/img_count_consultants_bg">
+
+                            <ImageView
+                                android:id="@+id/ivFarmerStat"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:padding="10dp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tvFarmerStat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|bottom"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/consultant"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="مرشد يقدم الاستشارة"
+                                    android:textColor="@color/white"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/messageCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp">
+
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/img_count_users_bg">
+
+                            <ImageView
+                                android:id="@+id/ivMessageStat"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:padding="10dp"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tvMessageStat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start|bottom"
+                                android:layout_margin="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/farmer"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="يستفيد من التطبيق"
+                                    android:textColor="@color/white"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="20dp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

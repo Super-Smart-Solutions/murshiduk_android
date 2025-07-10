@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="@integer/material_motion_duration_long_1"
+    android:exitFadeDuration="@integer/material_motion_duration_long_1">
+    <item android:state_focused="true" android:drawable="@drawable/focused_state_et_bg" />
+    <item android:drawable="@drawable/normal_state_et_bg" />
+
+</selector>
+

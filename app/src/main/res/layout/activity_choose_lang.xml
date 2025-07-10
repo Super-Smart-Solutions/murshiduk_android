@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InitialActivity">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg"
+        android:scaleType="centerCrop"
+        android:contentDescription="TODO" />
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <TextView
+
+            android:text="اختر لغتك المفضلة"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+
+            android:layout_marginTop="16dp"
+            android:text="Choose your prefered Language"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimary"
+            android:layout_height="wrap_content"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="100dp">
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_margin="8dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/btnEng"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/round_border"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:text="English"
+                android:textSize="20sp"
+                android:layout_height="match_parent"></TextView>
+
+            <TextView
+                android:id="@+id/btnAr"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/round_border"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:text="العربية"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_height="match_parent"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</FrameLayout>

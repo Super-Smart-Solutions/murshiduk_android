@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardlist_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card:cardCornerRadius="30dp"
+    android:layout_gravity="center"
+    android:background="@color/white">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/white"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_alert_notify"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+    </ImageView>
+
+    <TextView
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="هل تريد الاشتراك في التنبيهات الخاصة بهذا المنتج عند تغير السعر؟"
+        android:fontFamily="@font/cairoregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <TextView
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:text="حدد تنبيه ازا السعر"
+        android:fontFamily="@font/cairoregular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/priceRadio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioDecrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="انخفاض" />
+
+        <RadioButton
+            android:id="@+id/radioIncrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ارتفاع" />
+
+        <RadioButton
+            android:id="@+id/radioPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="وصلت الى مبلغ" />
+
+    </RadioGroup>
+
+    <EditText
+        android:visibility="gone"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:hint="e.g. 100 SAR"
+        android:digits="0123456789١٢٣٤٥٦٧٨٩٠"
+        android:layout_height="wrap_content"></EditText>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/round_corner_simple"
+        android:text="نعم"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"></View>
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

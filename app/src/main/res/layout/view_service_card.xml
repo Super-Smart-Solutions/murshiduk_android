@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_service"
+    android:layout_width="95dp"
+    android:layout_height="95dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2.5dp">
+
+    <ImageView
+        android:id="@+id/iv_service_icon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:contentDescription="@string/image"
+        android:padding="3dp"
+        android:layout_gravity="top|start"
+        android:layout_margin="10dp"
+        android:background="@drawable/circle_bg"
+        android:backgroundTint="#f4fff4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/cloud_management"/>
+
+    <TextView
+        android:id="@+id/tv_service_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#008941"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="5dp"
+        android:maxLines="2"
+        tools:text="البث المباشر"/>
+
+    <View
+        android:id="@+id/v_live_icon"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/shape_oval_gray"
+        android:visibility="gone"/>
+
+
+</androidx.cardview.widget.CardView>

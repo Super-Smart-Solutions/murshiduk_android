@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_5sdp">5dp</dimen>
+    <dimen name="_8sdp">8dp</dimen>
+    <dimen name="_14sdp">14dp</dimen>
+    <dimen name="_7sdp">7dp</dimen>
+    <dimen name="_3sdp">3dp</dimen>
+
+    <dimen name="card_view_layout_dashboard_dp">3dp</dimen>
+    <!--
+    Because the window insets on round devices are larger than 15dp, this padding only applies
+    to square screens.
+    -->
+    <dimen name="box_inset_layout_padding">0dp</dimen>
+
+    <!--
+    This padding applies to both square and round screens. The total padding between the buttons
+    and the window insets is box_inset_layout_padding (above variable) on square screens and
+    inner_frame_layout_padding (below variable) on round screens.
+    -->
+    <dimen name="inner_frame_layout_padding">5dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="margin_consult_item">10dp</dimen>
+    <dimen name="ll_item_consultation_text_margen">3dp</dimen>
+    <dimen name="img_arrow_width_item_consultation">20dp</dimen>
+    <dimen name="img_arrow_height_item_consultation">15dp</dimen>
+    <dimen name="card_view_search_dashboard">10</dimen>
+    <dimen name="dashboard_services_img_size">30dp</dimen>
+    <dimen name="corner_radius_consult_item">5dp</dimen>
+    <dimen name="margin_start_end_linear_layout_of_consults">6dp</dimen>
+    <dimen name="size_img_other_dashboard_content">30dp</dimen>
+    <dimen name="card_view_radius_other_dashboard">5dp</dimen>
+    <dimen name="margin_new_category_dashboard">20dp</dimen>
+    <dimen name="card_view_size_category_dashboard">150dp</dimen>
+    <dimen name="bottom_bar_icon_img_size">25dp</dimen>
+    <dimen name="layout_height_of_grid_items">115dp</dimen>
+    <dimen name="dashboard_items_text_size">14sp</dimen>
+    <dimen name="dashboard_items_margin">3dp</dimen>
+    <dimen name="edit_profile_space_height">8dp</dimen>
+    <dimen name="profile_info_space_height">8dp</dimen>
+    <dimen name="profile_items_space">1dp</dimen>
+    <dimen name="margin_start_profile_icons">5dp</dimen>
+    <dimen name="height_profile_items">50dp</dimen>
+    <dimen name="divider_layout_lap_report">5dp</dimen>
+    <dimen name="worker_register_devider">20dp</dimen>
+    <dimen name="text_size_title">14sp</dimen>
+    <dimen name="text_size_title_2">13sp</dimen>
+    <dimen name="text_size_subtitle">12sp</dimen>
+    <dimen name="text_size_subtitle_2">11.5sp</dimen>
+    <dimen name="text_size_body">11sp</dimen>
+    <dimen name="worker_info_text_size">@dimen/text_size_subtitle</dimen>
+
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        app:tint="#007940"
+        android:scaleType="centerCrop"
+        android:src="@drawable/curve_middle_new"
+        android:visibility="visible"></ImageView>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:id="@+id/layoutConsult"
+        android:orientation="vertical"
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/ic_consultation_active"
+            android:visibility="visible"></ImageView>
+
+        <TextView
+            android:visibility="visible"
+            android:text="@string/consultation"
+            android:fontFamily="@font/cairoregular"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:paddingStart="6dp"
+            android:textSize="12dp"
+            android:layout_marginTop="-22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+
+</FrameLayout>

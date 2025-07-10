@@ -19,3 +19,5 @@ app/build/crashlytics/
 react_native_demo/node_modules/
 npm-debug.log
 yarn-error.log
+openapi.json
+react_native_demo/

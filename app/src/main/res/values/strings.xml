@@ -1064,5 +1064,6 @@
     <string name="select_category">Select Category</string>
     <string name="select_image">Select Image</string>
     <string name="reset_image">Reset Image</string>
+    <string name="try_different_image">Reset try with a different image</string>
     <string name="submit">Submit</string>
 </resources>

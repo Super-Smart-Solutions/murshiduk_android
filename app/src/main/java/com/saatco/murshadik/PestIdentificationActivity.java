@@ -248,6 +248,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         buttonClearImage.setVisibility(View.GONE);
         buttonResetImage.setVisibility(View.GONE);
         findViewById(R.id.inference_result_container).setVisibility(View.GONE);
+        buttonResetImage.setText(R.string.reset_image);
     }
 
     @Override
@@ -439,6 +440,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
         resultTreatmentTitle.setVisibility(View.VISIBLE);
         resultTreatment.setText(disease.getTreatments());
         resultTreatment.setVisibility(View.VISIBLE);
+
+        buttonResetImage.setText(R.string.try_different_image);
     }
 
     private void showInconclusiveResult() {
@@ -473,6 +476,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         TextView resultTreatment = findViewById(R.id.result_treatment);
         resultTreatment.setVisibility(View.GONE);
+
+        buttonResetImage.setText(R.string.try_different_image);
     }
 
     private String getRealPathFromURI(Uri contentUri) {

@@ -1,6 +1,8 @@
 package com.saatco.murshadik;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.bumptech.glide.Glide;
 
 import android.os.Environment;
 import androidx.core.content.FileProvider;
@@ -66,6 +68,13 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 
 public class PestIdentificationActivity extends AppCompatActivity {
 
@@ -262,7 +271,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         }
     }
 
-    private static final int REQUEST_IMAGE_CAPTURE = 2;
+
 
     private void selectImage() {
         final CharSequence[] options = {getString(R.string.take_photo), getString(R.string.choose_from_gallery), getString(R.string.cancel)};
@@ -282,9 +291,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
                     }
 
                     if (photoFile != null) {
-                        Uri photoURI = FileProvider.getUriForFile(PestIdentificationActivity.this,
-                                "com.saatco.murshadik.provider",  // Match AndroidManifest.xml
-                                photoFile);
+                        Uri photoURI = FileProvider.getUriForFile(PestIdentificationActivity.this, "com.saatco.murshadik.fileprovider", photoFile);
+
                         takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
                     }
@@ -337,44 +345,91 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
         selectedImageUri = data.getData();
-        imagePicker.setImageURI(selectedImageUri);
+        Glide.with(this).load(selectedImageUri).into(imagePicker);
         buttonClearImage.setVisibility(View.VISIBLE);
         buttonResetImage.setVisibility(View.VISIBLE);
-
     } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
         File file = new File(currentPhotoPath);
         selectedImageUri = Uri.fromFile(file);
-        imagePicker.setImageURI(selectedImageUri);
+        Glide.with(this).load(selectedImageUri).into(imagePicker);
         buttonClearImage.setVisibility(View.VISIBLE);
         buttonResetImage.setVisibility(View.VISIBLE);
     }
+
+}
+private File compressImage(Uri imageUri) throws IOException {
+    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+
+    // Resize if needed (optional: scale to max width/height)
+    int maxDim = 1024;
+    int width = bitmap.getWidth();
+    int height = bitmap.getHeight();
+    if (width > maxDim || height > maxDim) {
+        float scale = Math.min((float) maxDim / width, (float) maxDim / height);
+        bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(scale * width), Math.round(scale * height), true);
+    }
+
+    // Compress the image to JPEG with quality 80
+    File compressedFile = File.createTempFile("compressed_", ".jpg", getCacheDir());
+    FileOutputStream out = new FileOutputStream(compressedFile);
+    bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
+    out.flush();
+    out.close();
+
+    return compressedFile;
 }
 
 
 private void uploadImage() {
-        showLoading(getString(R.string.checking_image));
-        if (selectedImageUri == null) {
-            Toast.makeText(this, "No image selected to upload.", Toast.LENGTH_SHORT).show();
-            hideLoading();
-            return;
-        }
+    showLoading(getString(R.string.checking_image));
+    if (selectedImageUri == null) {
+        Toast.makeText(this, "No image selected to upload.", Toast.LENGTH_SHORT).show();
+        hideLoading();
+        return;
+    }
 
-        File file = new File(getRealPathFromURI(selectedImageUri));
-        String originalFileName = file.getName();
-        String fileNameWithoutExt = originalFileName.substring(0, originalFileName.lastIndexOf('.'));
-        String fileExt = originalFileName.substring(originalFileName.lastIndexOf('.') + 1);
-        long timestamp = System.currentTimeMillis();
-        String newFileName = "uploads/" + fileNameWithoutExt + "_" + timestamp + "." + fileExt;
+//        File file = new File(getRealPathFromURI(selectedImageUri));
+    File file;
+    try {
+        file = compressImage(selectedImageUri);
+    } catch (IOException e) {
+        Toast.makeText(this, "Image compression failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        hideLoading();
+        return;
+    }
 
-        RequestBody requestFile = RequestBody.create(MediaType.parse(getContentResolver().getType(selectedImageUri)), file);
-        MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image_file", newFileName, requestFile);
+    String originalFileName = file.getName();
+    String fileNameWithoutExt = originalFileName.substring(0, originalFileName.lastIndexOf('.'));
+    String fileExt = originalFileName.substring(originalFileName.lastIndexOf('.') + 1);
+    long timestamp = System.currentTimeMillis();
+    String newFileName = "uploads/" + fileNameWithoutExt + "_" + timestamp + "." + fileExt;
 
-        MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", null, RequestBody.create(MediaType.parse("text/plain"), newFileName));
-        MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", null, RequestBody.create(MediaType.parse("text/plain"), String.valueOf(selectedPlantId)));
-        MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", null, RequestBody.create(MediaType.parse("text/plain"), "1")); // Assuming farm_id is always 1
-        MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", null, RequestBody.create(MediaType.parse("text/plain"), "false"));
+    String mimeType = getContentResolver().getType(selectedImageUri);
+    if (mimeType == null || mimeType.isEmpty()) {
+        mimeType = "image/jpeg"; // Fallback for camera images
+    }
 
-        pestIdentificationService.uploadImage(authToken, imagePart, namePart, plantIdPart, farmIdPart, annotatedPart, new Callback<UploadImageResponse>() {
+    MediaType mediaType = MediaType.parse(mimeType);
+    if (mediaType == null) {
+        Toast.makeText(this, "Unsupported image MIME type", Toast.LENGTH_SHORT).show();
+        hideLoading();
+        return;
+    }
+
+    RequestBody requestFile = RequestBody.create(mediaType, file);
+
+
+
+//    RequestBody requestFile = RequestBody.create(MediaType.parse(getContentResolver().getType(selectedImageUri)), file);
+    MultipartBody.Part imagePart = MultipartBody.Part.createFormData("image_file", newFileName, requestFile);
+
+    MultipartBody.Part namePart = MultipartBody.Part.createFormData("name", null, RequestBody.create(MediaType.parse("text/plain"), newFileName));
+    MultipartBody.Part plantIdPart = MultipartBody.Part.createFormData("plant_id", null, RequestBody.create(MediaType.parse("text/plain"), String.valueOf(selectedPlantId)));
+    MultipartBody.Part farmIdPart = MultipartBody.Part.createFormData("farm_id", null, RequestBody.create(MediaType.parse("text/plain"), "1")); // Assuming farm_id is always 1
+    MultipartBody.Part annotatedPart = MultipartBody.Part.createFormData("annotated", null, RequestBody.create(MediaType.parse("text/plain"), "false"));
+
+
+    pestIdentificationService.uploadImage(authToken, imagePart, namePart, plantIdPart, farmIdPart, annotatedPart, new Callback<UploadImageResponse>() {
             @Override
             public void onResponse(Call<UploadImageResponse> call, Response<UploadImageResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {

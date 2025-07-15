@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.request.RequestOptions;
-import com.saatco.murshadik.GlideApp;
+import com.bumptech.glide.Glide;
 import com.saatco.murshadik.Helpers.ProfileHelper;
 import com.saatco.murshadik.R;
 import com.saatco.murshadik.api.APIClient;
@@ -241,7 +241,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     imageViewHolder.tvSendTimeImg.setText(dateFormat.format(new Date(message.getCreatedAt())));
                     imageViewHolder.layoutSendImg.setVisibility(View.VISIBLE);
 
-                    GlideApp.with(context)
+                    Glide.with(context)
                             .load(imgRef)
                             .placeholder(R.drawable.ic_broken_image)
                             .into(imageViewHolder.senderImageMsg);
@@ -281,7 +281,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         imageViewHolder.tvGroupUserName.setText(getMemberName(message.getUserId()));
                     }
 
-                    GlideApp.with(context)
+                    Glide.with(context)
                             .load(imgRef)
                             .placeholder(R.drawable.ic_broken_image)
                             .into(imageViewHolder.receiverImageMsg);
@@ -330,7 +330,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         }
 
                         String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=%f,%f", Float.parseFloat(coordinates[0]), Float.parseFloat(coordinates[1]));
-                        GlideApp.with(context)
+                        Glide.with(context)
                                 .load("")
                                 .placeholder(R.drawable.map)
                                 .into(imageViewHolder.senderImageMsg);
@@ -378,7 +378,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         }
 
                         String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?q=%f,%f", Float.parseFloat(coordinates[0]), Float.parseFloat(coordinates[1]), "Location");
-                        GlideApp.with(context)
+                        Glide.with(context)
                                 .load("")
                                 .placeholder(R.drawable.map)
                                 .into(imageViewHolder.receiverImageMsg);
@@ -501,7 +501,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                 videoViewHolder.layoutSendVideo.setVisibility(View.VISIBLE);
 
-                GlideApp.with(context)
+                Glide.with(context)
                         .load(imgRef)
                         .apply(requestOptions)
                         .into(videoViewHolder.videoSendThumb);
@@ -555,7 +555,7 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 }*/
 
 
-                GlideApp.with(context)
+                Glide.with(context)
                         .load(imgRef)
                         .apply(requestOptions)
                         .into(videoViewHolder.videoRcvThumb);

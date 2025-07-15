@@ -1069,4 +1069,7 @@
     <string name="disease_name">Disease Name</string>
     <string name="confidence_score">Confidence Score</string>
     <string name="show_disease_details">Show Disease Details</string>
+    <string name="select_image_source">Select Image Source</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="choose_from_gallery">Choose from Gallery</string>
 </resources>

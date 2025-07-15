@@ -774,4 +774,7 @@
     <string name="disease_name">اسم المرض</string>
     <string name="confidence_score">درجة الثقة</string>
     <string name="show_disease_details">إظهار تفاصيل المرض</string>
+    <string name="select_image_source">اختر مصدر الصورة</string>
+    <string name="take_photo">التقاط صورة</string>
+    <string name="choose_from_gallery">اختر من المعرض</string>
 </resources>

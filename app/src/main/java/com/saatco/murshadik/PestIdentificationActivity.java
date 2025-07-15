@@ -2,6 +2,25 @@ package com.saatco.murshadik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Environment;
+import androidx.core.content.FileProvider;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import android.os.Environment;
+import androidx.core.content.FileProvider;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import android.os.Environment;
+import androidx.core.content.FileProvider;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import android.app.AlertDialog;
+import android.graphics.Bitmap;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
@@ -33,6 +52,8 @@ import com.saatco.murshadik.models.InferenceResponse;
 import com.saatco.murshadik.models.Plant;
 import com.saatco.murshadik.models.UploadImageResponse;
 
+import java.io.ByteArrayOutputStream;
+import android.content.Context;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +70,9 @@ import retrofit2.Response;
 public class PestIdentificationActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
+    private static final int REQUEST_IMAGE_CAPTURE = 2;
+    private String currentPhotoPath;
+
     private static final int REQUEST_CODE_PERMISSIONS = 101;
 
     private Spinner spinnerPestType;
@@ -127,7 +151,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         imagePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAndRequestPermissions();
+                selectImage();
             }
         });
 
@@ -238,6 +262,46 @@ public class PestIdentificationActivity extends AppCompatActivity {
         }
     }
 
+    private static final int REQUEST_IMAGE_CAPTURE = 2;
+
+    private void selectImage() {
+        final CharSequence[] options = {getString(R.string.take_photo), getString(R.string.choose_from_gallery), getString(R.string.cancel)};
+        AlertDialog.Builder builder = new AlertDialog.Builder(PestIdentificationActivity.this);
+        builder.setTitle(getString(R.string.select_image_source));
+        builder.setItems(options, (dialog, item) -> {
+            if (options[item].equals(getString(R.string.take_photo))) {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    File photoFile = null;
+                    try {
+                        photoFile = createImageFile();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        Toast.makeText(PestIdentificationActivity.this, "Could not create image file", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    if (photoFile != null) {
+                        Uri photoURI = FileProvider.getUriForFile(PestIdentificationActivity.this,
+                                "com.saatco.murshadik.provider",  // Match AndroidManifest.xml
+                                photoFile);
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                    }
+                }
+
+            } else if (options[item].equals(getString(R.string.choose_from_gallery))) {
+                Intent pickPhotoIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(pickPhotoIntent, PICK_IMAGE_REQUEST);
+
+            } else if (options[item].equals(getString(R.string.cancel))) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.show();
+    }
+
     private void openFileChooser() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
@@ -252,18 +316,42 @@ public class PestIdentificationActivity extends AppCompatActivity {
         buttonResetImage.setText(R.string.reset_image);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
-            selectedImageUri = data.getData();
-            imagePicker.setImageURI(selectedImageUri);
-            buttonClearImage.setVisibility(View.VISIBLE);
-            buttonResetImage.setVisibility(View.VISIBLE);
-        }
+    private File createImageFile() throws IOException {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  // prefix
+                ".jpg",         // suffix
+                storageDir      // directory
+        );
+
+        currentPhotoPath = image.getAbsolutePath();
+        return image;
     }
 
-    private void uploadImage() {
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+        selectedImageUri = data.getData();
+        imagePicker.setImageURI(selectedImageUri);
+        buttonClearImage.setVisibility(View.VISIBLE);
+        buttonResetImage.setVisibility(View.VISIBLE);
+
+    } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+        File file = new File(currentPhotoPath);
+        selectedImageUri = Uri.fromFile(file);
+        imagePicker.setImageURI(selectedImageUri);
+        buttonClearImage.setVisibility(View.VISIBLE);
+        buttonResetImage.setVisibility(View.VISIBLE);
+    }
+}
+
+
+private void uploadImage() {
         showLoading(getString(R.string.checking_image));
         if (selectedImageUri == null) {
             Toast.makeText(this, "No image selected to upload.", Toast.LENGTH_SHORT).show();

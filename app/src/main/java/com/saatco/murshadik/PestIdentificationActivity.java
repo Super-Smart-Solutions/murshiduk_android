@@ -3,6 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 
 import android.os.Environment;
 import androidx.core.content.FileProvider;
@@ -315,14 +317,52 @@ public class PestIdentificationActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
+//    private void clearImageSelection() {
+//        imagePicker.setImageResource(android.R.drawable.ic_menu_camera); // Set default image
+//        selectedImageUri = null;
+//        buttonClearImage.setVisibility(View.GONE);
+//        buttonResetImage.setVisibility(View.GONE);
+//        findViewById(R.id.inference_result_container).setVisibility(View.GONE);
+//        buttonResetImage.setText(R.string.reset_image);
+//    }
     private void clearImageSelection() {
-        imagePicker.setImageResource(android.R.drawable.ic_menu_camera); // Set default image
+        imagePicker.setImageResource(android.R.drawable.ic_menu_camera);
         selectedImageUri = null;
+
+        // Hide clear/reset buttons
         buttonClearImage.setVisibility(View.GONE);
         buttonResetImage.setVisibility(View.GONE);
-        findViewById(R.id.inference_result_container).setVisibility(View.GONE);
         buttonResetImage.setText(R.string.reset_image);
+
+        // Hide result container
+        View resultView = findViewById(R.id.inference_result_container);
+        resultView.setVisibility(View.GONE);
+
+        // Reset all result fields (to avoid showing stale data)
+        findViewById(R.id.disease_name_container).setVisibility(View.GONE);
+        findViewById(R.id.disease_details_container).setVisibility(View.GONE);
+
+        ((TextView) findViewById(R.id.result_title)).setText("");
+        ((TextView) findViewById(R.id.disease_name)).setText("");
+        ((TextView) findViewById(R.id.confidence_score)).setText("");
+
+        ((TextView) findViewById(R.id.result_arabic_name)).setText("");
+        ((TextView) findViewById(R.id.result_scientific_name)).setText("");
+        ((TextView) findViewById(R.id.result_symptoms)).setText("");
+        ((TextView) findViewById(R.id.result_treatment)).setText("");
+
+        // Hide all headers and fields
+        findViewById(R.id.english_name_header).setVisibility(View.GONE);
+        findViewById(R.id.arabic_name_header).setVisibility(View.GONE);
+        findViewById(R.id.result_arabic_name).setVisibility(View.GONE);
+        findViewById(R.id.result_scientific_name).setVisibility(View.GONE);
+        findViewById(R.id.result_symptoms_title).setVisibility(View.GONE);
+        findViewById(R.id.result_symptoms).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment_title).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment).setVisibility(View.GONE);
+        findViewById(R.id.button_show_details).setVisibility(View.GONE);
     }
+
 
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -345,13 +385,25 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
         selectedImageUri = data.getData();
-        Glide.with(this).load(selectedImageUri).into(imagePicker);
+//        Glide.with(this).load(selectedImageUri).into(imagePicker);
+        Glide.with(this)
+                .load(selectedImageUri)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(imagePicker);
+
         buttonClearImage.setVisibility(View.VISIBLE);
         buttonResetImage.setVisibility(View.VISIBLE);
     } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
         File file = new File(currentPhotoPath);
         selectedImageUri = Uri.fromFile(file);
-        Glide.with(this).load(selectedImageUri).into(imagePicker);
+//        Glide.with(this).load(selectedImageUri).into(imagePicker);
+        Glide.with(this)
+                .load(selectedImageUri)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(imagePicker);
+
         buttonClearImage.setVisibility(View.VISIBLE);
         buttonResetImage.setVisibility(View.VISIBLE);
     }
@@ -553,12 +605,13 @@ private void uploadImage() {
     private void displaySuccessfulResult(com.saatco.murshadik.models.Disease disease, double confidence) {
         View resultView = findViewById(R.id.inference_result_container);
         resultView.setVisibility(View.VISIBLE);
+        resultView.requestLayout();
 
         LinearLayout diseaseNameContainer = findViewById(R.id.disease_name_container);
         diseaseNameContainer.setVisibility(View.VISIBLE);
 
         TextView diseaseName = findViewById(R.id.disease_name);
-        diseaseName.setText(disease.getEnglishName());
+        diseaseName.setText(disease.getArabicName());
 
         TextView confidenceScore = findViewById(R.id.confidence_score);
         confidenceScore.setText(String.format("%.2f%%", confidence * 100));
@@ -604,40 +657,42 @@ private void uploadImage() {
     }
 
     private void showInconclusiveResult() {
-        View resultView = findViewById(R.id.inference_result_container);
-        resultView.setVisibility(View.VISIBLE);
+        // Make the root container visible
+        findViewById(R.id.inference_result_container).setVisibility(View.VISIBLE);
 
-        TextView englishNameHeader = findViewById(R.id.english_name_header);
-        englishNameHeader.setVisibility(View.GONE);
+        // Show the details container (it contains result_symptoms)
+        findViewById(R.id.disease_details_container).setVisibility(View.VISIBLE);
 
+        // Show and set the result title
         TextView resultTitle = findViewById(R.id.result_title);
         resultTitle.setText(R.string.detection_inconclusive);
         resultTitle.setVisibility(View.VISIBLE);
 
-        TextView arabicNameHeader = findViewById(R.id.arabic_name_header);
-        arabicNameHeader.setVisibility(View.GONE);
+        // Hide disease name section
+        findViewById(R.id.disease_name_container).setVisibility(View.GONE);
 
-        TextView resultArabicName = findViewById(R.id.result_arabic_name);
-        resultArabicName.setVisibility(View.GONE);
+        // Hide other details not needed for inconclusive case
+        findViewById(R.id.confidence_score).setVisibility(View.GONE);
+        findViewById(R.id.english_name_header).setVisibility(View.GONE);
+        findViewById(R.id.arabic_name_header).setVisibility(View.GONE);
+        findViewById(R.id.result_arabic_name).setVisibility(View.GONE);
+        findViewById(R.id.result_scientific_name).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment_title).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment).setVisibility(View.GONE);
+        findViewById(R.id.button_show_details).setVisibility(View.GONE);
 
-        TextView resultScientificName = findViewById(R.id.result_scientific_name);
-        resultScientificName.setVisibility(View.GONE);
-
-        TextView resultSymptomsTitle = findViewById(R.id.result_symptoms_title);
-        resultSymptomsTitle.setVisibility(View.GONE);
-
+        // Show the symptoms TextView as a general message area
         TextView resultSymptoms = findViewById(R.id.result_symptoms);
         resultSymptoms.setText(R.string.detection_inconclusive_message);
         resultSymptoms.setVisibility(View.VISIBLE);
 
-        TextView resultTreatmentTitle = findViewById(R.id.result_treatment_title);
-        resultTreatmentTitle.setVisibility(View.GONE);
-
-        TextView resultTreatment = findViewById(R.id.result_treatment);
-        resultTreatment.setVisibility(View.GONE);
-
+        // Show the reset button with appropriate text
         buttonResetImage.setText(R.string.try_different_image);
+        buttonResetImage.setVisibility(View.VISIBLE);
     }
+
+
+
 
     private String getRealPathFromURI(Uri contentUri) {
         String result;

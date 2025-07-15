@@ -760,7 +760,7 @@
     <string name="detection_failed">فشل الكشف</string>
     <string name="detection_failed_message">حدث خطأ غير متوقع أثناء الكشف عن الآفة. الرجاء معاودة المحاولة.</string>
     <string name="getting_disease_details">جاري جلب تفاصيل المرض...</string>
-    <string name="detection_inconclusive_message">لم نتمكن من تحديد المرض من الصورة. يرجى المحاولة مرة أخرى بصورة أوضح.</string>
+    <string name="detection_inconclusive_message">لم نتمكن من تحديد المرض من الصورة، من الممكن ان الصورة لا تحتوي علي مرض، او الجزء المصاب غير واضح. يرجى المحاولة مرة أخرى بصورة أوضح،  واعزل الجزء المصاب.</string>
     <string name="symptoms_header">الأعراض</string>
     <string name="treatment_header">العلاج</string>
     <string name="english_name_header">الاسم الإنجليزي</string>
@@ -777,4 +777,7 @@
     <string name="select_image_source">اختر مصدر الصورة</string>
     <string name="take_photo">التقاط صورة</string>
     <string name="choose_from_gallery">اختر من المعرض</string>
+    <string name="detecting_disease">جاري اتمام عملية الاستدلال....</string>
+    <string name="detection_completed">تم الاستدلال بنجاح</string>
+    <string name="detection_inconclusive">نتائج الاستدلال غير حاسمة</string>
 </resources>

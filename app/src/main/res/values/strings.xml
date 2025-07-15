@@ -1066,4 +1066,7 @@
     <string name="reset_image">Reset Image</string>
     <string name="try_different_image">Reset try with a different image</string>
     <string name="submit">Submit</string>
+    <string name="disease_name">Disease Name</string>
+    <string name="confidence_score">Confidence Score</string>
+    <string name="show_disease_details">Show Disease Details</string>
 </resources>

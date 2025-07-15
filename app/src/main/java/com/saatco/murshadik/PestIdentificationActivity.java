@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ProgressBar;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -111,9 +112,9 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 } else {
                     selectedPlantId = -1; // Should not happen with correct data
                 }
-                if (selectedPlantId != -1) {
-                    Toast.makeText(PestIdentificationActivity.this, "Selected: " + selectedPlantName + " (ID: " + selectedPlantId + ")", Toast.LENGTH_SHORT).show();
-                }
+//                if (selectedPlantId != -1) {
+//                    Toast.makeText(PestIdentificationActivity.this, "Selected: " + selectedPlantName + " (ID: " + selectedPlantId + ")", Toast.LENGTH_SHORT).show();
+//                }
             }
 
             @Override
@@ -364,7 +365,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
                     int status = response.body().getStatus();
                     if (status == 2) { // DETECTION_COMPLETED
                         int diseaseId = response.body().getDiseaseId();
-                        getDiseaseDetails(diseaseId);
+                        double confidence = response.body().getConfidenceLevel();
+                        getDiseaseDetails(diseaseId, confidence);
                     } else if (status == -2) { // DETECTION_INCONCLUSIVE
                         showInconclusiveResult();
                     } else {
@@ -383,7 +385,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         });
     }
 
-    private void getDiseaseDetails(int diseaseId) {
+    private void getDiseaseDetails(int diseaseId, double confidence) {
         showLoading(getString(R.string.getting_disease_details));
         pestIdentificationService.getDiseaseById(authToken, diseaseId, new Callback<com.saatco.murshadik.models.Disease>() {
             @Override
@@ -391,7 +393,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 hideLoading();
                 if (response.isSuccessful() && response.body() != null) {
                     com.saatco.murshadik.models.Disease disease = response.body();
-                    displaySuccessfulResult(disease);
+                    displaySuccessfulResult(disease, confidence);
                 } else {
                     Toast.makeText(PestIdentificationActivity.this, "Failed to get disease details: " + response.message(), Toast.LENGTH_SHORT).show();
                 }
@@ -405,12 +407,26 @@ public class PestIdentificationActivity extends AppCompatActivity {
         });
     }
 
-    private void displaySuccessfulResult(com.saatco.murshadik.models.Disease disease) {
+    private void displaySuccessfulResult(com.saatco.murshadik.models.Disease disease, double confidence) {
         View resultView = findViewById(R.id.inference_result_container);
         resultView.setVisibility(View.VISIBLE);
 
-        
-        
+        LinearLayout diseaseNameContainer = findViewById(R.id.disease_name_container);
+        diseaseNameContainer.setVisibility(View.VISIBLE);
+
+        TextView diseaseName = findViewById(R.id.disease_name);
+        diseaseName.setText(disease.getEnglishName());
+
+        TextView confidenceScore = findViewById(R.id.confidence_score);
+        confidenceScore.setText(String.format("%.2f%%", confidence * 100));
+
+        Button showDetailsButton = findViewById(R.id.button_show_details);
+        LinearLayout diseaseDetailsContainer = findViewById(R.id.disease_details_container);
+
+        showDetailsButton.setOnClickListener(v -> {
+            diseaseDetailsContainer.setVisibility(View.VISIBLE);
+            showDetailsButton.setVisibility(View.GONE);
+        });
 
         TextView englishNameHeader = findViewById(R.id.english_name_header);
         TextView resultTitle = findViewById(R.id.result_title);

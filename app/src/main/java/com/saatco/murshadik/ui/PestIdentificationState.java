@@ -34,4 +34,6 @@ public abstract class PestIdentificationState {
             this.message = message;
         }
     }
+
+    public static final class Healthy extends PestIdentificationState {}
 }

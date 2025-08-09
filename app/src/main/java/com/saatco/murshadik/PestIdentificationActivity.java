@@ -107,7 +107,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         imagePicker.setOnClickListener(v -> selectImage());
         buttonClearImage.setOnClickListener(v -> clearImageSelection());
-        buttonResetImage.setOnClickListener(v -> viewModel.resetState());
+        buttonResetImage.setOnClickListener(v -> clearImageSelection());
 
         buttonSubmit.setOnClickListener(v -> {
             if (selectedPlantId != -1 && selectedImageUri != null) {
@@ -133,7 +133,11 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 PestIdentificationState.Success successState = (PestIdentificationState.Success) state;
                 displaySuccessfulResult(successState.disease, successState.confidence);
                 viewFlipper.setDisplayedChild(2); // Show Result View
-            } else if (state instanceof PestIdentificationState.Inconclusive) {
+            } else if (state instanceof PestIdentificationState.Healthy) { // Add this block
+                showHealthyResult();
+                viewFlipper.setDisplayedChild(2); // Show Result View
+            }
+            else if (state instanceof PestIdentificationState.Inconclusive) {
                 showInconclusiveResult();
                 viewFlipper.setDisplayedChild(2); // Show Result View
             } else if (state instanceof PestIdentificationState.Error) {
@@ -244,7 +248,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
         imagePicker.setImageResource(android.R.drawable.ic_menu_camera);
         selectedImageUri = null;
         buttonClearImage.setVisibility(View.GONE);
-        // The viewModel will reset the state, which will flip the view back to the input screen
+        spinnerPestType.setSelection(0);
+        viewModel.resetState();
     }
 
 
@@ -295,6 +300,30 @@ public class PestIdentificationActivity extends AppCompatActivity {
         TextView resultSymptoms = findViewById(R.id.result_symptoms);
         resultSymptoms.setText(R.string.detection_inconclusive_message);
         resultSymptoms.setVisibility(View.VISIBLE);
+        buttonResetImage.setText(R.string.try_different_image);
+        buttonResetImage.setVisibility(View.VISIBLE);
+    }
+
+    private void showHealthyResult() {
+        findViewById(R.id.inference_result_container).setVisibility(View.VISIBLE);
+        findViewById(R.id.disease_name_container).setVisibility(View.GONE);
+        findViewById(R.id.disease_details_container).setVisibility(View.VISIBLE);
+
+        TextView resultTitle = findViewById(R.id.result_title);
+        resultTitle.setText(R.string.detection_healthy);
+        resultTitle.setVisibility(View.VISIBLE);
+
+        findViewById(R.id.confidence_score).setVisibility(View.GONE);
+        findViewById(R.id.english_name_header).setVisibility(View.GONE);
+        findViewById(R.id.arabic_name_header).setVisibility(View.GONE);
+        findViewById(R.id.result_arabic_name).setVisibility(View.GONE);
+        findViewById(R.id.result_scientific_name).setVisibility(View.GONE);
+        findViewById(R.id.result_symptoms_title).setVisibility(View.GONE);
+        findViewById(R.id.result_symptoms).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment_title).setVisibility(View.GONE);
+        findViewById(R.id.result_treatment).setVisibility(View.GONE);
+        findViewById(R.id.button_show_details).setVisibility(View.GONE);
+
         buttonResetImage.setText(R.string.try_different_image);
         buttonResetImage.setVisibility(View.VISIBLE);
     }

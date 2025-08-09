@@ -70,13 +70,19 @@ class PestIdentificationViewModel : ViewModel() {
 
                 when (detectionResponse.status) {
                     2 -> { // DETECTION_COMPLETED
-                        _uiState.value = PestIdentificationState.Loading(context.getString(R.string.getting_disease_details))
-                        val disease = APIHelper.safeApiCall {
-                            pestIdentificationService.getDiseaseById(authToken, detectionResponse.diseaseId)
+                        if (detectionResponse.diseaseId != 0 && detectionResponse.diseaseId != null) {
+                            // Disease was found
+                            _uiState.value = PestIdentificationState.Loading(context.getString(R.string.getting_disease_details))
+                            val disease = APIHelper.safeApiCall {
+                                pestIdentificationService.getDiseaseById(authToken, detectionResponse.diseaseId)
+                            }
+                            _uiState.value = PestIdentificationState.Success(disease, detectionResponse.confidenceLevel, null)
+                        } else {
+                            // No disease found, plant is healthy
+                            _uiState.value = PestIdentificationState.Healthy()
                         }
-                        _uiState.value = PestIdentificationState.Success(disease, detectionResponse.confidenceLevel, null)
                     }
-                    -2 -> _uiState.value = PestIdentificationState.Inconclusive() // <-- FIX 2: Added ()
+                    -2 -> _uiState.value = PestIdentificationState.Inconclusive() // DETECTION_INCONCLUSIVE
                     else -> throw IOException(context.getString(R.string.detection_failed))
                 }
 

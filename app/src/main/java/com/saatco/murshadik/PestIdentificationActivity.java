@@ -117,7 +117,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
     }
 
     private void observeViewModel() {
-        viewModel.uiState.observe(this, state -> {
+        viewModel.getUiState().observe(this, state -> {
             // Hide all components first, then show the relevant ones
             setLoadingState(false, null);
             findViewById(R.id.inference_result_container).setVisibility(View.GONE);

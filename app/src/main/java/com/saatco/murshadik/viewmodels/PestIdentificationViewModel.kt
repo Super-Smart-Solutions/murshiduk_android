@@ -1,3 +1,4 @@
+// In file: com/saatco/murshadik/viewmodels/PestIdentificationViewModel.kt
 package com.saatco.murshadik.viewmodels
 
 import android.content.Context
@@ -27,11 +28,11 @@ class PestIdentificationViewModel : ViewModel() {
 
     private val pestIdentificationService = PestIdentificationService()
     // TODO: This will be replaced with a secure method
-    private val authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl0sInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NTQ3MzkzOTZ9.whmaUqykxN3zTjObJLV9IiE5QvtduWvsg2pZFafQ9Y4"
+    private val authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl0sInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NTQ3NDAxODh9.yBbJRmYjRvxSfHoUBvsJpENJZl71yvJ-4JcM5ANpq8g"
 
     init {
         // Set the initial state when the ViewModel is created
-        _uiState.value = PestIdentificationState.Input
+        _uiState.value = PestIdentificationState.Input() // <-- FIX 1: Added ()
     }
 
     fun startDiseaseDetection(imageUri: Uri, plantId: Int, context: Context) {
@@ -75,7 +76,7 @@ class PestIdentificationViewModel : ViewModel() {
                         }
                         _uiState.value = PestIdentificationState.Success(disease, detectionResponse.confidenceLevel, null)
                     }
-                    -2 -> _uiState.value = PestIdentificationState.Inconclusive // DETECTION_INCONCLUSIVE
+                    -2 -> _uiState.value = PestIdentificationState.Inconclusive() // <-- FIX 2: Added ()
                     else -> throw IOException(context.getString(R.string.detection_failed))
                 }
 
@@ -100,7 +101,7 @@ class PestIdentificationViewModel : ViewModel() {
         }
         val compressedFile = File.createTempFile("compressed_", ".jpg", context.cacheDir)
         FileOutputStream(compressedFile).use { out ->
-                scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
+            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
         }
         return compressedFile
     }

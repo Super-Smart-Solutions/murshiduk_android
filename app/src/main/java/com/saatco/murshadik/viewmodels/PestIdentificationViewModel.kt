@@ -14,6 +14,7 @@ import com.saatco.murshadik.R
 import com.saatco.murshadik.api.APIHelper
 import com.saatco.murshadik.ui.PestIdentificationState
 import com.saatco.murshadik.models.Plant
+import com.saatco.murshadik.models.Disease
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -44,10 +45,12 @@ class PestIdentificationViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = APIHelper.safeApiCall { pestIdentificationService.getPlants(authToken) }
-                val placeholder = Plant(-1, "Select Plant", "اختر النبات") // Placeholder
+                android.util.Log.d("PestIdViewModel", "Successfully parsed ${response.items.size} plants from API.")
+                val placeholder = Plant(-1, "Select Category", "اختر الفئة", "", "","") // Placeholder
                 _plants.value = listOf(placeholder) + response.items
             } catch (e: Exception) {
                 // Handle error, maybe post to a different LiveData for errors
+                android.util.Log.e("PestIdViewModel", "Failed to fetch plants", e)
                 _plants.value = emptyList()
             }
         }
@@ -88,22 +91,23 @@ class PestIdentificationViewModel : ViewModel() {
 
                 when (detectionResponse.status) {
                     2 -> { // DETECTION_COMPLETED
-                        if (detectionResponse.diseaseId != 0 && detectionResponse.diseaseId != null) {
-                            // Disease was found
-                            _uiState.value = PestIdentificationState.Loading(context.getString(R.string.getting_disease_details))
-                            val disease = APIHelper.safeApiCall {
-                                pestIdentificationService.getDiseaseById(authToken, detectionResponse.diseaseId)
+                        val diseaseId = detectionResponse.diseaseId
+                        if (diseaseId != 0 && diseaseId != null) {
+                            // Disease was found, now get attention map
+                            val attentionResponse = APIHelper.safeApiCall {
+                                pestIdentificationService.getAttentionMap(authToken, detectionResponse.id)
                             }
-                            _uiState.value = PestIdentificationState.Success(disease, detectionResponse.confidenceLevel, null)
+                            val disease = APIHelper.safeApiCall {
+                                pestIdentificationService.getDiseaseById(authToken, diseaseId)
+                            }
+                            _uiState.value = PestIdentificationState.DetectionResult(disease, detectionResponse.confidenceLevel, attentionResponse.attentionMapUrl)
                         } else {
-                            // No disease found, plant is healthy
                             _uiState.value = PestIdentificationState.Healthy()
                         }
                     }
-                    -2 -> _uiState.value = PestIdentificationState.Inconclusive() // DETECTION_INCONCLUSIVE
+                    -2 -> _uiState.value = PestIdentificationState.Inconclusive()
                     else -> throw IOException(context.getString(R.string.detection_failed))
                 }
-
             } catch (e: Exception) {
                 // Handle any error from the entire chain
                 _uiState.value = PestIdentificationState.Error(e.message ?: "An unknown error occurred")
@@ -113,6 +117,10 @@ class PestIdentificationViewModel : ViewModel() {
 
     fun resetState() {
         _uiState.value = PestIdentificationState.Input()
+    }
+
+    fun onShowDiseaseDetailsClicked(disease: Disease) {
+        _uiState.value = PestIdentificationState.DiseaseDetails(disease)
     }
 
     @Throws(IOException::class)

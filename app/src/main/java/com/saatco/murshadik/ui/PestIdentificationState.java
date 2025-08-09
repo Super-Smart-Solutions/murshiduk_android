@@ -14,15 +14,23 @@ public abstract class PestIdentificationState {
         }
     }
 
-    public static final class Success extends PestIdentificationState {
+    public static final class DetectionResult extends PestIdentificationState {
         public final Disease disease;
         public final double confidence;
         public final String attentionMapUrl;
 
-        public Success(Disease disease, double confidence, String attentionMapUrl) {
+        public DetectionResult(Disease disease, double confidence, String attentionMapUrl) {
             this.disease = disease;
             this.confidence = confidence;
             this.attentionMapUrl = attentionMapUrl;
+        }
+    }
+
+    public static final class DiseaseDetails extends PestIdentificationState {
+        public final Disease disease;
+
+        public DiseaseDetails(Disease disease) {
+            this.disease = disease;
         }
     }
 

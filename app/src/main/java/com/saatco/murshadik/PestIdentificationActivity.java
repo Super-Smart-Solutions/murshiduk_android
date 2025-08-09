@@ -45,6 +45,7 @@ import java.util.Map;
 
 import android.widget.ViewFlipper;
 import com.saatco.murshadik.models.Plant;
+import com.saatco.murshadik.models.Disease;
 
 public class PestIdentificationActivity extends AppCompatActivity {
 
@@ -80,10 +81,18 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         // Setup Views
         setupViews();
-        //setupSpinner();
 
-        // Observe UI state changes from the ViewModel
         observeViewModel();
+
+        viewModel.getPlants().observe(this, plants -> {
+
+            if (plants != null && !plants.isEmpty()) {
+                setupSpinner(plants);
+            } else {
+                android.util.Log.w("PestIdActivity", "Plants list was null or empty, spinner not set up.");
+                Toast.makeText(this, getString(R.string.could_not_load_plants), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setupViews() {
@@ -113,45 +122,57 @@ public class PestIdentificationActivity extends AppCompatActivity {
             if (selectedPlantId != -1 && selectedImageUri != null) {
                 viewModel.startDiseaseDetection(selectedImageUri, selectedPlantId, getApplicationContext());
             } else if (selectedPlantId == -1) {
-                Toast.makeText(PestIdentificationActivity.this, "Please select a plant type.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PestIdentificationActivity.this, getString(R.string.please_select_category), Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(PestIdentificationActivity.this, "Please select an image.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PestIdentificationActivity.this, getString(R.string.please_select_image), Toast.LENGTH_SHORT).show();
+
             }
         });
 
         findViewById(R.id.inference_result_container).setVisibility(View.GONE);
     }
 
+    private void showDetectionResult(Disease disease, double confidence, String attentionMapUrl) {
+        TextView initialName = findViewById(R.id.initial_disease_name);
+        TextView initialConfidence = findViewById(R.id.initial_confidence_score);
+        ImageView attentionMap = findViewById(R.id.attention_map_image);
+        Button showInfoButton = findViewById(R.id.button_show_info);
+
+        initialName.setText(disease.getArabicName());
+        initialConfidence.setText(String.format(java.util.Locale.US, "%.2f%%", confidence * 100));
+
+        if (attentionMapUrl != null && !attentionMapUrl.isEmpty()) {
+            Glide.with(this).load(attentionMapUrl).into(attentionMap);
+        }
+
+        showInfoButton.setOnClickListener(v -> {
+            viewModel.onShowDiseaseDetailsClicked(disease);
+        });
+    }
+
     private void observeViewModel() {
         viewModel.getUiState().observe(this, state -> {
             if (state instanceof PestIdentificationState.Input) {
-                viewFlipper.setDisplayedChild(0); // Show Input View
+                viewFlipper.setDisplayedChild(0); // Show Input
             } else if (state instanceof PestIdentificationState.Loading) {
                 loadingMessageTextView.setText(((PestIdentificationState.Loading) state).message);
-                viewFlipper.setDisplayedChild(1); // Show Loading View
-            } else if (state instanceof PestIdentificationState.Success) {
-                PestIdentificationState.Success successState = (PestIdentificationState.Success) state;
-                displaySuccessfulResult(successState.disease, successState.confidence);
-                viewFlipper.setDisplayedChild(2); // Show Result View
-            } else if (state instanceof PestIdentificationState.Healthy) { // Add this block
+                viewFlipper.setDisplayedChild(1); // Show Loading
+            } else if (state instanceof PestIdentificationState.DetectionResult) {
+                PestIdentificationState.DetectionResult resultState = (PestIdentificationState.DetectionResult) state;
+                showDetectionResult(resultState.disease, resultState.confidence, resultState.attentionMapUrl);
+                viewFlipper.setDisplayedChild(2); // Show Initial Result
+            } else if (state instanceof PestIdentificationState.DiseaseDetails) {
+                displaySuccessfulResult(((PestIdentificationState.DiseaseDetails) state).disease);
+                viewFlipper.setDisplayedChild(3); // Show Full Details
+            } else if (state instanceof PestIdentificationState.Healthy) {
                 showHealthyResult();
-                viewFlipper.setDisplayedChild(2); // Show Result View
-            }
-            else if (state instanceof PestIdentificationState.Inconclusive) {
+                viewFlipper.setDisplayedChild(3); // Show Full Details (Healthy is a final state)
+            } else if (state instanceof PestIdentificationState.Inconclusive) {
                 showInconclusiveResult();
-                viewFlipper.setDisplayedChild(2); // Show Result View
+                viewFlipper.setDisplayedChild(3); // Show Full Details (Inconclusive is a final state)
             } else if (state instanceof PestIdentificationState.Error) {
                 Toast.makeText(this, ((PestIdentificationState.Error) state).message, Toast.LENGTH_LONG).show();
-                viewFlipper.setDisplayedChild(0); // Go back to Input View on error
-            }
-        });
-
-        viewModel.getPlants().observe(this, plants -> {
-            if (plants != null && !plants.isEmpty()) {
-                setupSpinner(plants);
-            } else {
-                // Handle case where plants could not be fetched
-                Toast.makeText(this, "Could not load plants.", Toast.LENGTH_SHORT).show();
+                viewFlipper.setDisplayedChild(0); // Go back to Input
             }
         });
     }
@@ -272,12 +293,11 @@ public class PestIdentificationActivity extends AppCompatActivity {
     }
 
 
-    private void displaySuccessfulResult(Disease disease, double confidence) {
+    private void displaySuccessfulResult(Disease disease) {
         View resultView = findViewById(R.id.inference_result_container);
         resultView.setVisibility(View.VISIBLE);
         findViewById(R.id.disease_name_container).setVisibility(View.VISIBLE);
         ((TextView) findViewById(R.id.disease_name)).setText(disease.getArabicName());
-        ((TextView) findViewById(R.id.confidence_score)).setText(String.format(java.util.Locale.US, "%.2f%%", confidence * 100));
         Button showDetailsButton = findViewById(R.id.button_show_details);
         LinearLayout diseaseDetailsContainer = findViewById(R.id.disease_details_container);
         showDetailsButton.setOnClickListener(v -> {

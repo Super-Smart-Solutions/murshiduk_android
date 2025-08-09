@@ -4,6 +4,7 @@ import com.saatco.murshadik.models.Disease
 import com.saatco.murshadik.models.PlantListResponse
 import com.saatco.murshadik.models.InferenceResponse
 import com.saatco.murshadik.models.UploadImageResponse
+import com.saatco.murshadik.models.AttentionResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
@@ -50,4 +51,10 @@ interface PestIdentificationApi {
         @Header("Authorization") authHeader: String,
         @Query("pageSize") pageSize: Int = 10
     ): Response<PlantListResponse>
+
+    @POST("inferences/{id}/attention")
+    suspend fun getAttentionMap(
+        @Header("Authorization") authHeader: String,
+        @Path("id") id: Int
+    ): Response<AttentionResponse>
 }

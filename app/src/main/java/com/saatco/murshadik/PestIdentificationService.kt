@@ -8,6 +8,7 @@ import com.saatco.murshadik.models.Disease
 import com.saatco.murshadik.models.PlantListResponse
 import com.saatco.murshadik.models.InferenceResponse
 import com.saatco.murshadik.models.UploadImageResponse
+import com.saatco.murshadik.models.AttentionResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -15,8 +16,6 @@ import retrofit2.Response
 import java.io.File
 
 class PestIdentificationService {
-
-    // Use the new, dedicated interface
     private val api: PestIdentificationApi = APIClient.getPestIdentificationClient().create(PestIdentificationApi::class.java)
 
     suspend fun uploadImage(
@@ -78,5 +77,11 @@ class PestIdentificationService {
         authToken: String
     ): Response<PlantListResponse> {
         return api.getPlants("Bearer $authToken")
+    }
+
+    suspend fun getAttentionMap(
+        authToken: String,
+        inferenceId: Int): Response<AttentionResponse> {
+        return api.getAttentionMap("Bearer $authToken", inferenceId)
     }
 }

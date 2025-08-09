@@ -1078,4 +1078,8 @@
     <string name="symptoms">Symptoms</string>
     <string name="treatment">Treatment</string>
     <string name="detection_healthy">Detection Complete: No diseases were found /n the input image is Healthy</string>
+    <string name="show_disease_info">Show Disease Info</string>
+    <string name="could_not_load_plants">Could not load plants.</string>
+    <string name="please_select_image">Please select or capture image</string>
+    <string name="please_select_category">Please select Category</string>
 </resources>

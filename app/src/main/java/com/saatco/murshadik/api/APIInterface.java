@@ -71,9 +71,6 @@ import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-/**
- * Created by Bassam
- */
 
 public interface APIInterface {
 
@@ -727,42 +724,5 @@ public interface APIInterface {
 
     @PUT("MurshadiK/ConsultAppointment/PutCancelAppointment")
     Call<String> cancelConsultationAppointment(@Query("appointmentId") String appointmentId);
-
-    @Multipart
-    @POST("images/uploads")
-    Call<com.saatco.murshadik.models.UploadImageResponse> uploadImage(
-            @Header("Authorization") String authHeader,
-            @Part MultipartBody.Part imageFile,
-            @Part MultipartBody.Part name,
-            @Part MultipartBody.Part plantId,
-            @Part MultipartBody.Part farmId,
-            @Part MultipartBody.Part annotated
-    );
-
-    @POST("inferences")
-    Call<com.saatco.murshadik.models.InferenceResponse> createInference(
-            @Header("Authorization") String authHeader,
-            @Query("image_id") int imageId
-    );
-
-    @POST("inferences/{id}/validate")
-    Call<com.saatco.murshadik.models.InferenceResponse> validateInference(
-            @Header("Authorization") String authHeader,
-            @Path("id") int id
-    );
-
-    @POST("inferences/{id}/detect")
-    Call<com.saatco.murshadik.models.InferenceResponse> detectDisease(
-            @Header("Authorization") String authHeader,
-            @Path("id") int id
-    );
-
-    @GET("diseases/{id}")
-    Call<com.saatco.murshadik.models.Disease> getDiseaseById(
-            @Header("Authorization") String authHeader,
-            @Path("id") int id
-    );
-
-
 }
 

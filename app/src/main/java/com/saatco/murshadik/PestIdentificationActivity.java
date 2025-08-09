@@ -130,6 +130,9 @@ public class PestIdentificationActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.inference_result_container).setVisibility(View.GONE);
+
+        Button buttonResetFromResult = findViewById(R.id.button_reset_from_result);
+        buttonResetFromResult.setOnClickListener(v -> clearImageSelection());
     }
 
     private void showDetectionResult(Disease disease, double confidence, String attentionMapUrl) {

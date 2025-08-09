@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.Map;
 
 import android.widget.ViewFlipper;
+import com.saatco.murshadik.models.Plant;
 
 public class PestIdentificationActivity extends AppCompatActivity {
 
@@ -79,8 +80,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         // Setup Views
         setupViews();
-        setupPlantIdMap();
-        setupSpinner();
+        //setupSpinner();
 
         // Observe UI state changes from the ViewModel
         observeViewModel();
@@ -145,6 +145,15 @@ public class PestIdentificationActivity extends AppCompatActivity {
                 viewFlipper.setDisplayedChild(0); // Go back to Input View on error
             }
         });
+
+        viewModel.getPlants().observe(this, plants -> {
+            if (plants != null && !plants.isEmpty()) {
+                setupSpinner(plants);
+            } else {
+                // Handle case where plants could not be fetched
+                Toast.makeText(this, "Could not load plants.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setupPlantIdMap() {
@@ -159,16 +168,26 @@ public class PestIdentificationActivity extends AppCompatActivity {
         plantIdMap.put(getString(R.string.plant_animals), 28);
     }
 
-    private void setupSpinner() {
-        List<String> pestTypes = new ArrayList<>(plantIdMap.keySet());
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, pestTypes);
+    private void setupSpinner(List<Plant> plants) {
+        // We will display the Arabic name in the spinner
+        List<String> plantNames = new ArrayList<>();
+        for (Plant plant : plants) {
+            plantNames.add(plant.getArabicName());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, plantNames);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPestType.setAdapter(adapter);
+
         spinnerPestType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedPlantName = parent.getItemAtPosition(position).toString();
-                selectedPlantId = plantIdMap.getOrDefault(selectedPlantName, -1);
+                // Get the ID from the original list, respecting the placeholder at position 0
+                if (position > 0) {
+                    selectedPlantId = plants.get(position).getId();
+                } else {
+                    selectedPlantId = -1;
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

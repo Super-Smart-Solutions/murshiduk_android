@@ -13,6 +13,7 @@ import com.saatco.murshadik.PestIdentificationService
 import com.saatco.murshadik.R
 import com.saatco.murshadik.api.APIHelper
 import com.saatco.murshadik.ui.PestIdentificationState
+import com.saatco.murshadik.models.Plant
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -23,16 +24,33 @@ import java.io.IOException
 
 class PestIdentificationViewModel : ViewModel() {
 
+    private val _plants = MutableLiveData<List<Plant>>()
+    val plants: LiveData<List<Plant>> = _plants
+
     private val _uiState = MutableLiveData<PestIdentificationState>()
     val uiState: LiveData<PestIdentificationState> = _uiState
 
     private val pestIdentificationService = PestIdentificationService()
     // TODO: This will be replaced with a secure method
-    private val authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl0sInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NTQ3NDAxODh9.yBbJRmYjRvxSfHoUBvsJpENJZl71yvJ-4JcM5ANpq8g"
+    private val authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl0sInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NTQ3NDQ1MjN9.nH9d1cXL4BL6oEIY2Kt_aVnGJ9qMZMDMMVGcDffOW8Y"
 
     init {
         // Set the initial state when the ViewModel is created
-        _uiState.value = PestIdentificationState.Input() // <-- FIX 1: Added ()
+        _uiState.value = PestIdentificationState.Input()
+        fetchPlants()
+    }
+
+    private fun fetchPlants() {
+        viewModelScope.launch {
+            try {
+                val response = APIHelper.safeApiCall { pestIdentificationService.getPlants(authToken) }
+                val placeholder = Plant(-1, "Select Plant", "اختر النبات") // Placeholder
+                _plants.value = listOf(placeholder) + response.items
+            } catch (e: Exception) {
+                // Handle error, maybe post to a different LiveData for errors
+                _plants.value = emptyList()
+            }
+        }
     }
 
     fun startDiseaseDetection(imageUri: Uri, plantId: Int, context: Context) {

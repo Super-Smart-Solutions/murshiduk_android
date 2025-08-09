@@ -1,6 +1,7 @@
 package com.saatco.murshadik.api
 
 import com.saatco.murshadik.models.Disease
+import com.saatco.murshadik.models.PlantListResponse
 import com.saatco.murshadik.models.InferenceResponse
 import com.saatco.murshadik.models.UploadImageResponse
 import okhttp3.MultipartBody
@@ -43,4 +44,10 @@ interface PestIdentificationApi {
         @Header("Authorization") authHeader: String,
         @Path("id") id: Int
     ): Response<Disease>
+
+    @GET("plants")
+    suspend fun getPlants(
+        @Header("Authorization") authHeader: String,
+        @Query("pageSize") pageSize: Int = 10
+    ): Response<PlantListResponse>
 }

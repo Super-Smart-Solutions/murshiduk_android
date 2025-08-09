@@ -5,6 +5,7 @@ import android.net.Uri
 import com.saatco.murshadik.api.APIClient
 import com.saatco.murshadik.api.PestIdentificationApi
 import com.saatco.murshadik.models.Disease
+import com.saatco.murshadik.models.PlantListResponse
 import com.saatco.murshadik.models.InferenceResponse
 import com.saatco.murshadik.models.UploadImageResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -71,5 +72,11 @@ class PestIdentificationService {
         diseaseId: Int
     ): Response<Disease> {
         return api.getDiseaseById("Bearer $authToken", diseaseId)
+    }
+
+    suspend fun getPlants(
+        authToken: String
+    ): Response<PlantListResponse> {
+        return api.getPlants("Bearer $authToken")
     }
 }

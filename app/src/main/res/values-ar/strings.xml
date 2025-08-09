@@ -780,4 +780,9 @@
     <string name="detecting_disease">جاري اتمام عملية الاستدلال....</string>
     <string name="detection_completed">تم الاستدلال بنجاح</string>
     <string name="detection_inconclusive">نتائج الاستدلال غير حاسمة</string>
+    <string name="show_details">عرض التفاصيل</string>
+    <string name="english_name">الاسم بالانجليزية</string>
+    <string name="arabic_name">الاسم بالعربية</string>
+    <string name="symptoms">الأعراض</string>
+    <string name="treatment">طرق المكافحة</string>
 </resources>

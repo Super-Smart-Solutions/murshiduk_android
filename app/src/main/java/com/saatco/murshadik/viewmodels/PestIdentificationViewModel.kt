@@ -87,6 +87,10 @@ class PestIdentificationViewModel : ViewModel() {
         }
     }
 
+    fun resetState() {
+        _uiState.value = PestIdentificationState.Input()
+    }
+
     @Throws(IOException::class)
     private fun compressImage(imageUri: Uri, context: Context): File {
         val bitmap = MediaStore.Images.Media.getBitmap(context.contentResolver, imageUri)

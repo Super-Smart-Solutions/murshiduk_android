@@ -43,6 +43,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.widget.ViewFlipper;
+
 public class PestIdentificationActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
@@ -64,7 +66,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView loadingMessageTextView;
     private Map<String, Integer> plantIdMap;
-    
+
+    private ViewFlipper viewFlipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +87,8 @@ public class PestIdentificationActivity extends AppCompatActivity {
     }
 
     private void setupViews() {
+        viewFlipper = findViewById(R.id.view_flipper);
+
         TextView toolbarTitle = findViewById(R.id.appBar).findViewById(R.id.toolbar_title);
         toolbarTitle.setText(R.string.ai_disease_detection);
 
@@ -102,7 +107,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
         imagePicker.setOnClickListener(v -> selectImage());
         buttonClearImage.setOnClickListener(v -> clearImageSelection());
-        buttonResetImage.setOnClickListener(v -> clearImageSelection());
+        buttonResetImage.setOnClickListener(v -> viewModel.resetState());
 
         buttonSubmit.setOnClickListener(v -> {
             if (selectedPlantId != -1 && selectedImageUri != null) {
@@ -119,47 +124,23 @@ public class PestIdentificationActivity extends AppCompatActivity {
 
     private void observeViewModel() {
         viewModel.getUiState().observe(this, state -> {
-            // Hide all components first, then show the relevant ones
-            setLoadingState(false, null);
-            findViewById(R.id.inference_result_container).setVisibility(View.GONE);
-            buttonSubmit.setEnabled(true);
-            spinnerPestType.setEnabled(true);
-            imagePicker.setEnabled(true);
-
             if (state instanceof PestIdentificationState.Input) {
-                // Initial state, do nothing extra
+                viewFlipper.setDisplayedChild(0); // Show Input View
             } else if (state instanceof PestIdentificationState.Loading) {
-                setLoadingState(true, ((PestIdentificationState.Loading) state).message);
+                loadingMessageTextView.setText(((PestIdentificationState.Loading) state).message);
+                viewFlipper.setDisplayedChild(1); // Show Loading View
             } else if (state instanceof PestIdentificationState.Success) {
                 PestIdentificationState.Success successState = (PestIdentificationState.Success) state;
                 displaySuccessfulResult(successState.disease, successState.confidence);
+                viewFlipper.setDisplayedChild(2); // Show Result View
             } else if (state instanceof PestIdentificationState.Inconclusive) {
                 showInconclusiveResult();
+                viewFlipper.setDisplayedChild(2); // Show Result View
             } else if (state instanceof PestIdentificationState.Error) {
                 Toast.makeText(this, ((PestIdentificationState.Error) state).message, Toast.LENGTH_LONG).show();
-                // Go back to input state on error
-                clearImageSelection();
+                viewFlipper.setDisplayedChild(0); // Go back to Input View on error
             }
         });
-    }
-
-    private void setLoadingState(boolean isLoading, String message) {
-        if (isLoading) {
-            progressBar.setVisibility(View.VISIBLE);
-            loadingMessageTextView.setText(message);
-            loadingMessageTextView.setVisibility(View.VISIBLE);
-            buttonSubmit.setEnabled(false);
-            spinnerPestType.setEnabled(false);
-            imagePicker.setEnabled(false);
-            buttonClearImage.setEnabled(false);
-        } else {
-            progressBar.setVisibility(View.GONE);
-            loadingMessageTextView.setVisibility(View.GONE);
-            buttonSubmit.setEnabled(true);
-            spinnerPestType.setEnabled(true);
-            imagePicker.setEnabled(true);
-            buttonClearImage.setEnabled(true);
-        }
     }
 
     private void setupPlantIdMap() {
@@ -263,9 +244,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
         imagePicker.setImageResource(android.R.drawable.ic_menu_camera);
         selectedImageUri = null;
         buttonClearImage.setVisibility(View.GONE);
-        buttonResetImage.setVisibility(View.GONE);
-        buttonResetImage.setText(R.string.reset_image);
-        findViewById(R.id.inference_result_container).setVisibility(View.GONE);
+        // The viewModel will reset the state, which will flip the view back to the input screen
     }
 
 

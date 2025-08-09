@@ -64,6 +64,7 @@ public class PestIdentificationActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView loadingMessageTextView;
     private Map<String, Integer> plantIdMap;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

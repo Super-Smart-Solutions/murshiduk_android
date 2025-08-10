@@ -9,6 +9,7 @@ import com.saatco.murshadik.models.PlantListResponse
 import com.saatco.murshadik.models.InferenceResponse
 import com.saatco.murshadik.models.UploadImageResponse
 import com.saatco.murshadik.models.AttentionResponse
+import com.saatco.murshadik.models.DiseaseListResponse
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -76,5 +77,9 @@ class PestIdentificationService {
     suspend fun getAttentionMap(
         inferenceId: Int): Response<AttentionResponse> {
         return api.getAttentionMap(inferenceId)
+    }
+
+    suspend fun getDiseasesForPlant(plantId: Int): Response<DiseaseListResponse> {
+        return api.getDiseasesForPlant(plantId)
     }
 }

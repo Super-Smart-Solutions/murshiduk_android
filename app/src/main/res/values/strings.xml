@@ -1083,4 +1083,6 @@
     <string name="please_select_image">Please select or capture image</string>
     <string name="please_select_category">Please select Category</string>
     <string name="disease_database">Diseases Database</string>
+    <string name="select_plant">Select Plant</string>
+    <string name="select_disease">Select Disease</string>
 </resources>

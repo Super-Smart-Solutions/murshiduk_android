@@ -791,4 +791,6 @@
     <string name="please_select_image">اختر الصوره</string>
     <string name="please_select_category">يجب اختيار الفئة</string>
     <string name="disease_database">قاعدة بيانات النباتات</string>
+    <string name="select_plant">اختر الفئة</string>
+    <string name="select_disease">اختر المرض</string>
 </resources>

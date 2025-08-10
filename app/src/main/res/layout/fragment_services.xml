@@ -286,6 +286,29 @@
             android:orientation="horizontal">
 
             <com.saatco.murshadik.views.ServiceCard
+                android:id="@+id/sc_disease_database"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:service_icon="@drawable/marketing_research"
+                app:service_title="@string/disease_database" />
+
+            <androidx.legacy.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.saatco.murshadik.views.ServiceCard
                 android:id="@+id/sc_coffee_disease"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

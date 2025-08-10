@@ -538,6 +538,10 @@
                 android:value="com.saatco.murshadik.ChatActivityNew" />
         </activity>
 
+        <activity
+            android:name=".DiseaseDatabaseActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.onesignal.NotificationOpened.DEFAULT"
             android:value="ENABLE" />

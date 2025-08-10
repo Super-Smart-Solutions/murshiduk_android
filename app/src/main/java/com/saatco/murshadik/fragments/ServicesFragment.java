@@ -19,6 +19,7 @@ import com.saatco.murshadik.AvailableWorkerActivity;
 import com.saatco.murshadik.ChatUserActivity;
 import com.saatco.murshadik.ClipsIndicativeCategoryActivity;
 import com.saatco.murshadik.ConsultationAppointmentsActivity;
+import com.saatco.murshadik.DiseaseDatabaseActivity;
 import com.saatco.murshadik.FragmentSelectorActivity;
 import com.saatco.murshadik.Helpers.ProfileHelper;
 import com.saatco.murshadik.Helpers.TokenHelper;
@@ -211,6 +212,11 @@ public class ServicesFragment extends Fragment {
         binding.scUdhiyah.setOnClickListener(v -> {
             // open virtual clinic
             Intent intent = new Intent(getContext(), VirtualClinicActivity.class);
+            startActivity(intent);
+        });
+
+        binding.scDiseaseDatabase.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), DiseaseDatabaseActivity.class);
             startActivity(intent);
         });
 

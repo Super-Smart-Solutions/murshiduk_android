@@ -1082,4 +1082,5 @@
     <string name="could_not_load_plants">Could not load plants.</string>
     <string name="please_select_image">Please select or capture image</string>
     <string name="please_select_category">Please select Category</string>
+    <string name="disease_database">Diseases Database</string>
 </resources>

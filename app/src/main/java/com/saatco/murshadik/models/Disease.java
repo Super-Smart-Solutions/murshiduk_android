@@ -6,6 +6,22 @@ import java.util.List;
 
 public class Disease {
 
+    public Disease() {
+    }
+
+    public Disease(int id, String englishName, String arabicName, String scientificName, String symptoms, String description, String treatments, List<String> stages, String createdAt, String updatedAt) {
+        this.id = id;
+        this.englishName = englishName;
+        this.arabicName = arabicName;
+        this.scientificName = scientificName;
+        this.symptoms = symptoms;
+        this.description = description;
+        this.treatments = treatments;
+        this.stages = stages;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     @SerializedName("english_name")
     private String englishName;
 

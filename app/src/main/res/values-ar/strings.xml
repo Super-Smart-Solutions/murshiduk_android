@@ -790,4 +790,5 @@
     <string name="could_not_load_plants">لم يتمكن تحميل بيانات الفئات.</string>
     <string name="please_select_image">اختر الصوره</string>
     <string name="please_select_category">يجب اختيار الفئة</string>
+    <string name="disease_database">قاعدة بيانات النباتات</string>
 </resources>

@@ -1,4 +1,3 @@
-// In file: com/saatco/murshadik/viewmodels/PestIdentificationViewModel.kt
 package com.saatco.murshadik.viewmodels
 
 import android.content.Context
@@ -32,8 +31,6 @@ class PestIdentificationViewModel : ViewModel() {
     val uiState: LiveData<PestIdentificationState> = _uiState
 
     private val pestIdentificationService = PestIdentificationService()
-    // TODO: This will be replaced with a secure method
-    private val authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MzE3NDU2NS1hYWJjLTRjMTItYWQ1Yi1iOWUyNWRmYzY2MjUiLCJhdWQiOlsiZmFzdGFwaS11c2VyczphdXRoIl0sInR5cGUiOiJhY2Nlc3MiLCJleHAiOjE3NTQ3NDQ1MjN9.nH9d1cXL4BL6oEIY2Kt_aVnGJ9qMZMDMMVGcDffOW8Y"
 
     init {
         // Set the initial state when the ViewModel is created
@@ -44,7 +41,7 @@ class PestIdentificationViewModel : ViewModel() {
     private fun fetchPlants() {
         viewModelScope.launch {
             try {
-                val response = APIHelper.safeApiCall { pestIdentificationService.getPlants(authToken) }
+                val response = APIHelper.safeApiCall { pestIdentificationService.getPlants() }
                 android.util.Log.d("PestIdViewModel", "Successfully parsed ${response.items.size} plants from API.")
                 val placeholder = Plant(-1, "Select Category", "اختر الفئة", "", "","") // Placeholder
                 _plants.value = listOf(placeholder) + response.items
@@ -65,20 +62,20 @@ class PestIdentificationViewModel : ViewModel() {
 
                 // Step 1: Upload Image
                 val uploadResponse = APIHelper.safeApiCall {
-                    pestIdentificationService.uploadImage(authToken, compressedFile, imageUri, plantId, context)
+                    pestIdentificationService.uploadImage(compressedFile, imageUri, plantId, context)
                 }
                 val imageId = uploadResponse.id
 
                 // Step 2: Create Inference
                 val inferenceResponse = APIHelper.safeApiCall {
-                    pestIdentificationService.createInference(authToken, imageId)
+                    pestIdentificationService.createInference(imageId)
                 }
                 val inferenceId = inferenceResponse.id
 
                 // Step 3: Validate Inference
                 _uiState.value = PestIdentificationState.Loading(context.getString(R.string.detecting_disease))
                 val validationResponse = APIHelper.safeApiCall {
-                    pestIdentificationService.validateInference(authToken, inferenceId)
+                    pestIdentificationService.validateInference(inferenceId)
                 }
                 if (validationResponse.status != 1) { // Not IMAGE_VALID
                     throw IOException(context.getString(R.string.image_not_valid))
@@ -86,7 +83,7 @@ class PestIdentificationViewModel : ViewModel() {
 
                 // Step 4: Detect Disease
                 val detectionResponse = APIHelper.safeApiCall {
-                    pestIdentificationService.detectDisease(authToken, inferenceId)
+                    pestIdentificationService.detectDisease(inferenceId)
                 }
 
                 when (detectionResponse.status) {
@@ -95,10 +92,10 @@ class PestIdentificationViewModel : ViewModel() {
                         if (diseaseId != 0 && diseaseId != null) {
                             // Disease was found, now get attention map
                             val attentionResponse = APIHelper.safeApiCall {
-                                pestIdentificationService.getAttentionMap(authToken, detectionResponse.id)
+                                pestIdentificationService.getAttentionMap(detectionResponse.id)
                             }
                             val disease = APIHelper.safeApiCall {
-                                pestIdentificationService.getDiseaseById(authToken, diseaseId)
+                                pestIdentificationService.getDiseaseById(diseaseId)
                             }
                             _uiState.value = PestIdentificationState.DetectionResult(disease, detectionResponse.confidenceLevel, attentionResponse.attentionMapUrl)
                         } else {

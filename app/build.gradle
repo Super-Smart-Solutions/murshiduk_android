@@ -9,6 +9,12 @@ buildscript {
     }
 
 }
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 repositories {
@@ -30,6 +36,7 @@ android {
         versionCode 241
         versionName "2.4.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "PEST_API_KEY", "\"${localProperties.getProperty('PEST_API_KEY')}\""
     }
     buildTypes {
         release {
@@ -61,6 +68,7 @@ android {
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
     packagingOptions {
         jniLibs {

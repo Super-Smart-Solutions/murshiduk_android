@@ -16,6 +16,7 @@ import javax.net.ssl.X509TrustManager;
 import okhttp3.CipherSuite;
 import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import okhttp3.TlsVersion;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -105,13 +106,23 @@ public class APIClient {
                 .build();
     }
 
+
     public static Retrofit getPestIdentificationClient() {
 
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        okhttp3.Interceptor apiKeyInterceptor = chain -> {
+            Request originalRequest = chain.request();
+            Request newRequest = originalRequest.newBuilder()
+                    .header("x-api-key", com.saatco.murshadik.BuildConfig.PEST_API_KEY)
+                    .build();
+            return chain.proceed(newRequest);
+        };
 
         OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
+                .addInterceptor(loggingInterceptor)
+                .addInterceptor(apiKeyInterceptor) // Add our new interceptor
                 .readTimeout(120, TimeUnit.SECONDS)
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .writeTimeout(120, TimeUnit.SECONDS)

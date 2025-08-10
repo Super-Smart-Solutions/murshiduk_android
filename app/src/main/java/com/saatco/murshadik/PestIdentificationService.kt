@@ -19,7 +19,6 @@ class PestIdentificationService {
     private val api: PestIdentificationApi = APIClient.getPestIdentificationClient().create(PestIdentificationApi::class.java)
 
     suspend fun uploadImage(
-        authToken: String,
         file: File,
         originalUri: Uri,
         plantId: Int,
@@ -42,46 +41,40 @@ class PestIdentificationService {
         val farmIdPart = MultipartBody.Part.createFormData("farm_id", "1")
         val annotatedPart = MultipartBody.Part.createFormData("annotated", "false")
 
-        return api.uploadImage("Bearer $authToken", imagePart, namePart, plantIdPart, farmIdPart, annotatedPart)
+        return api.uploadImage(imagePart, namePart, plantIdPart, farmIdPart, annotatedPart)
     }
 
     suspend fun createInference(
-        authToken: String,
         imageId: Int
     ): Response<InferenceResponse> {
-        return api.createInference("Bearer $authToken", imageId)
+        return api.createInference(imageId)
     }
 
     suspend fun validateInference(
-        authToken: String,
         inferenceId: Int
     ): Response<InferenceResponse> {
-        return api.validateInference("Bearer $authToken", inferenceId)
+        return api.validateInference(inferenceId)
     }
 
     suspend fun detectDisease(
-        authToken: String,
         inferenceId: Int
     ): Response<InferenceResponse> {
-        return api.detectDisease("Bearer $authToken", inferenceId)
+        return api.detectDisease(inferenceId)
     }
 
     suspend fun getDiseaseById(
-        authToken: String,
         diseaseId: Int
     ): Response<Disease> {
-        return api.getDiseaseById("Bearer $authToken", diseaseId)
+        return api.getDiseaseById(diseaseId)
     }
 
     suspend fun getPlants(
-        authToken: String
     ): Response<PlantListResponse> {
-        return api.getPlants("Bearer $authToken")
+        return api.getPlants( )
     }
 
     suspend fun getAttentionMap(
-        authToken: String,
         inferenceId: Int): Response<AttentionResponse> {
-        return api.getAttentionMap("Bearer $authToken", inferenceId)
+        return api.getAttentionMap(inferenceId)
     }
 }
